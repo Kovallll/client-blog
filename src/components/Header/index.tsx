@@ -1,14 +1,22 @@
+import classNames from 'classnames'
+
 import { Link } from 'src/i18n/routing'
 import { logoTitle } from './config'
 import styles from './styles.module.scss'
+import { HeaderProps } from './types'
 import { VideoButton } from './VideoButton'
 
 import { BurgerMenu } from '@components/BurgerMenu'
 import { navigationLinks } from '@constants'
 
-export const Header = () => {
+export const Header = ({ withVideo = true, className }: HeaderProps) => {
+    const headerStyles = classNames(
+        styles.header,
+        className ? styles[className] : ''
+    )
+
     return (
-        <header className={styles.header}>
+        <header className={headerStyles}>
             <p className={styles.title}>{logoTitle}</p>
 
             <div className={styles.content}>
@@ -20,7 +28,7 @@ export const Header = () => {
                     ))}
                 </nav>
                 <BurgerMenu />
-                <VideoButton />
+                {withVideo && <VideoButton />}
             </div>
         </header>
     )

@@ -1,4 +1,8 @@
 import CloseIcon from '@assets/icons/close.svg'
+import FacebookIcon from '@assets/icons/facebook.svg'
+import InstagramIcon from '@assets/icons/instagram.svg'
+import LinkedInIcon from '@assets/icons/linkedIn.svg'
+import TwitterIcon from '@assets/icons/twitter.svg'
 
 export enum Paths {
     Home = '/',
@@ -19,4 +23,13 @@ export const navigationLinks = [
     { path: Paths.ContactUs, title: contactUsNavText },
 ]
 
-export const icons = { CloseIcon }
+export const icons = {
+    CloseIcon,
+}
+
+export const socialLinks = [
+    { path: '/', icon: <FacebookIcon /> },
+    { path: '/', icon: <TwitterIcon /> },
+    { path: '/', icon: <InstagramIcon /> },
+    { path: '/', icon: <LinkedInIcon /> },
+]

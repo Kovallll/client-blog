@@ -1,10 +1,9 @@
-@import '@styles/vars.scss';
-@import '@styles/mixins.scss';
+@import '@styles/global';
 
 .header {
     @include flex-row-sb;
 
-    background: $dark-blue;
+    background: $dark-blue-gray;
     padding: $spacer-xs 0px;
     padding-left: $spacer-xl;
     padding-right: $spacer-md;
@@ -15,10 +14,12 @@
         padding-left: $spacer-lg;
         padding-right: $spacer-sm;
     }
+
     @media (max-width: $sm) {
         padding-left: $spacer-md;
         padding-right: $spacer-xs;
     }
+
     @media (max-width: $xs) {
         padding: $spacer-xxxs 0px;
         padding-left: $spacer-sm;
@@ -39,6 +40,7 @@
     @media (max-width: $sm) {
         font-size: $fs-xs;
     }
+
     @media (max-width: $xs) {
         font-size: $fs-xxs;
     }
@@ -62,7 +64,16 @@
     @media (max-width: $lg) {
         margin-right: $spacer-xs;
     }
+
     @media (max-width: $md) {
         margin-right: $spacer-xxs;
+    }
+}
+
+.header.footer {
+    padding: 0;
+
+    @media (max-width: $sm) {
+        display: none;
     }
 }
