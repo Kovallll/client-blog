@@ -3,7 +3,7 @@ import { getMessages } from 'next-intl/server'
 
 import styles from './layout.module.scss'
 
-import '@styles/globals.scss'
+import '@styles/base.scss'
 import { Footer } from '@components/Footer'
 import { Header } from '@components/Header'
 

@@ -1,14 +1,15 @@
-@import '@styles/vars';
-@import '@styles/mixins';
+@import '@styles/global';
 
 .container {
     display: none;
 
     @media (max-width: $sm) {
-        width: 100%;
         @include flex-row-start;
+
+        width: 100%;
         margin-right: $spacer-sm;
     }
+
     @media (max-width: $xs) {
         margin-right: $spacer-xs;
     }
@@ -16,15 +17,19 @@
 
 .menu {
     @include flex-column-center;
+
     justify-content: space-between;
     height: 30px;
     position: relative;
+
     @media (max-width: $md) {
         height: 28px;
     }
+
     @media (max-width: $sm) {
         height: 24px;
     }
+
     @media (max-width: $xs) {
         height: 20px;
     }
@@ -40,9 +45,11 @@
         transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
         opacity 0.55s ease,
         top 0.55s ease;
+
     @media (max-width: $md) {
         width: 36px;
     }
+
     @media (max-width: $xs) {
         height: 3px;
         width: 30px;
@@ -54,10 +61,12 @@
         transform: rotate(45deg);
         top: 42%;
     }
+
     &:nth-child(3) {
         transform: rotate(135deg);
         top: -42%;
     }
+
     &:nth-child(2) {
         opacity: 0;
     }
@@ -72,6 +81,7 @@
     padding: $spacer-xs;
     z-index: 10;
     top: 42px;
+
     @media (max-width: $xs) {
         top: 34px;
     }

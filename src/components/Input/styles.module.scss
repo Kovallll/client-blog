@@ -1,18 +1,16 @@
 @import '@styles/global';
 
-.button {
-    @include flex-row-center;
-
-    width: 100%;
-    font-weight: 700;
-    padding: $spacer-xs $spacer-lg;
-    background-color: $yellow;
+.input {
+    background-color: transparent;
+    padding: $spacer-xs $spacer-md;
     font-size: $fs-xs;
-    border: none;
+    color: $white;
     white-space: nowrap;
+    border: 1px solid $dark-gray;
+    width: 100%;
 
     @media (max-width: $lg) {
-        padding: $spacer-xs $spacer-md;
+        padding: $spacer-xs $spacer-sm;
     }
 
     @media (max-width: $sm) {
@@ -24,8 +22,4 @@
         padding: $spacer-xxs $spacer-xs;
         font-size: $fs-xxxs;
     }
-}
-
-.whiteButton {
-    background: $white;
 }

@@ -1,5 +1,4 @@
-@import '@styles/vars';
-@import '@styles/mixins';
+@import '@styles/global';
 
 .container {
     @include flex-column-center;
@@ -25,6 +24,7 @@
     @media (max-width: $md) {
         padding: $spacer-xs $spacer-lg;
     }
+
     @media (max-width: $sm) {
         padding: $spacer-xs $spacer-md;
     }
