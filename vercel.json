@@ -4,5 +4,5 @@
     "devCommand": "yarn dev",
     "installCommand": "yarn install",
     "framework": null,
-    "outputDirectory": "./next"
+    "outputDirectory": ".next"
 }

@@ -6,13 +6,6 @@
     "editor.formatOnSaveMode": "file",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "vs-code-prettier-eslint.prettierLast": false,
-    "colorize.languages": [
-        "javascript",
-        "typescript"
-    ],
-    "i18n-ally.localesPaths": [
-        "messages",
-        "src/i18n"
-    ],
-    
+    "colorize.languages": ["javascript", "typescript"],
+    "i18n-ally.localesPaths": ["messages", "src/i18n"]
 }
