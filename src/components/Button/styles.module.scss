@@ -1,0 +1,32 @@
+@import '@styles/mixins.scss';
+@import '@styles/vars.scss';
+
+.button {
+    @include flex-row-center;
+
+    width: 100%;
+    font-weight: 700;
+    padding: $spacer-xs $spacer-lg;
+    background-color: $yellow;
+    font-size: $fs-xs;
+    border: none;
+    white-space: nowrap;
+
+    @media (max-width: $lg) {
+        padding: $spacer-xs $spacer-md;
+    }
+
+    @media (max-width: $sm) {
+        padding: $spacer-xxs $spacer-sm;
+        font-size: $fs-xxs;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xxs $spacer-xs;
+        font-size: $fs-xxxs;
+    }
+}
+
+.whiteButton {
+    background: $white;
+}

@@ -3,11 +3,11 @@ import { getMessages } from 'next-intl/server'
 
 import styles from './layout.module.scss'
 
-import './globals.scss'
+import '@styles/globals.scss'
 import { Footer } from '@components/Footer'
 import { Header } from '@components/Header'
 
-export default async function LocaleLayout({
+export default async function RootLayout({
     children,
     params: { locale },
 }: {
