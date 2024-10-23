@@ -1,0 +1,12 @@
+@import '@styles/global';
+
+.page {
+    @include flex-column-center;
+}
+
+.container {
+    @include flex-column-center;
+
+    max-width: $max-w;
+    width: 100%;
+}

@@ -1,3 +1,5 @@
+@import '@styles/global';
+
 .container {
     display: flex;
     flex-direction: column;
@@ -5,5 +7,13 @@
 }
 
 .content {
+    max-width: 1440px;
+    width: 100%;
+}
+
+.contentWrap {
+    @include flex-column-center;
+
+    width: 100%;
     flex: 1 0 auto;
 }

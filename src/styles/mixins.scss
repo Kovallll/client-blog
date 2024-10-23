@@ -2,24 +2,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
 }
 
 @mixin flex-row-sb {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
 }
 
 @mixin flex-row-start {
     display: flex;
     justify-content: start;
     align-items: center;
+    flex-direction: row;
 }
 
 @mixin flex-row-end {
     display: flex;
     justify-content: end;
     align-items: center;
+    flex-direction: row;
 }
 
 @mixin flex-column-center {

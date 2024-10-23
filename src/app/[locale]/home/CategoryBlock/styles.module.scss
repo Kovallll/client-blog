@@ -1,0 +1,53 @@
+@import '@styles/global';
+
+.container {
+    @include flex-column-center;
+
+    width: 100%;
+    padding: $spacer-xs;
+    margin-bottom: $spacer-xxxl;
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-xxl;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xxs;
+        margin-bottom: $spacer-xl;
+    }
+}
+
+.title {
+    margin-bottom: $spacer-lg;
+    font-size: $fs-xl;
+
+    @media (max-width: $md) {
+        font-size: $fs-lg;
+        margin-bottom: $spacer-md;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-sm;
+        margin-bottom: $spacer-sm;
+    }
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    width: 100%;
+    gap: 12px;
+
+    @media (max-width: $sm) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
+        gap: 16px;
+    }
+
+    @media (max-width: $xs) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}

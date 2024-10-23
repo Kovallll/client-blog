@@ -1,0 +1,13 @@
+@import '@styles/global';
+
+.wrap {
+    margin-top: $spacer-md;
+
+    @media (max-width: $sm) {
+        margin-top: $spacer-sm;
+    }
+
+    @media (max-width: $xs) {
+        margin-top: $spacer-xs;
+    }
+}

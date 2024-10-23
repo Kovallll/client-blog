@@ -1,0 +1,134 @@
+@import '@styles/global';
+
+.container {
+    position: relative;
+    margin-bottom: $spacer-xxxl;
+}
+
+.content {
+    @include flex-column-start;
+
+    position: absolute;
+    top: 18%;
+    color: $white;
+    margin-left: $spacer-xl;
+
+    @media (max-width: $lg) {
+        top: 12%;
+        margin-left: $spacer-lg;
+    }
+    @media (max-width: $md) {
+        margin-left: $spacer-md;
+    }
+    @media (max-width: $xs) {
+        top: 8%;
+        margin-left: $spacer-xxs;
+    }
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+
+    min-height: 220px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        80.99% 71.93% at 74.58% 0%,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+}
+
+.caption {
+    font-size: $fs-xxs - 2px;
+    text-transform: uppercase;
+    margin-bottom: $spacer-sm;
+    font-weight: 600;
+    letter-spacing: 3px;
+
+    @media (max-width: $md) {
+        font-size: $fs-xxxs;
+        margin-bottom: $spacer-xs;
+        margin-bottom: $spacer-xs;
+    }
+    @media (max-width: $xs) {
+        font-size: $fs-xxxs - 2px;
+    }
+}
+
+.captionBold {
+    font-weight: 900;
+}
+
+.title {
+    font-size: $fs-xxxl;
+    font-weight: 700;
+    width: 800px;
+    margin-bottom: $spacer-sm;
+    line-height: 64px;
+
+    @media (max-width: $lg) {
+        line-height: 48px;
+        font-size: $fs-xxl;
+    }
+    @media (max-width: $md) {
+        line-height: 48px;
+        font-size: $fs-xl;
+        width: 500px;
+        margin-bottom: $spacer-xs;
+    }
+    @media (max-width: $sm) {
+        line-height: 32px;
+        font-size: $fs-lg;
+        width: 400px;
+    }
+    @media (max-width: $xs) {
+        line-height: 24px;
+        font-size: $fs-sm;
+        width: 350px;
+        margin-bottom: $spacer-xxs;
+    }
+}
+
+.publicationInfo {
+    font-size: $fs-xxs - 2px;
+    margin-bottom: $spacer-xs;
+    @media (max-width: $md) {
+        font-size: $fs-xxxs;
+        margin-bottom: $spacer-xxs;
+    }
+    @media (max-width: $xs) {
+        font-size: $fs-xxxs - 2px;
+    }
+}
+
+.subtitle {
+    font-size: $fs-xxs - 2px;
+    width: 600px;
+    margin-bottom: $spacer-lg;
+    line-height: 28px;
+    @media (max-width: $md) {
+        font-size: $fs-xxxs;
+        margin-bottom: $spacer-md;
+        line-height: 24px;
+    }
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-sm;
+        line-height: 20px;
+        width: 400px;
+    }
+    @media (max-width: $xs) {
+        font-size: $fs-xxxs - 2px;
+        margin-bottom: $spacer-xs;
+        line-height: 16px;
+        width: 300px;
+    }
+}

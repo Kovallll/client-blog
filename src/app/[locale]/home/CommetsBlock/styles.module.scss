@@ -1,0 +1,137 @@
+@import '@styles/global';
+
+.container {
+    @include flex-row-center;
+
+    background: $beige;
+    margin: $spacer-xs;
+    padding: $spacer-xl $spacer-xxxl;
+    margin-bottom: $spacer-xxxl;
+
+    @media (max-width: $lg) {
+        padding: $spacer-lg $spacer-xxl;
+    }
+
+    @media (max-width: $md) {
+        padding: $spacer-md $spacer-xl;
+    }
+
+    @media (max-width: $sm) {
+        padding: $spacer-sm $spacer-lg;
+        margin-bottom: $spacer-xxl;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xs $spacer-md;
+        margin-bottom: $spacer-xl;
+    }
+}
+
+.line {
+    border: 1px solid $gray;
+    height: 300px;
+    margin: 0 $spacer-xxl;
+
+    @media (max-width: $lg) {
+        margin: 0 $spacer-xl;
+    }
+
+    @media (max-width: $md) {
+        margin: 0 $spacer-lg;
+    }
+
+    @media (max-width: $sm) {
+        margin: 0 $spacer-md;
+    }
+
+    @media (max-width: $xs) {
+        margin: 0 $spacer-sm;
+    }
+}
+
+.article {
+    min-width: 200px;
+
+    @media (max-width: $sm) {
+        min-width: 160px;
+    }
+
+    @media (max-width: $xs) {
+        min-width: 130px;
+    }
+}
+
+.comment {
+    @include flex-column-start;
+    justify-content: space-between;
+    height: 300px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: $fs-sm;
+    line-height: 32px;
+    max-width: 480px;
+    width: 100%;
+
+    @media (max-width: $md) {
+        font-size: $fs-sm;
+        line-height: 28px;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-xs;
+        line-height: 24px;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xxs;
+        line-height: 16px;
+    }
+}
+
+.bottomComment {
+    @include flex-row-sb;
+    width: 100%;
+
+    @media (max-width: $sm) {
+        @include flex-column-start;
+    }
+}
+
+.pagination {
+    @include flex-row-center;
+
+    @media (max-width: $sm) {
+        margin-top: $spacer-sm;
+    }
+}
+
+.prevArrow {
+    @include flex-row-center;
+    background: $white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @media (max-width: $sm) {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.nextArrow {
+    @include flex-row-center;
+    background: $black;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    margin-left: $spacer-xs;
+    cursor: pointer;
+
+    @media (max-width: $sm) {
+        width: 48px;
+        height: 48px;
+    }
+}

@@ -1,0 +1,60 @@
+@import '@styles/global';
+
+.container {
+    @include flex-column-start;
+
+    padding: $spacer-md;
+    border: 1px solid $light-gray;
+    max-width: 300px;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+        background: $light-gray;
+    }
+}
+
+.iconWrap {
+    @include flex-row-center;
+    background: $beige;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    margin-bottom: $spacer-xs;
+}
+
+.title {
+    font-size: $fs-md;
+    font-weight: 700;
+    margin-bottom: $spacer-xxxs;
+
+    @media (max-width: $md) {
+        font-size: $fs-xs;
+    }
+}
+
+.subtitle {
+    font-size: $fs-xxs;
+    line-height: 28px;
+
+    @media (max-width: $md) {
+        font-size: $fs-xxxs;
+        line-height: 20px;
+    }
+}
+
+.active {
+    background: $yellow;
+    border: 0;
+}
+
+.container.miniCard {
+    @include flex-row-start;
+    flex-direction: row;
+    padding: $spacer-sm;
+
+    .iconWrap {
+        margin-bottom: 0;
+        margin-right: $spacer-xs;
+    }
+}

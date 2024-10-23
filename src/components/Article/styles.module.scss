@@ -1,0 +1,106 @@
+@import '@styles/global';
+
+.container {
+    @include flex-column-start;
+
+    width: 100%;
+}
+
+.caption {
+    font-size: $fs-xxs;
+    margin-bottom: $spacer-sm;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @media (max-width: $md) {
+        font-size: $fs-xxs - 2px;
+        margin-bottom: $spacer-xs;
+        letter-spacing: 2px;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-xxxs - 2px;
+        margin-bottom: $spacer-xxs;
+        letter-spacing: 1px;
+    }
+}
+
+.title {
+    font-size: $fs-xl;
+    margin-bottom: $spacer-xs;
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 48px;
+
+    @media (max-width: $md) {
+        font-size: $fs-md;
+        margin-bottom: $spacer-xxs;
+        letter-spacing: 0;
+        line-height: 32px;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-xs;
+        margin-bottom: $spacer-xxxs;
+        line-height: 24px;
+    }
+}
+
+.subtitle {
+    font-size: $fs-xxs;
+    color: $gray;
+    line-height: 28px;
+
+    @media (max-width: $md) {
+        font-size: $fs-xxxs;
+        line-height: 20px;
+    }
+    @media (max-width: $sm) {
+        font-size: $fs-xxxs - 2px;
+        line-height: 12px;
+    }
+}
+
+.container.misionTitle {
+    .title {
+        font-size: $fs-md;
+
+        @media (max-width: $md) {
+            font-size: $fs-xs;
+        }
+    }
+}
+
+.container.discover {
+    .title {
+        font-size: $fs-xxl;
+        line-height: 64px;
+
+        @media (max-width: $lg) {
+            font-size: $fs-xl;
+            line-height: 48px;
+        }
+
+        @media (max-width: $md) {
+            font-size: $fs-lg - 4px;
+            line-height: 40px;
+        }
+
+        @media (max-width: $sm) {
+            font-size: $fs-md;
+            line-height: 32px;
+        }
+
+        @media (max-width: $xs) {
+            font-size: $fs-xs;
+            line-height: 20px;
+        }
+    }
+}
+
+.container.joinUs {
+    p {
+        text-align: center;
+    }
+}
