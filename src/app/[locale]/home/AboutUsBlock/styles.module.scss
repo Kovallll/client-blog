@@ -1,0 +1,114 @@
+@import '@styles/global';
+
+.container {
+    @include flex-column-center;
+
+    margin: $spacer-xs;
+    margin-bottom: $spacer-xxxl;
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-xxl;
+    }
+
+    @media (max-width: $xs) {
+        margin: $spacer-xxs;
+        margin-bottom: $spacer-xl;
+    }
+}
+
+.content {
+    @include flex-row-center;
+
+    background: $light-pink;
+    padding: $spacer-xxl $spacer-xl;
+
+    @media (max-width: $md) {
+        padding: $spacer-xl $spacer-lg;
+    }
+
+    @media (max-width: $sm) {
+        padding: $spacer-lg $spacer-md;
+    }
+
+    @media (max-width: $xs) {
+        @include flex-column-center;
+    }
+}
+
+.lines {
+    @include flex-row-end;
+
+    width: 100%;
+}
+
+.yellowLine {
+    background: $yellow;
+    height: 20px;
+    width: 60%;
+    @media (max-width: $md) {
+        height: 16px;
+    }
+
+    @media (max-width: $sm) {
+        height: 12px;
+    }
+
+    @media (max-width: $xs) {
+        height: 8px;
+    }
+}
+
+.purpleLine {
+    background: $purple;
+    height: 20px;
+    width: 20%;
+    @media (max-width: $md) {
+        height: 16px;
+    }
+
+    @media (max-width: $sm) {
+        height: 12px;
+    }
+
+    @media (max-width: $xs) {
+        height: 8px;
+    }
+}
+
+.about {
+    flex: 1;
+    margin-right: $spacer-xl;
+
+    @media (max-width: $md) {
+        margin-right: $spacer-lg;
+    }
+
+    @media (max-width: $sm) {
+        margin-right: $spacer-md;
+    }
+
+    @media (max-width: $xs) {
+        margin-right: 0;
+        margin-bottom: $spacer-xs;
+    }
+}
+
+.mision {
+    flex: 1;
+}
+
+.link {
+    margin-top: $spacer-xs;
+    color: $purple;
+    font-size: $fs-xs - 2px;
+
+    @media (max-width: $md) {
+        font-size: $fs-xs;
+        margin-top: $spacer-xxs;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-xxs;
+        margin-top: $spacer-xxxs;
+    }
+}

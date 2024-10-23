@@ -1,0 +1,16 @@
+@import '@styles/global';
+
+.container {
+    @include flex-column-center;
+
+    width: 400px;
+    margin-bottom: $spacer-xxxl;
+
+    @media (max-width: $sm) {
+        width: 300px;
+    }
+
+    @media (max-width: $xs) {
+        width: 280px;
+    }
+}

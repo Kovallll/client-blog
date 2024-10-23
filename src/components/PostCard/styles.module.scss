@@ -1,0 +1,109 @@
+@import '@styles/global';
+
+.card {
+    @include flex-row-center;
+
+    padding: $spacer-md;
+    cursor: pointer;
+    width: 100%;
+
+    &:hover {
+        background: $light-gray;
+    }
+
+    @media (max-width: $md) {
+        &:hover {
+            background: $beige;
+        }
+        padding: $spacer-sm;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xs;
+    }
+}
+
+.card.featurePost {
+    padding: 0;
+    cursor: default;
+
+    &:hover {
+        background: transparent;
+    }
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+.active {
+    background: $beige;
+}
+
+.info {
+    @include flex-column-start;
+}
+
+.excerpt {
+    font-size: $fs-xxs - 2px;
+    margin-bottom: $spacer-xs;
+
+    @media (max-width: $md) {
+        font-size: $fs-xxxs;
+        margin-bottom: $spacer-xxs;
+    }
+    @media (max-width: $xs) {
+        font-size: $fs-xxxs -2px;
+        margin-bottom: $spacer-xxxs;
+    }
+}
+
+.title {
+    font-size: $fs-sm;
+    margin-bottom: $spacer-xs;
+    font-weight: 700;
+    line-height: 32px;
+
+    @media (max-width: $md) {
+        font-size: $fs-xs;
+        margin-bottom: $spacer-xxs;
+        line-height: 24px;
+    }
+    @media (max-width: $xs) {
+        font-size: $fs-xxs;
+        margin-bottom: $spacer-xxxs;
+        line-height: 16px;
+    }
+}
+
+.subtitle {
+    font-size: $fs-xxs;
+    margin-bottom: $spacer-md;
+    color: $gray;
+    line-height: 28px;
+
+    @media (max-width: $md) {
+        font-size: $fs-xxxs;
+        margin-bottom: $spacer-sm;
+        line-height: 20px;
+    }
+    @media (max-width: $xs) {
+        font-size: $fs-xxxs -2px;
+        margin-bottom: $spacer-xs;
+        line-height: 16px;
+    }
+}
+
+.card.vertical {
+    @include flex-column-center;
+
+    img {
+        margin-bottom: $spacer-md;
+    }
+    @media (max-width: $xs) {
+        img {
+            margin-bottom: $spacer-xs;
+        }
+    }
+}

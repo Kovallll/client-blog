@@ -1,0 +1,48 @@
+@import '@styles/global';
+
+.container {
+    position: relative;
+    width: 100%;
+    padding: $spacer-xs;
+    margin-bottom: $spacer-xxxl;
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-xxl;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xxs;
+        margin-bottom: $spacer-xl;
+    }
+}
+
+.info {
+    padding: $spacer-xl;
+    bottom: 0;
+    right: 0;
+    width: 56%;
+    position: absolute;
+    background: $white;
+
+    @media (max-width: $lg) {
+        padding: $spacer-lg;
+    }
+
+    @media (max-width: $md) {
+        padding: $spacer-md;
+        width: 46%;
+    }
+
+    @media (max-width: $sm) {
+        padding: $spacer-sm;
+    }
+    @media (max-width: $xs) {
+        padding: $spacer-sm;
+        width: 76%;
+    }
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}

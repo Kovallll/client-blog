@@ -1,0 +1,57 @@
+@import '@styles/global';
+
+.container {
+    @include flex-row-sb;
+
+    width: 100%;
+    margin-bottom: $spacer-xxxl;
+    padding: $spacer-xs;
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-xxl;
+    }
+
+    @media (max-width: $xs) {
+        @include flex-column-center;
+
+        padding: $spacer-xxs;
+        margin-bottom: $spacer-xl;
+    }
+}
+
+.title {
+    margin-right: $spacer-xxl;
+    color: $gray;
+    white-space: nowrap;
+
+    @media (max-width: $sm) {
+        margin-right: $spacer-xl;
+    }
+
+    @media (max-width: $xs) {
+        margin-right: 0;
+        margin-bottom: $spacer-xs;
+    }
+}
+
+.topTitle {
+    font-size: $fs-xxs;
+    line-height: 20px;
+}
+
+.bottomTitle {
+    font-size: $fs-sm;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.sponsors {
+    @include flex-row-sb;
+
+    overflow-x: auto;
+    width: 100%;
+
+    a {
+        margin-left: $spacer-xs;
+    }
+}

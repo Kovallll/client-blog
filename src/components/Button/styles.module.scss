@@ -7,9 +7,11 @@
     font-weight: 700;
     padding: $spacer-xs $spacer-lg;
     background-color: $yellow;
-    font-size: $fs-xs;
+    font-size: $fs-xs - 2px;
     border: none;
     white-space: nowrap;
+    cursor: pointer;
+    transition: transform 0.4s ease;
 
     @media (max-width: $lg) {
         padding: $spacer-xs $spacer-md;
@@ -23,6 +25,10 @@
     @media (max-width: $xs) {
         padding: $spacer-xxs $spacer-xs;
         font-size: $fs-xxxs;
+    }
+
+    &:hover {
+        transform: scale(1.1);
     }
 }
 

@@ -1,5 +1,9 @@
 declare module '*.mp4'
 declare module '*.svg' {
-    const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>
+    const ReactComponent: React.FunctionComponent<
+        React.SVGProps<SVGSVGElement> & {
+            title?: string
+        }
+    >
     export default ReactComponent
 }

@@ -1,0 +1,87 @@
+@import '@styles/global';
+
+.container {
+    @include flex-row-center;
+
+    align-items: start;
+    margin: $spacer-xs;
+    margin-bottom: $spacer-xxxl;
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
+        margin-bottom: $spacer-xxl;
+    }
+
+    @media (max-width: $xs) {
+        margin: $spacer-xxs;
+        margin-bottom: $spacer-xl;
+    }
+}
+
+.allPosts {
+    @include flex-column-start;
+    max-width: 520px;
+    width: 100%;
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
+    }
+}
+
+.featuredPost {
+    @include flex-column-start;
+
+    margin-right: $spacer-md;
+    @media (max-width: $sm) {
+        @include flex-column-center;
+        margin-right: 0;
+        margin-bottom: $spacer-xs;
+    }
+}
+
+.featuredPostContent {
+    padding: $spacer-md;
+    border: 1px solid $light-pink;
+}
+
+.allPostsContent {
+    max-width: 560px;
+
+    article {
+        min-width: 280px;
+    }
+
+    @media (max-width: $sm) {
+        display: flex;
+        overflow: auto;
+    }
+
+    @media (max-width: $xs) {
+        max-width: 360px;
+        article {
+            min-width: 180px;
+        }
+    }
+}
+
+.title {
+    margin-bottom: $spacer-md;
+    font-size: $fs-lg;
+
+    @media (max-width: $md) {
+        font-size: $fs-md;
+        margin-bottom: $spacer-sm;
+    }
+    @media (max-width: $xs) {
+        font-size: $fs-sm;
+        margin-bottom: $spacer-xs;
+    }
+}
+
+.button {
+    width: 200px;
+
+    @media (max-width: $md) {
+        width: 160px;
+    }
+}

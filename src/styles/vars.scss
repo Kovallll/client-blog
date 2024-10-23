@@ -24,11 +24,12 @@ $fs-md: 28px;
 $fs-lg: 32px;
 $fs-xl: 36px;
 $fs-xxl: 48px;
-$fs-xxl: 56px;
+$fs-xxxl: 56px;
 
 // цвета
+$gray: #6d6e76;
 $light-gray: #f4f4f4;
-$gray: #f4f0f8;
+$light-pink: #f4f0f8;
 $dark-gray: #4c4c4c;
 $beige: #fbf6ea;
 $white: #fff;
@@ -44,6 +45,3 @@ $sm: 768px;
 $md: 992px;
 $lg: 1200px;
 $xl: 1400px;
-
-//шрифт
-$ff: Poppins, sans-serif;
