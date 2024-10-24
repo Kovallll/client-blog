@@ -35,6 +35,8 @@
 .image {
     max-width: 100%;
     height: auto;
+
+    margin-right: $spacer-md;
 }
 
 .active {
@@ -48,14 +50,17 @@
 .excerpt {
     font-size: $fs-xxs - 2px;
     margin-bottom: $spacer-xs;
+    line-height: 20px;
 
     @media (max-width: $md) {
         font-size: $fs-xxxs;
         margin-bottom: $spacer-xxs;
+        line-height: 16px;
     }
     @media (max-width: $xs) {
         font-size: $fs-xxxs -2px;
         margin-bottom: $spacer-xxxs;
+        line-height: 12px;
     }
 }
 
@@ -73,7 +78,7 @@
     @media (max-width: $xs) {
         font-size: $fs-xxs;
         margin-bottom: $spacer-xxxs;
-        line-height: 16px;
+        line-height: 20px;
     }
 }
 
@@ -98,12 +103,100 @@
 .card.vertical {
     @include flex-column-center;
 
+    .title {
+        font-size: $fs-md;
+
+        @media (max-width: $md) {
+            font-size: $fs-sm;
+        }
+        @media (max-width: $xs) {
+            font-size: $fs-xs;
+        }
+    }
+
     img {
         margin-bottom: $spacer-md;
+        margin-right: 0;
     }
+
     @media (max-width: $xs) {
         img {
             margin-bottom: $spacer-xs;
+        }
+    }
+}
+
+.card.blog {
+    .image {
+        max-width: 490px;
+        width: 100%;
+        height: auto;
+
+        @media (max-width: $sm) {
+            max-width: 420px;
+        }
+
+        @media (max-width: $xs) {
+            max-width: 340px;
+        }
+    }
+
+    .title {
+        font-size: $fs-lg;
+        line-height: 48px;
+
+        @media (max-width: $sm) {
+            font-size: $fs-md;
+            line-height: 32px;
+        }
+
+        @media (max-width: $xs) {
+            font-size: $fs-sm;
+            line-height: 24px;
+        }
+    }
+
+    .excerpt {
+        font-size: $fs-xxs;
+        letter-spacing: 3px;
+        font-weight: 600;
+
+        @media (max-width: $sm) {
+            font-size: $fs-xxxs;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: $xs) {
+            font-size: $fs-xxxs - 2px;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+.card.blogPost {
+    .image {
+        height: 300px;
+        width: 420px;
+        object-fit: cover;
+
+        @media (max-width: $sm) {
+            height: 220px;
+            width: 360px;
+        }
+
+        @media (max-width: $xs) {
+            height: 180px;
+            width: 300px;
+        }
+    }
+
+    @media (max-width: $md) {
+        text-align: center;
+        .title {
+            width: 100%;
+        }
+        .excerpt {
+            width: 100%;
         }
     }
 }

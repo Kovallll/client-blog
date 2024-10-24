@@ -7,10 +7,12 @@
     margin-bottom: $spacer-xxxl;
 
     @media (max-width: $sm) {
+        margin-bottom: $spacer-xxl;
         width: 300px;
     }
 
     @media (max-width: $xs) {
+        margin-bottom: $spacer-xl;
         width: 280px;
     }
 }

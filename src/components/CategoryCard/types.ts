@@ -1,5 +1,7 @@
+import { Categories } from '@constants'
+
 export interface CategoryCardProps {
-    Icon: JSX.Element
-    title: string
+    category: Categories
     subtitle?: string
+    className?: string
 }

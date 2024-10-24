@@ -1,0 +1,79 @@
+@import '@styles/global';
+
+.container {
+    @include flex-column-center;
+
+    margin-bottom: $spacer-xxxl;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-xl;
+    }
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-md;
+    }
+
+    @media (max-width: $xs) {
+        margin-bottom: $spacer-sm;
+    }
+}
+
+.head {
+    @include flex-column-start;
+    width: 56%;
+    margin-top: $spacer-xxxl;
+
+    @media (max-width: $md) {
+        margin-top: $spacer-xxl;
+    }
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
+
+        margin-top: $spacer-xl;
+        text-align: center;
+        width: 100%;
+    }
+
+    @media (max-width: $xs) {
+        margin-top: $spacer-lg;
+    }
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.title {
+    font-size: $fs-xxl;
+    line-height: 64px;
+    font-weight: 700;
+    margin-top: $spacer-sm;
+
+    @media (max-width: $md) {
+        font-size: $fs-xl;
+        line-height: 48px;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-md;
+        line-height: 32px;
+        margin-top: $spacer-xs;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-sm;
+        line-height: 24px;
+    }
+}
+
+.postInfo {
+    max-width: 840px;
+    margin-top: $spacer-xl;
+
+    @media (max-width: $sm) {
+        margin-top: $spacer-lg;
+    }
+}

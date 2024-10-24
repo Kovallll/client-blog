@@ -1,3 +1,5 @@
+import { Categories } from './postsValues'
+
 import BusinessIcon from '@assets/icons/business.svg'
 import CloseIcon from '@assets/icons/close.svg'
 import EconomyIcon from '@assets/icons/economy.svg'
@@ -14,13 +16,21 @@ import PrevArrowIcon from '@assets/icons/prevArrow.svg'
 import StartupIcon from '@assets/icons/startup.svg'
 import TechnologyIcon from '@assets/icons/technology.svg'
 import TwitterIcon from '@assets/icons/twitter.svg'
-import { PostData } from '@types'
+
+export {
+    Categories,
+    authorsData,
+    blogPostsData,
+    homePostsData,
+    allPosts,
+} from './postsValues'
 
 export enum Paths {
     Home = '/home',
     Blog = '/blog',
     AboutUs = '/about-us',
     ContactUs = '/contact-us',
+    BlogPost = '/blog-post',
 }
 
 export const homeNavText = 'Home'
@@ -48,92 +58,32 @@ export const socialLinks = [
     { path: '/', icon: <LinkedInIcon /> },
 ]
 
-export const homePostsData: PostData[] = [
-    {
-        id: '1',
-        imageUrl: '/images/featurePost.png',
-        altText: 'feature post image',
-        excerpt: 'By John Deo | Aug 23, 2021',
-        title: '1 Figma design systems that you can download for free today.',
-        subtitle: `Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-         Excepteur sint occaecat cupidatat non proident.`,
-    },
-    {
-        id: '2',
-        imageUrl: '/images/featurePost.png',
-        altText: 'feature post image',
-        excerpt: 'By John Deo | Aug 23, 2021',
-        title: '2 Figma design systems that you can download for free today.',
-        subtitle: `Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-         Excepteur sint occaecat cupidatat non proident.`,
-    },
-    {
-        id: '3',
-        imageUrl: '/images/featurePost.png',
-        altText: 'feature post image',
-        excerpt: 'By John Deo | Aug 23, 2021',
-        title: '3 Figma design systems that you can download for free today.',
-        subtitle: `Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-         Excepteur sint occaecat cupidatat non proident.`,
-    },
-    {
-        id: '4',
-        imageUrl: '/images/featurePost.png',
-        altText: 'feature post image',
-        excerpt: 'By John Deo | Aug 23, 2021',
-        title: '4 Figma design systems that you can download for free today.',
-        subtitle: `Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-         Excepteur sint occaecat cupidatat non proident.`,
-    },
-]
-
-export const categoryData = [
-    {
-        Icon: <BusinessIcon />,
-        title: 'Business',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-    },
-    {
-        Icon: <StartupIcon />,
-        title: 'Startup',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-    },
-    {
-        Icon: <EconomyIcon />,
-        title: 'Economy',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-    },
-    {
+export const categoryData = {
+    [Categories.STARTUP]: { Icon: <StartupIcon />, title: 'Startup' },
+    [Categories.BUSINESS]: { Icon: <BusinessIcon />, title: 'Business' },
+    [Categories.ECONOMY]: { Icon: <EconomyIcon />, title: 'Economy' },
+    [Categories.TECHNOLOGY]: {
         Icon: <TechnologyIcon />,
         title: 'Technology',
+    },
+}
+
+export const categoriesData = [
+    {
+        category: Categories.BUSINESS,
         subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
     },
-]
-
-export const authorsData = [
     {
-        id: '1',
-        avatarUrl: '/images/author1.png',
-        fullName: 'Floyd Miles',
-        subtitle: 'Content Writer @Company',
+        category: Categories.STARTUP,
+        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
     },
     {
-        id: '2',
-        avatarUrl: '/images/author2.png',
-        fullName: 'Dianne Russell',
-        subtitle: 'Content Writer @Company',
+        category: Categories.ECONOMY,
+        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
     },
     {
-        id: '3',
-        avatarUrl: '/images/author3.png',
-        fullName: 'Jenny Wilson',
-        subtitle: 'Content Writer @Company',
-    },
-    {
-        id: '4',
-        avatarUrl: '/images/author4.png',
-        fullName: 'Leslie Alexander',
-        subtitle: 'Content Writer @Company',
+        category: Categories.TECHNOLOGY,
+        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
     },
 ]
 

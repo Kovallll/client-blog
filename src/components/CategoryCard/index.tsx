@@ -6,9 +6,14 @@ import classNames from 'classnames'
 import styles from './styles.module.scss'
 import { CategoryCardProps } from './types'
 
+import { categoryData } from '@constants'
 import { useClickOutside } from '@hooks'
 
-export const CategoryCard = ({ Icon, title, subtitle }: CategoryCardProps) => {
+export const CategoryCard = ({
+    category,
+    subtitle,
+    className,
+}: CategoryCardProps) => {
     const cardRef = useRef(null)
     const [isCardClicked, setIsCardClicked] = useState(false)
 
@@ -22,10 +27,16 @@ export const CategoryCard = ({ Icon, title, subtitle }: CategoryCardProps) => {
 
     const isWithOutSubtitle = subtitle === undefined ? true : false
 
-    const style = classNames(styles.container, {
-        [styles.miniCard]: isWithOutSubtitle,
-        [styles.active]: isCardClicked,
-    })
+    const style = classNames(
+        styles.container,
+        className ? styles[className] : '',
+        {
+            [styles.miniCard]: isWithOutSubtitle,
+            [styles.active]: isCardClicked,
+        }
+    )
+
+    const { Icon, title } = categoryData[category]
 
     return (
         <article className={style} onClick={handleClickCard} ref={cardRef}>
