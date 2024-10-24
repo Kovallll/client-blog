@@ -1,58 +1,44 @@
 @import '@styles/global';
 
 .container {
-    position: relative;
-    margin-bottom: $spacer-xxxl;
+    @include flex-row-se;
 
-    @media (max-width: $sm) {
+    margin-bottom: $spacer-xxxl;
+    background: $light-pink;
+    padding: $spacer-xxl $spacer-sm;
+
+    @media (max-width: $md) {
+        padding: $spacer-lg $spacer-xs;
         margin-bottom: $spacer-xxl;
     }
 
     @media (max-width: $xs) {
+        padding: $spacer-md $spacer-xxs;
         margin-bottom: $spacer-xl;
     }
 }
 
 .content {
     @include flex-column-start;
-
-    position: absolute;
-    top: 18%;
-    color: $white;
-    margin-left: $spacer-xl;
-
-    @media (max-width: $lg) {
-        top: 12%;
-        margin-left: $spacer-lg;
-    }
-    @media (max-width: $md) {
-        margin-left: $spacer-md;
-    }
-    @media (max-width: $xs) {
-        top: 8%;
-        margin-left: $spacer-xxs;
-    }
 }
 
 .image {
     max-width: 100%;
     height: auto;
+    margin-left: $spacer-xs;
+    min-height: 320px;
 
-    min-height: 220px;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    background: radial-gradient(
-        80.99% 71.93% at 74.58% 0%,
-        rgba(0, 0, 0, 0.2) 0%,
-        rgba(0, 0, 0, 0.5) 100%
-    );
+    @media (max-width: $md) {
+        min-height: 280px;
+    }
+    @media (max-width: $sm) {
+        min-height: 220px;
+    }
+    @media (max-width: $xs) {
+        width: auto;
+        min-height: 0px;
+        max-height: 130px;
+    }
 }
 
 .caption {
@@ -68,7 +54,7 @@
         margin-bottom: $spacer-xs;
     }
     @media (max-width: $xs) {
-        font-size: $fs-xxxs - 2px;
+        font-size: $fs-xxxs - 4px;
     }
 }
 
@@ -79,7 +65,7 @@
 .title {
     font-size: $fs-xxxl;
     font-weight: 700;
-    width: 800px;
+    max-width: 800px;
     margin-bottom: $spacer-sm;
     line-height: 64px;
 
@@ -90,18 +76,17 @@
     @media (max-width: $md) {
         line-height: 48px;
         font-size: $fs-xl;
-        width: 500px;
+        max-width: 500px;
         margin-bottom: $spacer-xs;
     }
     @media (max-width: $sm) {
         line-height: 32px;
         font-size: $fs-lg;
-        width: 400px;
+        max-width: 400px;
     }
     @media (max-width: $xs) {
         line-height: 24px;
-        font-size: $fs-sm;
-        width: 350px;
+        font-size: $fs-xs;
         margin-bottom: $spacer-xxs;
     }
 }
@@ -114,13 +99,13 @@
         margin-bottom: $spacer-xxs;
     }
     @media (max-width: $xs) {
-        font-size: $fs-xxxs - 2px;
+        font-size: $fs-xxxs - 4px;
     }
 }
 
 .subtitle {
     font-size: $fs-xxs - 2px;
-    width: 600px;
+    max-width: 600px;
     margin-bottom: $spacer-lg;
     line-height: 28px;
     @media (max-width: $md) {
@@ -131,12 +116,11 @@
     @media (max-width: $sm) {
         margin-bottom: $spacer-sm;
         line-height: 20px;
-        width: 400px;
+        max-width: 400px;
     }
     @media (max-width: $xs) {
-        font-size: $fs-xxxs - 2px;
+        font-size: $fs-xxxs - 4px;
         margin-bottom: $spacer-xs;
-        line-height: 16px;
-        width: 300px;
+        line-height: 12px;
     }
 }

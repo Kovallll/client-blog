@@ -100,7 +100,24 @@
     .image {
         margin-bottom: 0;
         margin-right: $spacer-xs;
-        width: 32px;
-        height: 32px;
+
+        @media (max-width: $xs) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+
+.container.blogPost {
+    .text {
+        @include flex-column-start;
+    }
+
+    .fullName {
+        color: $purple;
+    }
+
+    @media (max-width: $sm) {
+        @include flex-row-center;
     }
 }

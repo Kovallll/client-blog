@@ -14,6 +14,8 @@ export const FeaturedPost = () => {
     const [featuredPostData, setFeaturedPostData] = useState<PostData>(
         homePostsData[0]
     )
+    const { excerpt, id, title, image, subtitle } = featuredPostData
+
     const router = useRouter()
 
     const handleClickReadMore = () => {
@@ -25,18 +27,21 @@ export const FeaturedPost = () => {
         setFeaturedPostData(data)
     }
 
+    const handleClickViewAllButton = () => {
+        router.push(Paths.Blog)
+    }
+
     return (
         <section className={styles.container}>
             <div className={styles.featuredPost}>
                 <h2 className={styles.title}>Featured Post</h2>
                 <div className={styles.featuredPostContent}>
                     <PostCard
-                        id={featuredPostData.id}
-                        excerpt={featuredPostData.excerpt}
-                        title={featuredPostData.title}
-                        imageUrl={featuredPostData.imageUrl}
-                        altText={featuredPostData.altText}
-                        subtitle={featuredPostData.subtitle}
+                        id={id}
+                        excerpt={excerpt}
+                        title={title}
+                        image={image}
+                        subtitle={subtitle}
                         verticalCard={true}
                         className="featurePost"
                     />
@@ -49,7 +54,15 @@ export const FeaturedPost = () => {
                 </div>
             </div>
             <div className={styles.allPosts}>
-                <h2 className={styles.title}>All Posts</h2>
+                <div className={styles.textBlock}>
+                    <h2 className={styles.title}>All Posts</h2>
+                    <button
+                        className={styles.view}
+                        onClick={handleClickViewAllButton}
+                    >
+                        View All
+                    </button>
+                </div>
                 <div className={styles.allPostsContent}>
                     {homePostsData.map(({ id, excerpt, title }) => (
                         <PostCard

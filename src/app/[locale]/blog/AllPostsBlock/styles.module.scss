@@ -1,0 +1,84 @@
+@import '@styles/global';
+
+.container {
+    @include flex-column-start;
+
+    width: 100%;
+    padding: $spacer-xs;
+    margin-bottom: $spacer-xxxl;
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-xxl;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xxs;
+        margin-bottom: $spacer-xl;
+    }
+}
+
+.title {
+    font-size: $fs-xxl;
+    padding-bottom: $spacer-md;
+    border-bottom: 1px solid $gray;
+    width: 100%;
+
+    @media (max-width: $sm) {
+        font-size: $fs-xl;
+        padding-bottom: $spacer-sm;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-md;
+        padding-bottom: $spacer-xs;
+    }
+}
+
+.pagination {
+    @include flex-row-center;
+
+    width: 100%;
+    gap: $spacer-xs;
+}
+
+%paginationButton {
+    border: 0;
+    background: transparent;
+    font-weight: 700;
+    color: $dark-blue-gray;
+    line-height: 40px;
+    font-size: $fs-md;
+    cursor: pointer;
+
+    &:hover {
+        color: $purple;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-sm;
+        line-height: 32px;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xs;
+        line-height: 24px;
+    }
+}
+
+.disabledButton {
+    line-height: 32px;
+    font-size: $fs-sm;
+    color: $gray;
+
+    &:hover {
+        color: $gray;
+    }
+}
+
+.prev {
+    @extend %paginationButton;
+}
+
+.next {
+    @extend %paginationButton;
+}

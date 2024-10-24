@@ -2,6 +2,8 @@
 
 .page {
     @include flex-column-center;
+
+    margin: 0px $spacer-xs;
 }
 
 .container {

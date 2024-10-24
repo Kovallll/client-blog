@@ -10,12 +10,14 @@ import { AuthorCardProps } from './types'
 import { socialLinks } from '@constants'
 import { useClickOutside } from '@hooks'
 
-export const AuthorCard = ({
-    avatarUrl,
-    fullName,
-    subtitle,
-    horizontalCard = false,
-}: AuthorCardProps) => {
+export const AuthorCard = (props: AuthorCardProps) => {
+    const {
+        avatarUrl,
+        fullName,
+        subtitle,
+        horizontalCard = false,
+        className,
+    } = props
     const cardRef = useRef(null)
     const [isCardClicked, setIsCardClicked] = useState(false)
 
@@ -27,10 +29,14 @@ export const AuthorCard = ({
         setIsCardClicked((prev) => !prev)
     }
 
-    const style = classNames(styles.container, {
-        [styles.active]: isCardClicked,
-        [styles.horizontalCard]: horizontalCard,
-    })
+    const style = classNames(
+        styles.container,
+        className ? styles[className] : '',
+        {
+            [styles.active]: isCardClicked,
+            [styles.horizontalCard]: horizontalCard,
+        }
+    )
 
     return (
         <article className={style} onClick={handleClickCard} ref={cardRef}>

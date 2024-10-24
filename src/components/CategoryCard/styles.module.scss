@@ -12,6 +12,11 @@
     &:hover {
         background: $light-gray;
     }
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
+        text-align: center;
+    }
 }
 
 .iconWrap {
@@ -56,5 +61,35 @@
     .iconWrap {
         margin-bottom: 0;
         margin-right: $spacer-xs;
+    }
+}
+
+.container.blogPost {
+    padding: 0;
+    border: 0;
+    cursor: default;
+    background: $white;
+    margin-bottom: $spacer-xl;
+    margin-top: $spacer-md;
+
+    &:hover {
+        background: $white;
+    }
+
+    @media (max-width: $sm) {
+        @include flex-row-center;
+
+        margin-bottom: $spacer-lg;
+        margin-top: $spacer-sm;
+
+        .iconWrap {
+            width: 32px;
+            height: 32px;
+            background: $white;
+        }
+
+        .title {
+            font-size: $fs-xxs;
+        }
     }
 }

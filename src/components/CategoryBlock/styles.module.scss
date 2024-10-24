@@ -3,9 +3,9 @@
 .container {
     @include flex-column-center;
 
-    margin-bottom: $spacer-xxxl;
     width: 100%;
     padding: $spacer-xs;
+    margin-bottom: $spacer-xxxl;
 
     @media (max-width: $sm) {
         margin-bottom: $spacer-xxl;
@@ -18,25 +18,44 @@
 }
 
 .title {
-    font-size: $fs-xl;
     margin-bottom: $spacer-lg;
+    font-size: $fs-xl;
+
+    @media (max-width: $md) {
+        font-size: $fs-lg;
+        margin-bottom: $spacer-md;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-sm;
+        margin-bottom: $spacer-sm;
+    }
 }
 
-.authors {
+.categories {
     display: grid;
-    width: 100%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, 1fr);
+    width: 100%;
     gap: 12px;
 
-    @media (max-width: $lg) {
+    @media (max-width: $sm) {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         justify-items: center;
+        gap: 16px;
     }
 
     @media (max-width: $xs) {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+.container.blogCategories {
+    @include flex-column-start;
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
     }
 }

@@ -3,9 +3,9 @@
 .container {
     @include flex-column-center;
 
+    margin-bottom: $spacer-xxxl;
     width: 100%;
     padding: $spacer-xs;
-    margin-bottom: $spacer-xxxl;
 
     @media (max-width: $sm) {
         margin-bottom: $spacer-xxl;
@@ -18,32 +18,31 @@
 }
 
 .title {
-    margin-bottom: $spacer-lg;
     font-size: $fs-xl;
+    margin-bottom: $spacer-lg;
 
-    @media (max-width: $md) {
+    @media (max-width: $sm) {
         font-size: $fs-lg;
         margin-bottom: $spacer-md;
     }
 
-    @media (max-width: $sm) {
-        font-size: $fs-sm;
+    @media (max-width: $xs) {
+        font-size: $fs-md;
         margin-bottom: $spacer-sm;
     }
 }
 
-.categories {
+.authors {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    width: 100%;
     gap: 12px;
 
-    @media (max-width: $sm) {
+    @media (max-width: $lg) {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         justify-items: center;
-        gap: 16px;
     }
 
     @media (max-width: $xs) {

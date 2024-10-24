@@ -1,6 +1,4 @@
 import { AboutUsBlock } from './AboutUsBlock'
-import { AuthorsList } from './AuthorsList'
-import { CategoryBlock } from './CategoryBlock'
 import { CommetsBlock } from './CommetsBlock'
 import { DiscoverBlock } from './DiscoverBlock'
 import { FeaturedInBlock } from './FeaturedInBlock'
@@ -8,6 +6,8 @@ import { FeaturedPost } from './FeaturedPost'
 import { HeroBlock } from './HeroBlock'
 import styles from './page.module.scss'
 
+import { AuthorsList } from '@components/AuthorsList'
+import { CategoryBlock } from '@components/CategoryBlock'
 import { JoinUs } from '@components/JoinUs'
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
             <div className={styles.container}>
                 <FeaturedPost />
                 <AboutUsBlock />
-                <CategoryBlock />
+                <CategoryBlock title="Choose A Catagory" />
                 <DiscoverBlock />
                 <AuthorsList />
                 <FeaturedInBlock />

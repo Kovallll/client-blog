@@ -11,18 +11,10 @@ export const HeroBlock = () => {
         afterText: 'By ',
         highlightText: 'James West',
         beforeText: ' | May 23, 2022',
-        color: 'yellow',
+        color: 'purple',
     }
     return (
         <div className={styles.container}>
-            <Image
-                width={1440}
-                height={720}
-                alt="home top image"
-                src="/images/homeTopImage.png"
-                className={styles.image}
-            />
-            <div className={styles.overlay}></div>
             <div className={styles.content}>
                 <p className={styles.caption}>
                     Posted on
@@ -39,6 +31,13 @@ export const HeroBlock = () => {
                 </p>
                 <ReadMoreButton />
             </div>
+            <Image
+                width={520}
+                height={360}
+                alt="home top image"
+                src="/images/blogTopImage.png"
+                className={styles.image}
+            />
         </div>
     )
 }

@@ -1,0 +1,60 @@
+@import '@styles/global';
+
+.container {
+    @include flex-column-start;
+
+    margin-bottom: $spacer-xxxl;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-lg;
+    }
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-md;
+    }
+
+    @media (max-width: $xs) {
+        margin-bottom: $spacer-sm;
+    }
+
+    @media (max-width: $md) {
+        @include flex-column-center;
+    }
+}
+
+.title {
+    font-weight: 700;
+    line-height: 48px;
+    font-size: $fs-xl;
+    margin-bottom: $spacer-md;
+
+    @media (max-width: $sm) {
+        line-height: 40px;
+        font-size: $fs-lg;
+        margin-bottom: $spacer-sm;
+    }
+
+    @media (max-width: $xs) {
+        line-height: 32px;
+        font-size: $fs-md;
+    }
+}
+
+.posts {
+    @include flex-row-center;
+
+    align-items: start;
+
+    article {
+        padding: $spacer-xs;
+        min-width: 280px;
+
+        @media (max-width: $md) {
+            padding: $spacer-xxs;
+        }
+    }
+
+    @media (max-width: $md) {
+        @include flex-column-center;
+    }
+}
