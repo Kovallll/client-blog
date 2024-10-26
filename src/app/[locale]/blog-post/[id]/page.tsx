@@ -6,7 +6,7 @@ import styles from './page.module.scss'
 import { Post } from './Post'
 import { ReadNext } from './ReadNext'
 
-import { JoinUs } from '@components/JoinUs'
+import JoinUs from '@components/JoinUs'
 import { allPosts } from '@constants'
 
 export default function BlogPost() {
@@ -16,7 +16,7 @@ export default function BlogPost() {
 
     return (
         <div className={styles.page}>
-            <div className={styles.container}>
+            <div className={styles.content}>
                 <Post post={post} />
                 <ReadNext post={post} />
                 <JoinUs />

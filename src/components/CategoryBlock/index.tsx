@@ -3,14 +3,15 @@ import classNames from 'classnames'
 import styles from './styles.module.scss'
 import { CategoryBlockProps } from './types'
 
-import { CategoryCard } from '@components/CategoryCard'
+import CategoryCard from '@components/CategoryCard'
 import { categoriesData } from '@constants'
 
-export const CategoryBlock = ({ title, className }: CategoryBlockProps) => {
+const CategoryBlock = ({ title, className }: CategoryBlockProps) => {
     const style = classNames(
         styles.container,
         className ? styles[className] : ''
     )
+
     return (
         <section className={style}>
             <h2 className={styles.title}>{title}</h2>
@@ -22,3 +23,5 @@ export const CategoryBlock = ({ title, className }: CategoryBlockProps) => {
         </section>
     )
 }
+
+export default CategoryBlock

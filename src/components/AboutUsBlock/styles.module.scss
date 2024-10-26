@@ -3,17 +3,11 @@
 .container {
     @include flex-column-center;
 
-    margin: $spacer-xs;
-    margin-bottom: $spacer-xxxl;
+    @extend %marginBottom;
 
-    @media (max-width: $sm) {
-        margin-bottom: $spacer-xxl;
-    }
-
-    @media (max-width: $xs) {
-        margin: $spacer-xxs;
-        margin-bottom: $spacer-xl;
-    }
+    margin-left: $spacer-xs;
+    margin-right: $spacer-xs;
+    width: 100%;
 }
 
 .content {
@@ -32,46 +26,6 @@
 
     @media (max-width: $xs) {
         @include flex-column-center;
-    }
-}
-
-.lines {
-    @include flex-row-end;
-
-    width: 100%;
-}
-
-.yellowLine {
-    background: $yellow;
-    height: 20px;
-    width: 60%;
-    @media (max-width: $md) {
-        height: 16px;
-    }
-
-    @media (max-width: $sm) {
-        height: 12px;
-    }
-
-    @media (max-width: $xs) {
-        height: 8px;
-    }
-}
-
-.purpleLine {
-    background: $purple;
-    height: 20px;
-    width: 20%;
-    @media (max-width: $md) {
-        height: 16px;
-    }
-
-    @media (max-width: $sm) {
-        height: 12px;
-    }
-
-    @media (max-width: $xs) {
-        height: 8px;
     }
 }
 
@@ -101,6 +55,10 @@
     margin-top: $spacer-xs;
     color: $purple;
     font-size: $fs-xs - 2px;
+
+    &:hover {
+        color: $yellow;
+    }
 
     @media (max-width: $md) {
         font-size: $fs-xs;

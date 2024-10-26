@@ -1,56 +1,23 @@
 @import '@styles/global';
 
 .infoTitle {
-    line-height: 48px;
-    font-size: $fs-xl;
-    font-weight: 700;
-    margin-bottom: $spacer-xs;
-
-    @media (max-width: $md) {
-        font-size: $fs-lg;
-        line-height: 40px;
-    }
+    @extend %title-36;
 
     @media (max-width: $sm) {
         font-size: $fs-md;
-        line-height: 32px;
+        line-height: $lh-lg;
     }
 
     @media (max-width: $xs) {
         font-size: $fs-sm;
-        line-height: 24px;
+        line-height: $lh-sm;
     }
 }
 
 .infoText {
-    font-size: $fs-xxs;
-    line-height: 28px;
-    margin-bottom: $spacer-sm;
-
-    @media (max-width: $sm) {
-        font-size: $fs-xxxs;
-        line-height: 24px;
-    }
-
-    @media (max-width: $xs) {
-        font-size: $fs-xxxs - 2px;
-        line-height: 16px;
-    }
+    @extend %title-16;
 }
 
 .infoList {
-    font-weight: 700;
-    font-size: $fs-sm;
-    line-height: 32px;
-    margin-bottom: $spacer-xxs;
-
-    @media (max-width: $sm) {
-        font-size: $fs-xs;
-        line-height: 24px;
-    }
-
-    @media (max-width: $xs) {
-        font-size: $fs-xxs;
-        line-height: 16px;
-    }
+    @extend %title-24;
 }

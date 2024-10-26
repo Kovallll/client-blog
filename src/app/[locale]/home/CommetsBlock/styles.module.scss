@@ -1,12 +1,20 @@
 @import '@styles/global';
 
+$commentMinWidth: 460px;
+$commentMinWidthMd: 360px;
+$commentMinWidthSm: 270px;
+$commentMinWidthXs: 160px;
+
 .container {
     @include flex-row-center;
 
+    @extend %marginBottom;
+
     background: $beige;
-    margin: $spacer-xs;
+    margin-left: $spacer-xs;
+    margin-right: $spacer-xs;
     padding: $spacer-xl $spacer-xxxl;
-    margin-bottom: $spacer-xxxl;
+    position: relative;
 
     @media (max-width: $lg) {
         padding: $spacer-lg $spacer-xxl;
@@ -18,12 +26,10 @@
 
     @media (max-width: $sm) {
         padding: $spacer-sm $spacer-lg;
-        margin-bottom: $spacer-xxl;
     }
 
     @media (max-width: $xs) {
         padding: $spacer-xs $spacer-md;
-        margin-bottom: $spacer-xl;
     }
 }
 
@@ -51,7 +57,7 @@
 
 .article {
     min-width: 200px;
-
+    flex: 5;
     @media (max-width: $sm) {
         min-width: 160px;
     }
@@ -61,77 +67,146 @@
     }
 }
 
-.comment {
-    @include flex-column-start;
-    justify-content: space-between;
-    height: 300px;
+.comments {
+    @include flex-row-start;
+
+    overflow: auto;
+    max-width: $commentMinWidth;
+    min-width: $commentMinWidth;
+    flex: 7;
+    gap: $spacer-xs;
+
+    @media (max-width: $md) {
+        max-width: $commentMinWidthMd;
+        min-width: $commentMinWidthMd;
+    }
+
+    @media (max-width: $sm) {
+        max-width: $commentMinWidthSm;
+        min-width: $commentMinWidthSm;
+    }
+
+    @media (max-width: $xs) {
+        max-width: $commentMinWidthXs;
+        min-width: $commentMinWidthXs;
+    }
 }
 
-.title {
+.comment {
+    @include flex-column-start;
+
+    justify-content: space-between;
+    min-width: $commentMinWidth;
+    height: 300px;
+
+    @media (max-width: $md) {
+        min-width: $commentMinWidthMd;
+    }
+
+    @media (max-width: $sm) {
+        min-width: $commentMinWidthSm;
+    }
+
+    @media (max-width: $xs) {
+        min-width: $commentMinWidthXs;
+    }
+}
+
+.commetText {
     font-weight: 700;
     font-size: $fs-sm;
-    line-height: 32px;
-    max-width: 480px;
-    width: 100%;
+    line-height: $lh-lg;
+
+    word-break: break-all;
 
     @media (max-width: $md) {
         font-size: $fs-sm;
-        line-height: 28px;
+        line-height: $lh-md;
     }
 
     @media (max-width: $sm) {
         font-size: $fs-xs;
-        line-height: 24px;
+        line-height: $lh-sm;
     }
 
     @media (max-width: $xs) {
         font-size: $fs-xxs;
-        line-height: 16px;
-    }
-}
-
-.bottomComment {
-    @include flex-row-sb;
-    width: 100%;
-
-    @media (max-width: $sm) {
-        @include flex-column-start;
+        line-height: $lh-xxs;
     }
 }
 
 .pagination {
     @include flex-row-center;
+    position: absolute;
+
+    bottom: $spacer-xl;
+    right: $spacer-xxxl;
+
+    @media (max-width: $lg) {
+        bottom: $spacer-xl - 2px;
+        right: $spacer-xxl;
+    }
+
+    @media (max-width: $md) {
+        bottom: $spacer-lg;
+        right: $spacer-md;
+    }
 
     @media (max-width: $sm) {
-        margin-top: $spacer-sm;
+        bottom: $spacer-md + 2px;
+        right: $spacer-sm;
     }
+
+    @media (max-width: $xs) {
+        bottom: $spacer-xl;
+        right: $spacer-xxs;
+    }
+}
+
+%arrow {
+    @include flex-row-center;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 0;
 }
 
 .prevArrow {
     @include flex-row-center;
+
+    @extend %arrow;
+
     background: $white;
     width: 48px;
     height: 48px;
-    border-radius: 50%;
-    cursor: pointer;
 
     @media (max-width: $sm) {
         width: 32px;
         height: 32px;
     }
+    @media (max-width: $xs) {
+        width: 24px;
+        height: 24px;
+        padding: $spacer-xxxs;
+    }
 }
 
 .nextArrow {
     @include flex-row-center;
+
+    @extend %arrow;
+
     background: $black;
     width: 62px;
     height: 62px;
-    border-radius: 50%;
     margin-left: $spacer-xs;
-    cursor: pointer;
 
     @media (max-width: $sm) {
         width: 48px;
         height: 48px;
+    }
+
+    @media (max-width: $xs) {
+        width: 32px;
+        height: 32px;
     }
 }

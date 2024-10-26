@@ -1,0 +1,49 @@
+@import '@styles/global';
+
+.lines {
+    @include flex-row-end;
+
+    width: 100%;
+}
+
+.yellowLine {
+    background: $yellow;
+    height: 20px;
+    width: 60%;
+    @media (max-width: $md) {
+        height: 16px;
+    }
+
+    @media (max-width: $sm) {
+        height: 12px;
+    }
+
+    @media (max-width: $xs) {
+        height: 8px;
+    }
+}
+
+.purpleLine {
+    background: $purple;
+    height: 20px;
+    width: 20%;
+    @media (max-width: $md) {
+        height: 16px;
+    }
+
+    @media (max-width: $sm) {
+        height: 12px;
+    }
+
+    @media (max-width: $xs) {
+        height: 8px;
+    }
+}
+
+.lines.aboutImage {
+    @include flex-row-start;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}

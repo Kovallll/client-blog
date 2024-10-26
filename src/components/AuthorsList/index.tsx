@@ -1,24 +1,21 @@
+import { title } from './config'
 import styles from './styles.module.scss'
+import { AuthorsListProps } from './types'
 
-import { AuthorCard } from '@components/AuthorCard'
+import AuthorCard from '@components/AuthorCard'
 import { authorsData } from '@constants'
 
-export const AuthorsList = () => {
+const AuthorsList = ({ countAuthors }: AuthorsListProps) => {
     return (
         <section className={styles.container}>
-            <h2 className={styles.title}>List of Authors</h2>
+            <h2 className={styles.title}>{title}</h2>
             <div className={styles.authors}>
-                {authorsData
-                    .slice(0, 4)
-                    .map(({ id, avatarUrl, fullName, description }) => (
-                        <AuthorCard
-                            key={id}
-                            avatarUrl={avatarUrl}
-                            fullName={fullName}
-                            subtitle={description}
-                        />
-                    ))}
+                {authorsData.slice(0, countAuthors).map((author) => (
+                    <AuthorCard key={author.id} author={author} />
+                ))}
             </div>
         </section>
     )
 }
+
+export default AuthorsList

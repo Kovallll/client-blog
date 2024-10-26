@@ -23,6 +23,9 @@ export {
     blogPostsData,
     homePostsData,
     allPosts,
+    homeStepByStepPost,
+    blogStepByStepPost,
+    commentsData,
 } from './postsValues'
 
 export enum Paths {
@@ -31,18 +34,23 @@ export enum Paths {
     AboutUs = '/about-us',
     ContactUs = '/contact-us',
     BlogPost = '/blog-post',
+    Category = '/category',
+    Author = '/author',
+    Privacy = '/privacy-policy',
 }
 
 export const homeNavText = 'Home'
 export const blogNavText = 'Blog'
 export const aboutUsNavText = 'About Us'
-export const contactUsNavText = 'Contact us'
+export const contactUsNavText = 'Contact Us'
+export const privacyPolicyNavText = 'Privacy Policy'
 
 export const navigationLinks = [
     { path: Paths.Home, title: homeNavText },
     { path: Paths.Blog, title: blogNavText },
     { path: Paths.AboutUs, title: aboutUsNavText },
     { path: Paths.ContactUs, title: contactUsNavText },
+    { path: Paths.Privacy, title: privacyPolicyNavText },
 ]
 
 export const icons = {

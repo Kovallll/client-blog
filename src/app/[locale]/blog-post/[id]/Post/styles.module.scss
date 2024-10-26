@@ -3,19 +3,7 @@
 .container {
     @include flex-column-center;
 
-    margin-bottom: $spacer-xxxl;
-
-    @media (max-width: $md) {
-        margin-bottom: $spacer-xl;
-    }
-
-    @media (max-width: $sm) {
-        margin-bottom: $spacer-md;
-    }
-
-    @media (max-width: $xs) {
-        margin-bottom: $spacer-sm;
-    }
+    @extend %marginBottom;
 }
 
 .head {
@@ -47,25 +35,25 @@
 }
 
 .title {
-    font-size: $fs-xxl;
-    line-height: 64px;
-    font-weight: 700;
-    margin-top: $spacer-sm;
+    @extend %title-36;
+
+    margin: $spacer-sm 0;
 
     @media (max-width: $md) {
         font-size: $fs-xl;
-        line-height: 48px;
+        line-height: $lh-xxl;
     }
 
     @media (max-width: $sm) {
         font-size: $fs-md;
-        line-height: 32px;
-        margin-top: $spacer-xs;
+        line-height: $lh-lg;
+        margin: $spacer-xs 0;
     }
 
     @media (max-width: $xs) {
         font-size: $fs-sm;
-        line-height: 24px;
+        line-height: $lh-sm;
+        margin: $spacer-xxs 0;
     }
 }
 

@@ -1,0 +1,168 @@
+@import '@styles/global';
+
+.container {
+    margin-top: $spacer-xxxl * 2;
+}
+
+.imageBlock {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+.bottomImageOverwiew {
+    position: absolute;
+    @include flex-column-start;
+    width: 100%;
+    bottom: 0;
+    left: $spacer-xxl;
+
+    @media (max-width: $sm) {
+        left: $spacer-lg;
+    }
+}
+
+.statistic {
+    @include flex-row-center;
+
+    background: $yellow;
+    padding: $spacer-md $spacer-lg;
+    gap: $spacer-lg;
+
+    @media (max-width: $lg) {
+        padding: $spacer-sm $spacer-md;
+        gap: $spacer-md;
+    }
+
+    @media (max-width: $md) {
+        padding: $spacer-xs $spacer-sm;
+        gap: $spacer-sm;
+    }
+
+    @media (max-width: $sm) {
+        padding: $spacer-xxs $spacer-xs;
+        gap: $spacer-xs;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xxxs $spacer-xxxs;
+        gap: $spacer-xxxs;
+    }
+}
+
+.info {
+    @include flex-column-center;
+}
+
+.infoTitle {
+    font-size: $fs-xxxl;
+    font-weight: 700;
+
+    @media (max-width: $md) {
+        font-size: $fs-xxl;
+        line-height: $lh-lg ;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-xl;
+        line-height: $lh-md;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-sm;
+        line-height: $lh-xs;
+    }
+}
+
+.infoSubtitle {
+    @extend %title-16;
+    margin-bottom: 0;
+}
+
+.topImageOverwiew {
+    @include flex-row-end;
+}
+
+.cardWrap {
+    @include flex-row-center;
+
+    width: 90%;
+    position: absolute;
+    top: -$spacer-xxxl * 2;
+    padding: 0 $spacer-xs;
+
+    @media (max-width: $sm) {
+        @include flex-column-start;
+
+        background: $white;
+        width: 100%;
+    }
+}
+
+.overviewCard {
+    min-width: 620px;
+    padding: $spacer-xl;
+    background: $white;
+
+    @media (max-width: $lg) {
+        min-width: 580px;
+        padding: $spacer-lg;
+    }
+
+    @media (max-width: $md) {
+        min-width: 430px;
+        padding: $spacer-md;
+    }
+
+    @media (max-width: $sm) {
+        min-width: 100%;
+        padding: $spacer-sm 0;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xs 0;
+    }
+}
+
+.cardCaption {
+    @extend %title-16;
+    letter-spacing: 3px;
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-xxs;
+    }
+}
+
+.cardTitle {
+    @extend %title-48;
+
+    @media (max-width: $md) {
+        font-size: $fs-xl;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-lg;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-md;
+    }
+}
+
+.text {
+    @extend %title-16;
+    margin-left: $spacer-md;
+
+    @media (max-width: $md) {
+        font-size: $fs-xxxs;
+    }
+
+    @media (max-width: $sm) {
+        margin-left: 0;
+        font-size: $fs-xxxs - 2px;
+    }
+}

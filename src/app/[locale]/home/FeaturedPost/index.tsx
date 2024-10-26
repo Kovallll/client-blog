@@ -3,10 +3,17 @@
 import { useState } from 'react'
 
 import { useRouter } from 'src/i18n/routing'
+import {
+    allPostsTitle,
+    buttonTitle,
+    className,
+    postTitle,
+    viewText,
+} from './config'
 import styles from './styles.module.scss'
 
-import { Button } from '@components/Button'
-import { PostCard } from '@components/PostCard'
+import Button from '@components/Button'
+import PostCard from '@components/PostCard'
 import { homePostsData, Paths } from '@constants'
 import { PostData } from '@types'
 
@@ -19,7 +26,7 @@ export const FeaturedPost = () => {
     const router = useRouter()
 
     const handleClickReadMore = () => {
-        router.push(Paths.Blog)
+        router.push(`${Paths.BlogPost}/${id}`)
     }
 
     const handleClikcPostCard = (id: string) => {
@@ -34,7 +41,7 @@ export const FeaturedPost = () => {
     return (
         <section className={styles.container}>
             <div className={styles.featuredPost}>
-                <h2 className={styles.title}>Featured Post</h2>
+                <h2 className={styles.title}>{postTitle}</h2>
                 <div className={styles.featuredPostContent}>
                     <PostCard
                         id={id}
@@ -43,24 +50,24 @@ export const FeaturedPost = () => {
                         image={image}
                         subtitle={subtitle}
                         verticalCard={true}
-                        className="featurePost"
+                        className={className}
                     />
                     <div className={styles.button}>
                         <Button
                             onClick={handleClickReadMore}
-                            title="Read More >"
+                            title={buttonTitle}
                         />
                     </div>
                 </div>
             </div>
             <div className={styles.allPosts}>
                 <div className={styles.textBlock}>
-                    <h2 className={styles.title}>All Posts</h2>
+                    <h2 className={styles.title}>{allPostsTitle}</h2>
                     <button
                         className={styles.view}
                         onClick={handleClickViewAllButton}
                     >
-                        View All
+                        {viewText}
                     </button>
                 </div>
                 <div className={styles.allPostsContent}>

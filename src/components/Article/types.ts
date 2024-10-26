@@ -1,6 +1,3 @@
-export interface ArticleProps {
-    title: string
-    subtitle: string
-    caption?: string
-    className?: string
-}
+import { Article } from '@types'
+
+export interface ArticleProps extends Article {}

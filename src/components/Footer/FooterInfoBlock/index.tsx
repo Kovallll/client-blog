@@ -5,7 +5,7 @@ import styles from './styles.module.scss'
 
 import { socialLinks } from '@constants'
 
-export const InfoBlock = () => {
+export const FooterInfoBlock = () => {
     return (
         <div className={styles.info}>
             <p className={styles.text}>

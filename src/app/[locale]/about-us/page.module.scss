@@ -1,0 +1,11 @@
+@import '@styles/global';
+
+.page {
+    @include flex-column-center;
+}
+
+.content {
+    @extend %contentWrap;
+}
+
+

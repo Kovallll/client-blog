@@ -1,44 +1,81 @@
+'use client'
+
+import { memo, useRef } from 'react'
+
+import { caption, commentGap, subtitle, title } from './config'
 import styles from './styles.module.scss'
 
 import { Article } from '@components/Article'
-import { AuthorCard } from '@components/AuthorCard'
-import { icons } from '@constants'
+import AuthorCard  from '@components/AuthorCard'
+import { commentsData, icons } from '@constants'
+import { PaginationDirection } from '@types'
 
-export const CommetsBlock = () => {
+const CommetsBlock = () => {
+    const carouselRef = useRef(null)
+
     const { NextArrowIcon, PrevArrowIcon } = icons
+
+    const paginationScroll = (direction: PaginationDirection) => {
+        if (carouselRef.current) {
+            const carousel = carouselRef.current as HTMLDivElement
+            const px = direction === 'next' ? 1 : -1
+            const scrollPosition = carousel.scrollLeft + px
+
+            const itemWidth = carousel.offsetWidth + commentGap
+            const itemIndex =
+                direction === 'next'
+                    ? Math.ceil(scrollPosition / itemWidth)
+                    : Math.floor(scrollPosition / itemWidth)
+
+            carousel.scrollTo({
+                left: itemIndex * itemWidth,
+                behavior: 'smooth',
+            })
+        }
+    }
+
+    const handleClickPrevButton = () => {
+        paginationScroll('prev')
+    }
+
+    const handleClickNextButton = () => {
+        paginationScroll('next')
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.article}>
-                <Article
-                    caption="TESTIMONIALS"
-                    title="What people say about our blog"
-                    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-                />
+                <Article caption={caption} title={title} subtitle={subtitle} />
             </div>
             <span className={styles.line}></span>
-            <div className={styles.comment}>
-                <p className={styles.title}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                </p>
-                <div className={styles.bottomComment}>
-                    <AuthorCard
-                        avatarUrl="/images/profile.png"
-                        fullName="Jonathan Vallem"
-                        subtitle="New york, USA"
-                        horizontalCard={true}
-                    />
-                    <div className={styles.pagination}>
-                        <span className={styles.prevArrow}>
-                            <PrevArrowIcon />
-                        </span>
-                        <span className={styles.nextArrow}>
-                            <NextArrowIcon />
-                        </span>
+            <div className={styles.comments} ref={carouselRef}>
+                {commentsData.map(({ author, comment, id, location }) => (
+                    <div className={styles.comment} key={id}>
+                        <p className={styles.commetText}>{comment}</p>
+                        <AuthorCard
+                            author={author}
+                            subtitle={location}
+                            horizontalCard={true}
+                        />
                     </div>
-                </div>
+                ))}
+            </div>
+            <div className={styles.pagination}>
+                <button
+                    className={styles.prevArrow}
+                    onClick={handleClickPrevButton}
+                >
+                    <PrevArrowIcon />
+                </button>
+                <button
+                    className={styles.nextArrow}
+                    onClick={handleClickNextButton}
+                >
+                    <NextArrowIcon />
+                </button>
             </div>
         </div>
     )
 }
+
+export default memo(CommetsBlock)

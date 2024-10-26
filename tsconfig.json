@@ -33,7 +33,8 @@
             "@styles/*": ["src/styles/*"],
             "@utils": ["src/utils"],
             "@hooks": ["src/hooks"],
-            "@store": ["src/store"]
+            "@store": ["src/store"],
+            "@pages/*": ["src/app/[locale]/*"]
         },
         "incremental": true
     },

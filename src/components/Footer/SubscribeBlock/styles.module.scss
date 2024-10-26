@@ -56,3 +56,22 @@
 
     flex: 1;
 }
+
+.button {
+    max-width: 180px;
+    margin-left: $spacer-sm;
+    margin-top: $spacer-sm;
+
+    @media (max-width: $lg) {
+        max-width: 140px;
+        margin-left: $spacer-xs;
+    }
+
+    @media (max-width: $md) {
+        max-width: 120px;
+    }
+
+    @media (max-width: $xs) {
+        margin-top: $spacer-xs;
+    }
+}

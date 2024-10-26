@@ -1,29 +1,32 @@
 import Image from 'next/image'
 
+import { altText, caption, className, src, subtitle, title } from './config'
 import { DiscoverButton } from './DiscoverButton'
 import styles from './styles.module.scss'
 
 import { Article } from '@components/Article'
 
-export const DiscoverBlock = () => {
+const DiscoverBlock = () => {
     return (
         <section className={styles.container}>
             <Image
-                src="/images/discover.png"
-                alt="discover image"
+                src={src}
+                alt={altText}
                 width={900}
                 height={700}
                 className={styles.image}
             />
             <div className={styles.info}>
                 <Article
-                    caption="Why we started "
-                    title="It started out as a simple idea and evolved into our passion"
-                    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."
-                    className="discover"
+                    caption={caption}
+                    title={title}
+                    subtitle={subtitle}
+                    className={className}
                 />
                 <DiscoverButton />
             </div>
         </section>
     )
 }
+
+export default DiscoverBlock

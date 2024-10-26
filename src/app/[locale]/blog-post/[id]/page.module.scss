@@ -6,9 +6,6 @@
     margin: 0px $spacer-xs;
 }
 
-.container {
-    @include flex-column-center;
-
-    max-width: $max-w;
-    width: 100%;
+.content {
+    @extend %contentWrap;
 }

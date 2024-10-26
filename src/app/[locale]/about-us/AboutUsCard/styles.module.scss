@@ -1,0 +1,82 @@
+@import '@styles/global';
+
+.card {
+    @include flex-row-sb;
+
+    @extend %marginBottom;
+
+    gap: $spacer-xxxl;
+    width: 100%;
+    padding: 0px $spacer-sm;
+
+    @media (max-width: $lg) {
+        gap: $spacer-lg;
+    }
+
+    @media (max-width: $md) {
+        gap: $spacer-xs;
+    }
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
+    }
+}
+
+.image {
+    min-width: 620px;
+    height: auto;
+
+    @media (max-width: $lg) {
+        min-width: 520px;
+    }
+
+    @media (max-width: $md) {
+        min-width: 400px;
+    }
+
+    @media (max-width: $sm) {
+        height: 300px;
+        object-fit: contain;
+    }
+
+    @media (max-width: $sm) {
+        height: 200px;
+        object-fit: contain;
+    }
+}
+
+.textInfo {
+    @include flex-column-start;
+}
+
+.title {
+    @extend %title-36;
+
+    @media (max-width: $md) {
+        font-size: $fs-md;
+    }
+}
+
+.subtitle {
+    @extend %title-24;
+
+    @media (max-width: $md) {
+        font-size: $fs-xs;
+    }
+}
+
+.text {
+    @extend %title-16;
+
+    @media (max-width: $md) {
+        font-size: $fs-xxxs;
+    }
+}
+
+.reverse {
+    flex-direction: row-reverse;
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
+    }
+}

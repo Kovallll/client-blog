@@ -1,2 +1,95 @@
 @import './mixins.scss';
 @import './vars.scss';
+
+%marginBottom {
+    margin-bottom: $spacer-xxxl;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-xxl;
+    }
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-xl;
+    }
+
+    @media (max-width: $xs) {
+        margin-bottom: $spacer-lg;
+    }
+}
+
+%contentWrap {
+    @include flex-column-center;
+
+    max-width: $max-w;
+    width: 100%;
+}
+
+%title-48 {
+    font-size: $fs-xxl;
+    line-height: $lh-xxxl;
+    font-weight: 700;
+
+    @media (max-width: $sm) {
+        font-size: $fs-xl;
+        line-height: $lh-xxl;
+        font-weight: 700;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-md;
+        line-height: $lh-lg;
+        font-weight: 700;
+    }
+}
+
+%title-36 {
+    font-size: $fs-xl;
+    font-weight: 700;
+    line-height: $lh-xxl;
+    margin-bottom: $spacer-lg;
+
+    @media (max-width: $md) {
+        font-size: $fs-lg;
+        line-height: $lh-lg;
+        margin-bottom: $spacer-md;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-sm;
+        line-height: $lh-sm;
+        margin-bottom: $spacer-sm;
+    }
+}
+
+%title-24 {
+    font-weight: 700;
+    font-size: $fs-sm;
+    line-height: $lh-lg;
+    margin-bottom: $spacer-xxs;
+
+    @media (max-width: $sm) {
+        font-size: $fs-xs;
+        line-height: $lh-sm;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xxs;
+        line-height: $lh-xs;
+    }
+}
+
+%title-16 {
+    font-size: $fs-xxs;
+    line-height: $lh-md;
+    margin-bottom: $spacer-sm;
+
+    @media (max-width: $sm) {
+        font-size: $fs-xxxs;
+        line-height: $lh-sm;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xxxs - 2px;
+        line-height: $lh-xxs;
+    }
+}

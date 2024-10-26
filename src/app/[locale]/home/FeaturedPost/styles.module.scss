@@ -3,18 +3,14 @@
 .container {
     @include flex-row-center;
 
+    @extend %marginBottom;
+
     align-items: start;
-    margin: $spacer-xs;
-    margin-bottom: $spacer-xxxl;
+    margin-left: $spacer-xs;
+    margin-right: $spacer-xs;
 
     @media (max-width: $sm) {
         @include flex-column-center;
-        margin-bottom: $spacer-xxl;
-    }
-
-    @media (max-width: $xs) {
-        margin: $spacer-xxs;
-        margin-bottom: $spacer-xl;
     }
 }
 
@@ -78,7 +74,7 @@
 }
 
 .view {
-    line-height: 40px;
+    line-height: $lh-xl;
     color: $purple;
     border: 0;
     background: transparent;
@@ -87,15 +83,14 @@
 }
 
 .title {
+    @extend %title-36;
+
     margin-bottom: $spacer-md;
-    font-size: $fs-lg;
 
     @media (max-width: $md) {
-        font-size: $fs-md;
         margin-bottom: $spacer-sm;
     }
     @media (max-width: $xs) {
-        font-size: $fs-sm;
         margin-bottom: $spacer-xs;
     }
 }

@@ -1,16 +1,9 @@
 @import '@styles/global';
 
 .container {
+    @extend %marginBottom;
+
     position: relative;
-    margin-bottom: $spacer-xxxl;
-
-    @media (max-width: $sm) {
-        margin-bottom: $spacer-xxl;
-    }
-
-    @media (max-width: $xs) {
-        margin-bottom: $spacer-xl;
-    }
 }
 
 .content {
@@ -38,7 +31,13 @@
     max-width: 100%;
     height: auto;
 
-    min-height: 220px;
+    @media (max-width: $sm) {
+        min-height: 320px;
+    }
+
+    @media (max-width: $xs) {
+        min-height: 240px;
+    }
 }
 
 .overlay {
@@ -56,19 +55,20 @@
 }
 
 .caption {
-    font-size: $fs-xxs - 2px;
+    @extend %title-16;
+
     text-transform: uppercase;
-    margin-bottom: $spacer-sm;
     font-weight: 600;
     letter-spacing: 3px;
+}
+
+.publicationInfo {
+    @extend %title-16;
+
+    margin-bottom: $spacer-xs;
 
     @media (max-width: $md) {
-        font-size: $fs-xxxs;
-        margin-bottom: $spacer-xs;
-        margin-bottom: $spacer-xs;
-    }
-    @media (max-width: $xs) {
-        font-size: $fs-xxxs - 2px;
+        margin-bottom: $spacer-xxs;
     }
 }
 
@@ -81,62 +81,44 @@
     font-weight: 700;
     width: 800px;
     margin-bottom: $spacer-sm;
-    line-height: 64px;
+    line-height: $lh-xxxl;
 
     @media (max-width: $lg) {
-        line-height: 48px;
+        line-height: $lh-xxl;
         font-size: $fs-xxl;
     }
     @media (max-width: $md) {
-        line-height: 48px;
         font-size: $fs-xl;
         width: 500px;
         margin-bottom: $spacer-xs;
     }
     @media (max-width: $sm) {
-        line-height: 32px;
+        line-height: $lh-lg;
         font-size: $fs-lg;
         width: 400px;
     }
     @media (max-width: $xs) {
-        line-height: 24px;
+        line-height: $lh-sm;
         font-size: $fs-sm;
         width: 350px;
         margin-bottom: $spacer-xxs;
     }
 }
 
-.publicationInfo {
-    font-size: $fs-xxs - 2px;
-    margin-bottom: $spacer-xs;
-    @media (max-width: $md) {
-        font-size: $fs-xxxs;
-        margin-bottom: $spacer-xxs;
-    }
-    @media (max-width: $xs) {
-        font-size: $fs-xxxs - 2px;
-    }
-}
-
 .subtitle {
-    font-size: $fs-xxs - 2px;
+    @extend %title-16;
+
     width: 600px;
     margin-bottom: $spacer-lg;
-    line-height: 28px;
     @media (max-width: $md) {
-        font-size: $fs-xxxs;
         margin-bottom: $spacer-md;
-        line-height: 24px;
     }
     @media (max-width: $sm) {
         margin-bottom: $spacer-sm;
-        line-height: 20px;
         width: 400px;
     }
     @media (max-width: $xs) {
-        font-size: $fs-xxxs - 2px;
         margin-bottom: $spacer-xs;
-        line-height: 16px;
         width: 300px;
     }
 }

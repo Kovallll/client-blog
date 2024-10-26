@@ -3,19 +3,15 @@
 .container {
     @include flex-row-sb;
 
-    width: 100%;
-    margin-bottom: $spacer-xxxl;
-    padding: $spacer-xs;
+    @extend %marginBottom;
 
-    @media (max-width: $sm) {
-        margin-bottom: $spacer-xxl;
-    }
+    width: 100%;
+    padding: $spacer-xs;
 
     @media (max-width: $xs) {
         @include flex-column-center;
 
         padding: $spacer-xxs;
-        margin-bottom: $spacer-xl;
     }
 }
 
@@ -36,13 +32,13 @@
 
 .topTitle {
     font-size: $fs-xxs;
-    line-height: 20px;
+    line-height: $lh-xs;
 }
 
 .bottomTitle {
     font-size: $fs-sm;
     font-weight: 700;
-    line-height: 32px;
+    line-height: $lh-lg;
 }
 
 .sponsors {
