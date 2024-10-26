@@ -14,6 +14,7 @@ import { Paths, socialLinks } from '@constants'
 
 const AuthorCard = (props: AuthorCardProps) => {
     const { author, subtitle, horizontalCard = false, className } = props
+
     const cardRef = useRef(null)
     const router = useRouter()
 

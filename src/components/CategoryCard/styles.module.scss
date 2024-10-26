@@ -4,12 +4,12 @@
     @include flex-column-start;
 
     padding: $spacer-md;
-    border: 1px solid $light-gray;
+    border: 1px solid $cardBorderColor;
     max-width: 300px;
     cursor: pointer;
 
     &:hover {
-        background: $yellow;
+        background: $light-gray;
     }
 
     @media (max-width: $sm) {
@@ -17,6 +17,10 @@
 
         padding: $spacer-xs;
         text-align: center;
+
+        &:hover {
+            background: $yellow;
+        }
     }
 }
 
@@ -96,4 +100,45 @@
         margin-bottom: $spacer-xs;
         margin-top: $spacer-xxs;
     }
+}
+
+%categoryCard {
+    margin-bottom: $spacer-sm;
+
+    @media (max-width: $lg) {
+        padding: $spacer-xs;
+    }
+
+    @media (max-width: $md) {
+        padding: $spacer-xxs;
+        margin-bottom: $spacer-xs;
+    }
+
+    .title {
+        margin-bottom: 0;
+
+        @media (max-width: $lg) {
+            font-size: $fs-xs;
+        }
+    }
+
+    .iconWrap {
+        @include flex-row-center;
+
+        @media (max-width: $md) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+
+.container.categoryCard {
+    @extend %categoryCard;
+}
+
+.container.categoryCardActive {
+    @extend %categoryCard;
+
+    background: $yellow;
+    border: 0;
 }

@@ -7,11 +7,9 @@ import ColorsLines from '@components/ColorsLines'
 import { Paths } from '@constants'
 import { AboutUsProps } from '@types'
 
-const AboutUsBlock = ({
-    firstArticle,
-    secondArticle,
-    withLine,
-}: AboutUsProps) => {
+const AboutUsBlock = (props: AboutUsProps) => {
+    const { firstArticle, secondArticle, withLine } = props
+
     return (
         <section className={styles.container}>
             {withLine && <ColorsLines isYellowFirts={true} />}

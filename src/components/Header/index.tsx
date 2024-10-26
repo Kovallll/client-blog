@@ -9,11 +9,9 @@ import VideoButton from './VideoButton'
 import BurgerMenu from '@components/BurgerMenu'
 import { navigationLinks } from '@constants'
 
-export const Header = ({
-    withVideo = true,
-    withPrivacy = false,
-    className,
-}: HeaderProps) => {
+export const Header = (props: HeaderProps) => {
+    const { withVideo = true, withPrivacy = false, className } = props
+
     const headerStyles = classNames(
         styles.header,
         className ? styles[className] : ''

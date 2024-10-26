@@ -59,12 +59,11 @@
 }
 
 .infoTitle {
-    font-size: $fs-xxxl;
-    font-weight: 700;
+    @extend %title-56;
 
     @media (max-width: $md) {
         font-size: $fs-xxl;
-        line-height: $lh-lg ;
+        line-height: $lh-lg;
     }
 
     @media (max-width: $sm) {

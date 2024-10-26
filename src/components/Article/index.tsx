@@ -3,12 +3,9 @@ import classNames from 'classnames'
 import styles from './styles.module.scss'
 import { ArticleProps } from './types'
 
-export const Article = ({
-    caption,
-    title,
-    subtitle,
-    className,
-}: ArticleProps) => {
+export const Article = (props: ArticleProps) => {
+    const { caption, title, subtitle, className } = props
+
     const style = classNames(
         styles.container,
         className ? styles[className] : ''

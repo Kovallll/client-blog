@@ -4,7 +4,7 @@ import { className, excerptColor, postsOnPage, title } from './config'
 import styles from './styles.module.scss'
 import { ReadNextProps } from './types'
 
-import  PostCard  from '@components/PostCard'
+import PostCard from '@components/PostCard'
 import { allPosts } from '@constants'
 
 export const ReadNext = ({ post: currentPost }: ReadNextProps) => {

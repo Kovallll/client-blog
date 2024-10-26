@@ -90,7 +90,7 @@ export default function Home() {
             <div className={styles.content}>
                 <FeaturedPost />
                 {components.map((component, index) => (
-                    <div key={index}>{component}</div>
+                    <div className={styles.component} key={index}>{component}</div>
                 ))}
                 {componentsCount !== allComponentsCount && (
                     <div className={styles.obrerve} ref={observeRef} />

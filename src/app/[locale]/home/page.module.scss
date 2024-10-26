@@ -28,3 +28,8 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+.component {
+    width: 100%;
+    @include flex-row-center;
+}

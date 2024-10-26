@@ -15,7 +15,7 @@ const CategoryCard = ({ category, subtitle, className }: CategoryCardProps) => {
     const router = useRouter()
 
     const handleClickCard = () => {
-        router.push(Paths.Category)
+        router.push(`${Paths.Category}/${category.toLowerCase()}`)
     }
 
     const isWithOutSubtitle = subtitle === undefined ? true : false

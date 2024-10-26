@@ -1,6 +1,7 @@
 'use client'
 
 import { memo } from 'react'
+import { toast } from 'react-toastify'
 import { useFormik } from 'formik'
 import { withZodSchema } from 'formik-validator-zod'
 
@@ -25,6 +26,7 @@ const SubscribeBlock = () => {
     })
 
     const handleSendEmail = (email: string) => {
+        toast.info('Sending...')
         emailjs
             .send(
                 process.env.NEXT_PUBLIC_SERVICE_ID as string,
@@ -32,11 +34,12 @@ const SubscribeBlock = () => {
                 { email },
                 process.env.NEXT_PUBLIC_EMAIL_JS_KEY
             )
-            .then((response) => {
-                console.log('send email', response.status, response.text)
+            .then(() => {
+                toast.success('Send successful!')
             })
             .catch((error) => {
-                console.error('failed send', error)
+                toast.error('Failed send!')
+                console.error('Error', error)
             })
     }
 

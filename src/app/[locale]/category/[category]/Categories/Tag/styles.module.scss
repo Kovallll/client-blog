@@ -1,0 +1,29 @@
+@import '@styles/global';
+
+.tag {
+    border: 2px solid $gray;
+    padding: $spacer-xs $spacer-md;
+    text-align: center;
+    border-radius: 32px;
+    color: $gray;
+    font-weight: 700;
+    font-size: $fs-xxxs + 2px;
+    cursor: pointer;
+
+    @media (max-width: $lg) {
+        padding: $spacer-xxs $spacer-sm;
+        border-radius: 16px;
+        font-size: $fs-xxxs;
+    }
+
+    @media (max-width: $md) {
+        padding: $spacer-xxxs $spacer-xs;
+        border-radius: 12px;
+    }
+}
+
+.active {
+    background: $yellow;
+    color: $black;
+    border-color: $yellow;
+}

@@ -1,0 +1,5 @@
+export const buttonTitle = 'Search'
+export const categoriesTitle = 'Categories'
+export const tagsTitle = 'All Tags'
+export const activeClassName = 'Active'
+export const className = 'categoryCard'

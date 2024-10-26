@@ -10,6 +10,7 @@ export interface PostData {
     author: AuthorType
     postTime: string
     postInfo: PostInfoData[]
+    tags: string[]
     image?: ImageType
     subtitle?: string
     className?: string

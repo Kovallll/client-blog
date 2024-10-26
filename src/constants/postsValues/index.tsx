@@ -32,6 +32,15 @@ const postInfo: PostInfoData[] = [
     },
 ]
 
+export const allTags = [
+    'Business',
+    'Experience',
+    'Screen',
+    'Technology',
+    'Life',
+    'Marketing',
+]
+
 export const authorsData: AuthorType[] = [
     {
         id: '1',
@@ -134,6 +143,7 @@ export const homeStepByStepPost: PostData = {
         altText: 'home top image',
     },
     postInfo,
+    tags: [allTags[0], allTags[1]],
 }
 
 export const blogStepByStepPost: PostData = {
@@ -156,6 +166,7 @@ export const blogStepByStepPost: PostData = {
         altText: 'blog top image',
     },
     postInfo,
+    tags: [allTags[0], allTags[3]],
 }
 
 export const homePostsData: PostData[] = [
@@ -178,6 +189,7 @@ export const homePostsData: PostData[] = [
             altText: 'feature post image',
         },
         postInfo,
+        tags: [allTags[0], allTags[5], allTags[4]],
     },
     {
         id: '14',
@@ -198,6 +210,7 @@ export const homePostsData: PostData[] = [
             altText: 'feature post image',
         },
         postInfo,
+        tags: [allTags[0], allTags[2], allTags[4]],
     },
     {
         id: '15',
@@ -218,6 +231,7 @@ export const homePostsData: PostData[] = [
             altText: 'feature post image',
         },
         postInfo,
+        tags: [allTags[3], allTags[4]],
     },
     {
         id: '16',
@@ -238,6 +252,7 @@ export const homePostsData: PostData[] = [
             altText: 'feature post image',
         },
         postInfo,
+        tags: [allTags[1], allTags[3], allTags[2]],
     },
 ]
 
@@ -253,6 +268,7 @@ export const blogPostsData: PostData[] = [
         postTime: 'Posted on 27th January 2022',
         image: { imageUrl: '/images/postImage1.png', altText: 'post image' },
         postInfo,
+        tags: [...allTags],
     },
     {
         id: '2',
@@ -265,6 +281,7 @@ export const blogPostsData: PostData[] = [
         postTime: 'Posted on 27th January 2022',
         image: { imageUrl: '/images/postImage2.png', altText: 'post image' },
         postInfo,
+        tags: [allTags[1]],
     },
     {
         id: '3',
@@ -277,6 +294,7 @@ export const blogPostsData: PostData[] = [
         postTime: 'Posted on 27th January 2022',
         image: { imageUrl: '/images/postImage3.png', altText: 'post image' },
         postInfo,
+        tags: [allTags[2]],
     },
     {
         id: '4',
@@ -289,6 +307,7 @@ export const blogPostsData: PostData[] = [
         postTime: 'Posted on 27th January 2022',
         image: { imageUrl: '/images/postImage4.png', altText: 'post image' },
         postInfo,
+        tags: [allTags[3]],
     },
     {
         id: '5',
@@ -301,6 +320,7 @@ export const blogPostsData: PostData[] = [
         postTime: 'Posted on 27th January 2022',
         image: { imageUrl: '/images/postImage1.png', altText: 'post image' },
         postInfo,
+        tags: [allTags[4]],
     },
     {
         id: '6',
@@ -313,6 +333,7 @@ export const blogPostsData: PostData[] = [
         postTime: 'Posted on 27th January 2022',
         image: { imageUrl: '/images/postImage4.png', altText: 'post image' },
         postInfo,
+        tags: [allTags[1], allTags[3]],
     },
     {
         id: '7',
@@ -325,6 +346,7 @@ export const blogPostsData: PostData[] = [
         postTime: 'Posted on 27th January 2022',
         image: { imageUrl: '/images/postImage3.png', altText: 'post image' },
         postInfo,
+        tags: [allTags[1], allTags[4]],
     },
     {
         id: '8',
@@ -337,6 +359,7 @@ export const blogPostsData: PostData[] = [
         postTime: 'Posted on 27th January 2022',
         image: { imageUrl: '/images/postImage2.png', altText: 'post image' },
         postInfo,
+        tags: [allTags[4], allTags[3]],
     },
     {
         id: '9',
@@ -349,6 +372,7 @@ export const blogPostsData: PostData[] = [
         postTime: 'Posted on 27th January 2022',
         image: { imageUrl: '/images/postImage2.png', altText: 'post image' },
         postInfo,
+        tags: [...allTags],
     },
     {
         id: '10',
@@ -361,6 +385,7 @@ export const blogPostsData: PostData[] = [
         postTime: 'Posted on 27th January 2022',
         image: { imageUrl: '/images/postImage1.png', altText: 'post image' },
         postInfo,
+        tags: [allTags[4], allTags[5]],
     },
 
     {
@@ -374,6 +399,7 @@ export const blogPostsData: PostData[] = [
         author: authorsData[5],
         postTime: 'Posted on 27th January 2022',
         postInfo,
+        tags: [allTags[3], allTags[4]],
     },
     {
         id: '12',
@@ -389,6 +415,7 @@ export const blogPostsData: PostData[] = [
         author: authorsData[6],
         postTime: 'Posted on 27th January 2022',
         postInfo,
+        tags: [allTags[2], allTags[3]],
     },
 ]
 

@@ -4,14 +4,12 @@ import { memo, useRef } from 'react'
 import classNames from 'classnames'
 import Image from 'next/image'
 
-import { useWindowSize } from 'src/hooks/useWindowSize'
 import { useRouter } from 'src/i18n/routing'
 import styles from './styles.module.scss'
 import { PostCardProps } from './types'
 
 import { Excerpt } from '@components/Excerpt'
 import { Paths } from '@constants'
-import vars from '@styles/vars.scss'
 
 const PostCard = (props: PostCardProps) => {
     const {
@@ -24,6 +22,7 @@ const PostCard = (props: PostCardProps) => {
         onClick,
         verticalCard = false,
     } = props
+
     const cardRef = useRef(null)
     const router = useRouter()
 
@@ -35,10 +34,8 @@ const PostCard = (props: PostCardProps) => {
         }
     }
 
-    const size = useWindowSize()
-
     const style = classNames(styles.card, className ? styles[className] : '', {
-        [styles.vertical]: verticalCard || size.width < vars.$sm,
+        [styles.vertical]: verticalCard,
     })
 
     return (
