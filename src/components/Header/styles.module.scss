@@ -61,6 +61,10 @@
     margin-right: $spacer-sm;
     font-size: $fs-xxs;
 
+    &:hover {
+        color: $yellow;
+    }
+
     @media (max-width: $lg) {
         margin-right: $spacer-xs;
     }

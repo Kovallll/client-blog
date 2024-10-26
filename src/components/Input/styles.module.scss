@@ -1,5 +1,24 @@
 @import '@styles/global';
 
+.wrap {
+    @include flex-column-start;
+}
+
+.error {
+    height: $spacer-sm;
+    color: $red;
+    font-size: $fs-xs;
+
+    @media (max-width: $lg) {
+        font-size: $fs-xxs;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xxxs;
+        height: $spacer-xs;
+    }
+}
+
 .input {
     background-color: transparent;
     padding: $spacer-xs $spacer-md;

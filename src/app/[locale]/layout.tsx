@@ -7,6 +7,7 @@ import styles from './layout.module.scss'
 import '@styles/base.scss'
 import { Footer } from '@components/Footer'
 import { Header } from '@components/Header'
+import emailjs from '@emailjs/browser'
 
 const sen = Sen({
     subsets: ['latin'],
@@ -21,7 +22,10 @@ export default async function RootLayout({
     params: { locale: string }
 }) {
     const messages = await getMessages()
-    //redirect(Paths.Home)
+    emailjs.init({
+        publicKey: process.env.NEXT_PUBLIC_EMAIL_JS_KEY,
+    })
+
     return (
         <html lang={locale} className={sen.className}>
             <body className={styles.container}>

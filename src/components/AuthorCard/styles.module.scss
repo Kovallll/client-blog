@@ -10,38 +10,51 @@
     cursor: pointer;
 
     &:hover {
-        background: $light-pink;
+        background: $beige;
+    }
+
+    @media (max-width: $md) {
+        padding: $spacer-sm;
+        max-width: 250px;
     }
 
     @media (max-width: $sm) {
-        padding: $spacer-md;
+        padding: $spacer-xs;
+        max-width: 210px;
     }
 }
 
 .image {
     border-radius: 50%;
     margin-bottom: $spacer-xs;
+
+    @media (max-width: $sm) {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 .fullName {
     font-size: $fs-md;
     font-weight: 700;
     margin-bottom: $spacer-xxxs;
-    line-height: 40px;
+    line-height: $lh-xl;
     white-space: nowrap;
 
     @media (max-width: $sm) {
         font-size: $fs-sm;
+        line-height: $lh-md;
     }
 }
 
 .subtitle {
-    font-size: $fs-xxxs;
-    line-height: 20px;
+    font-size: $fs-xxs - 2px;
+    line-height: $lh-xs;
     margin-bottom: $spacer-xs;
 
     @media (max-width: $sm) {
         font-size: $fs-xxxs - 2px;
+        margin-bottom: $spacer-xxs;
     }
 }
 
@@ -49,14 +62,9 @@
     @include flex-column-center;
 }
 
-.active {
-    background: $beige;
-    border: 0;
-}
-
 .links {
     display: flex;
-    gap: 16px;
+    gap: $spacer-xs;
 }
 
 .container.horizontalCard {
@@ -75,12 +83,12 @@
 
         @media (max-width: $sm) {
             font-size: $fs-xxs;
-            line-height: 24px;
+            line-height: $lh-sm;
         }
 
         @media (max-width: $xs) {
             font-size: $fs-xxxs;
-            line-height: 20px;
+            line-height: $lh-xs;
         }
     }
 
@@ -101,7 +109,7 @@
         margin-bottom: 0;
         margin-right: $spacer-xs;
 
-        @media (max-width: $xs) {
+        @media (max-width: $sm) {
             width: 32px;
             height: 32px;
         }

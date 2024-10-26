@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useState } from 'react'
+import { memo, useRef, useState } from 'react'
 import classNames from 'classnames'
 
 import { Link } from 'src/i18n/routing'
@@ -8,7 +8,7 @@ import styles from './styles.module.scss'
 import { navigationLinks } from '@constants'
 import { useClickOutside } from '@hooks'
 
-export const BurgerMenu = () => {
+const BurgerMenu = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const burgerRef = useRef(null)
 
@@ -45,3 +45,5 @@ export const BurgerMenu = () => {
         </div>
     )
 }
+
+export default memo(BurgerMenu)

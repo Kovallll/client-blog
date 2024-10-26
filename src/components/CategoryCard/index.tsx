@@ -1,28 +1,21 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { memo, useRef } from 'react'
 import classNames from 'classnames'
 
+import { useRouter } from 'src/i18n/routing'
 import styles from './styles.module.scss'
 import { CategoryCardProps } from './types'
 
-import { categoryData } from '@constants'
-import { useClickOutside } from '@hooks'
+import { categoryData, Paths } from '@constants'
 
-export const CategoryCard = ({
-    category,
-    subtitle,
-    className,
-}: CategoryCardProps) => {
+const CategoryCard = ({ category, subtitle, className }: CategoryCardProps) => {
     const cardRef = useRef(null)
-    const [isCardClicked, setIsCardClicked] = useState(false)
 
-    useClickOutside(cardRef, () => {
-        setIsCardClicked(false)
-    })
+    const router = useRouter()
 
     const handleClickCard = () => {
-        setIsCardClicked((prev) => !prev)
+        router.push(Paths.Category)
     }
 
     const isWithOutSubtitle = subtitle === undefined ? true : false
@@ -32,7 +25,6 @@ export const CategoryCard = ({
         className ? styles[className] : '',
         {
             [styles.miniCard]: isWithOutSubtitle,
-            [styles.active]: isCardClicked,
         }
     )
 
@@ -46,3 +38,5 @@ export const CategoryCard = ({
         </article>
     )
 }
+
+export default memo(CategoryCard)

@@ -7,58 +7,54 @@
 }
 
 .caption {
-    font-size: $fs-xxs;
-    margin-bottom: $spacer-sm;
+    @extend %title-16;
+
     letter-spacing: 3px;
     font-weight: 600;
     text-transform: uppercase;
 
     @media (max-width: $md) {
-        font-size: $fs-xxs - 2px;
         margin-bottom: $spacer-xs;
         letter-spacing: 2px;
     }
 
     @media (max-width: $sm) {
-        font-size: $fs-xxxs - 2px;
         margin-bottom: $spacer-xxs;
         letter-spacing: 1px;
     }
 }
 
 .title {
-    font-size: $fs-xl;
+    @extend %title-36;
+
     margin-bottom: $spacer-xs;
-    font-weight: 700;
     letter-spacing: -2px;
-    line-height: 48px;
 
     @media (max-width: $md) {
         font-size: $fs-md;
         margin-bottom: $spacer-xxs;
         letter-spacing: 0;
-        line-height: 32px;
     }
 
     @media (max-width: $sm) {
         font-size: $fs-xs;
         margin-bottom: $spacer-xxxs;
-        line-height: 24px;
     }
 }
 
 .subtitle {
     font-size: $fs-xxs;
     color: $gray;
-    line-height: 28px;
+    line-height: $lh-md;
 
     @media (max-width: $md) {
         font-size: $fs-xxxs;
-        line-height: 20px;
+        line-height: $lh-xs;
     }
+
     @media (max-width: $sm) {
         font-size: $fs-xxxs - 2px;
-        line-height: 12px;
+        line-height: $lh-xxxs;
     }
 }
 
@@ -75,26 +71,26 @@
 .container.discover {
     .title {
         font-size: $fs-xxl;
-        line-height: 64px;
+        line-height: $lh-xxxl;
 
         @media (max-width: $lg) {
             font-size: $fs-xl;
-            line-height: 48px;
+            line-height: $lh-xxl;
         }
 
         @media (max-width: $md) {
             font-size: $fs-lg - 4px;
-            line-height: 40px;
+            line-height: $lh-xl;
         }
 
         @media (max-width: $sm) {
             font-size: $fs-md;
-            line-height: 32px;
+            line-height: $lh-lg;
         }
 
         @media (max-width: $xs) {
             font-size: $fs-xs;
-            line-height: 20px;
+            line-height: $lh-xs;
         }
     }
 }

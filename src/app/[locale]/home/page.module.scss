@@ -4,9 +4,27 @@
     @include flex-column-center;
 }
 
-.container {
-    @include flex-column-center;
+.content {
+    @extend %contentWrap;
+}
 
-    max-width: $max-w;
-    width: 100%;
+.obrerve {
+    height: 100px;
+    width: 1px;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(200px);
+    background-color: red;
+    transition:
+        background-color 14.4s ease,
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+.visible {
+    background-color: blue;
+    opacity: 1;
+    transform: translateY(0);
 }

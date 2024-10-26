@@ -1,55 +1,48 @@
 'use client'
-import { useRef, useState } from 'react'
+
+import { memo, useRef } from 'react'
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { useRouter } from 'src/i18n/routing'
+import { altText } from './config'
 import styles from './styles.module.scss'
 import { AuthorCardProps } from './types'
 
-import { socialLinks } from '@constants'
-import { useClickOutside } from '@hooks'
+import { Paths, socialLinks } from '@constants'
 
-export const AuthorCard = (props: AuthorCardProps) => {
-    const {
-        avatarUrl,
-        fullName,
-        subtitle,
-        horizontalCard = false,
-        className,
-    } = props
+const AuthorCard = (props: AuthorCardProps) => {
+    const { author, subtitle, horizontalCard = false, className } = props
     const cardRef = useRef(null)
-    const [isCardClicked, setIsCardClicked] = useState(false)
-
-    useClickOutside(cardRef, () => {
-        setIsCardClicked(false)
-    })
+    const router = useRouter()
 
     const handleClickCard = () => {
-        setIsCardClicked((prev) => !prev)
+        router.push(`${Paths.Author}/${author.id}`)
     }
 
     const style = classNames(
         styles.container,
         className ? styles[className] : '',
         {
-            [styles.active]: isCardClicked,
             [styles.horizontalCard]: horizontalCard,
         }
     )
 
+    const subtitleText = subtitle ? subtitle : author.description
+
     return (
         <article className={style} onClick={handleClickCard} ref={cardRef}>
             <Image
-                alt="author avatar"
-                src={avatarUrl}
+                alt={altText}
+                src={author.avatarUrl}
                 width={horizontalCard ? 48 : 130}
                 height={horizontalCard ? 48 : 130}
                 className={styles.image}
             />
             <div className={styles.text}>
-                <p className={styles.fullName}>{fullName}</p>
-                <p className={styles.subtitle}>{subtitle}</p>
+                <p className={styles.fullName}>{author.fullName}</p>
+                <p className={styles.subtitle}>{subtitleText}</p>
             </div>
             <div className={styles.links}>
                 {socialLinks.map(({ icon, path }) => (
@@ -61,3 +54,5 @@ export const AuthorCard = (props: AuthorCardProps) => {
         </article>
     )
 }
+
+export default memo(AuthorCard)

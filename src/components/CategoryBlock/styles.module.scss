@@ -18,18 +18,7 @@
 }
 
 .title {
-    margin-bottom: $spacer-lg;
-    font-size: $fs-xl;
-
-    @media (max-width: $md) {
-        font-size: $fs-lg;
-        margin-bottom: $spacer-md;
-    }
-
-    @media (max-width: $sm) {
-        font-size: $fs-sm;
-        margin-bottom: $spacer-sm;
-    }
+    @extend %title-36;
 }
 
 .categories {
@@ -39,7 +28,7 @@
     width: 100%;
     gap: 12px;
 
-    @media (max-width: $sm) {
+    @media (max-width: $md) {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         justify-items: center;

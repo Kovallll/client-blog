@@ -18,18 +18,7 @@
 }
 
 .title {
-    font-size: $fs-xl;
-    margin-bottom: $spacer-lg;
-
-    @media (max-width: $sm) {
-        font-size: $fs-lg;
-        margin-bottom: $spacer-md;
-    }
-
-    @media (max-width: $xs) {
-        font-size: $fs-md;
-        margin-bottom: $spacer-sm;
-    }
+    @extend %title-36;
 }
 
 .authors {
@@ -37,7 +26,7 @@
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    gap: 12px;
+    gap: $spacer-xs;
 
     @media (max-width: $lg) {
         grid-template-columns: repeat(2, 1fr);

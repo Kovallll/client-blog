@@ -6,15 +6,16 @@
     padding: $spacer-md;
     border: 1px solid $light-gray;
     max-width: 300px;
-    width: 100%;
     cursor: pointer;
 
     &:hover {
-        background: $light-gray;
+        background: $yellow;
     }
 
     @media (max-width: $sm) {
         @include flex-column-center;
+
+        padding: $spacer-xs;
         text-align: center;
     }
 }
@@ -39,12 +40,10 @@
 }
 
 .subtitle {
-    font-size: $fs-xxs;
-    line-height: 28px;
+    @extend %title-16;
 
-    @media (max-width: $md) {
-        font-size: $fs-xxxs;
-        line-height: 20px;
+    @media (max-width: $sm) {
+        max-width: 200px;
     }
 }
 
@@ -79,8 +78,8 @@
     @media (max-width: $sm) {
         @include flex-row-center;
 
-        margin-bottom: $spacer-lg;
-        margin-top: $spacer-sm;
+        margin-bottom: $spacer-md;
+        margin-top: $spacer-xs;
 
         .iconWrap {
             width: 32px;
@@ -91,5 +90,10 @@
         .title {
             font-size: $fs-xxs;
         }
+    }
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-xs;
+        margin-top: $spacer-xxs;
     }
 }

@@ -39,3 +39,25 @@ export interface PostInfoData {
     textData: string[]
     listData?: string[]
 }
+
+export interface CommentsData {
+    id: string
+    author: AuthorType
+    location: string
+    comment: string
+}
+
+export type PaginationDirection = 'prev' | 'next'
+
+export interface AboutUsProps {
+    firstArticle: Article
+    secondArticle: Article
+    withLine: boolean
+}
+
+export interface Article {
+    title: string
+    subtitle: string
+    caption?: string
+    className?: string
+}

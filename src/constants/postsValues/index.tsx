@@ -1,6 +1,4 @@
-import { v4 as uuidv4 } from 'uuid'
-
-import { AuthorType, PostData, PostInfoData } from '@types'
+import { AuthorType, CommentsData, PostData, PostInfoData } from '@types'
 
 export enum Categories {
     ECONOMY = 'ECONOMY',
@@ -36,54 +34,129 @@ const postInfo: PostInfoData[] = [
 
 export const authorsData: AuthorType[] = [
     {
-        id: uuidv4(),
+        id: '1',
         avatarUrl: '/images/author1.png',
         fullName: 'Floyd Miles',
         description: 'Content Writer @Company',
     },
     {
-        id: uuidv4(),
+        id: '2',
         avatarUrl: '/images/author2.png',
         fullName: 'Dianne Russell',
         description: 'Content Writer @Company',
     },
     {
-        id: uuidv4(),
+        id: '3',
         avatarUrl: '/images/author3.png',
         fullName: 'Jenny Wilson',
         description: 'Content Writer @Company',
     },
     {
-        id: uuidv4(),
+        id: '4',
         avatarUrl: '/images/author4.png',
         fullName: 'Leslie Alexander',
         description: 'Content Writer @Company',
     },
     {
-        id: uuidv4(),
+        id: '5',
         avatarUrl: '/images/author5.png',
         fullName: 'Guy Hawkins',
         description: 'Content Writer @Company',
     },
     {
-        id: uuidv4(),
+        id: '6',
         avatarUrl: '/images/author6.png',
         fullName: 'Eleanor Pena',
         description: 'Content Writer @Company',
     },
     {
-        id: uuidv4(),
+        id: '7',
         avatarUrl: '/images/author7.png',
         fullName: 'Robert Fox',
         description: 'Content Writer @Company',
     },
     {
-        id: uuidv4(),
+        id: '8',
         avatarUrl: '/images/author8.png',
         fullName: 'Jacob Jones',
         description: 'Content Writer @Company',
     },
 ]
+
+export const commentsData: CommentsData[] = [
+    {
+        id: '1',
+        author: authorsData[0],
+        location: 'New york, USA',
+        comment: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+    },
+    {
+        id: '2',
+        author: authorsData[1],
+        location: 'New york, USA',
+        comment: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+    },
+    {
+        id: '3',
+        author: authorsData[2],
+        location: 'New york, USA',
+        comment: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+    },
+    {
+        id: '4',
+        author: authorsData[3],
+        location: 'New york, USA',
+        comment: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+    },
+]
+
+export const homeStepByStepPost: PostData = {
+    id: 'home-step-by-step',
+    excerpt: {
+        afterText: 'By ',
+        highlightText: 'James West',
+        beforeText: ' | May 23, 2022',
+        color: 'yellow',
+    },
+    category: Categories.STARTUP,
+    title: 'Step-by-step guide to choosing great font pairs',
+    subtitle: `Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident.`,
+    author: authorsData[7],
+    postTime: 'Posted on 27th January 2022',
+    image: {
+        imageUrl: '/images/homeTopImage.png',
+        altText: 'home top image',
+    },
+    postInfo,
+}
+
+export const blogStepByStepPost: PostData = {
+    id: 'blog-step-by-step',
+    excerpt: {
+        afterText: 'By ',
+        highlightText: 'James West',
+        beforeText: ' | May 23, 2022',
+        color: 'purple',
+    },
+    category: Categories.STARTUP,
+    title: 'Step-by-step guide to choosing great font pairs',
+    subtitle: `Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident.`,
+    author: authorsData[1],
+    postTime: 'Posted on 27th January 2022',
+    image: {
+        imageUrl: '/images/blogTopImage.png',
+        altText: 'blog top image',
+    },
+    postInfo,
+}
 
 export const homePostsData: PostData[] = [
     {
@@ -319,4 +392,9 @@ export const blogPostsData: PostData[] = [
     },
 ]
 
-export const allPosts = [...homePostsData, ...blogPostsData]
+export const allPosts = [
+    ...homePostsData,
+    ...blogPostsData,
+    homeStepByStepPost,
+    blogStepByStepPost,
+]

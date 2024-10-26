@@ -18,18 +18,17 @@
 }
 
 .title {
-    font-size: $fs-xxl;
+    @extend %title-48;
+
     padding-bottom: $spacer-md;
     border-bottom: 1px solid $gray;
     width: 100%;
 
     @media (max-width: $sm) {
-        font-size: $fs-xl;
         padding-bottom: $spacer-sm;
     }
 
     @media (max-width: $xs) {
-        font-size: $fs-md;
         padding-bottom: $spacer-xs;
     }
 }
@@ -46,7 +45,7 @@
     background: transparent;
     font-weight: 700;
     color: $dark-blue-gray;
-    line-height: 40px;
+    line-height: $lh-xl;
     font-size: $fs-md;
     cursor: pointer;
 
@@ -56,17 +55,17 @@
 
     @media (max-width: $sm) {
         font-size: $fs-sm;
-        line-height: 32px;
+        line-height: $lh-lg;
     }
 
     @media (max-width: $xs) {
         font-size: $fs-xs;
-        line-height: 24px;
+        line-height: $lh-sm;
     }
 }
 
 .disabledButton {
-    line-height: 32px;
+    line-height: $lh-lg;
     font-size: $fs-sm;
     color: $gray;
 

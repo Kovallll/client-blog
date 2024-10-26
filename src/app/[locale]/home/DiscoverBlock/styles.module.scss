@@ -1,18 +1,14 @@
 @import '@styles/global';
 
 .container {
+    @extend %marginBottom;
+
     position: relative;
     width: 100%;
     padding: $spacer-xs;
-    margin-bottom: $spacer-xxxl;
-
-    @media (max-width: $sm) {
-        margin-bottom: $spacer-xxl;
-    }
 
     @media (max-width: $xs) {
         padding: $spacer-xxs;
-        margin-bottom: $spacer-xl;
     }
 }
 

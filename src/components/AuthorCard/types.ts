@@ -1,6 +1,7 @@
+import { AuthorType } from '@types'
+
 export interface AuthorCardProps {
-    avatarUrl: string
-    fullName: string
+    author: AuthorType
     subtitle?: string
     horizontalCard?: boolean
     className?: string

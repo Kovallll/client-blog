@@ -3,23 +3,20 @@
 .card {
     @include flex-row-center;
 
-    padding: $spacer-md;
+    padding: $spacer-sm;
     cursor: pointer;
     width: 100%;
 
     &:hover {
-        background: $light-gray;
+        background: $beige;
     }
 
     @media (max-width: $md) {
-        &:hover {
-            background: $beige;
-        }
-        padding: $spacer-sm;
+        padding: $spacer-xs;
     }
 
     @media (max-width: $xs) {
-        padding: $spacer-xs;
+        padding: $spacer-xxs;
     }
 }
 
@@ -50,54 +47,39 @@
 .excerpt {
     font-size: $fs-xxs - 2px;
     margin-bottom: $spacer-xs;
-    line-height: 20px;
+    line-height: $lh-xs;
 
     @media (max-width: $md) {
         font-size: $fs-xxxs;
         margin-bottom: $spacer-xxs;
-        line-height: 16px;
+        line-height: $lh-xxs;
     }
     @media (max-width: $xs) {
         font-size: $fs-xxxs -2px;
         margin-bottom: $spacer-xxxs;
-        line-height: 12px;
+        line-height: $lh-xxxs;
     }
 }
 
 .title {
-    font-size: $fs-sm;
-    margin-bottom: $spacer-xs;
-    font-weight: 700;
-    line-height: 32px;
+    @extend %title-24;
+
+    margin-bottom: $spacer-xxs;
 
     @media (max-width: $md) {
-        font-size: $fs-xs;
-        margin-bottom: $spacer-xxs;
-        line-height: 24px;
+        margin-bottom: $spacer-xxxs;
     }
+
     @media (max-width: $xs) {
         font-size: $fs-xxs;
-        margin-bottom: $spacer-xxxs;
-        line-height: 20px;
+        line-height: $lh-xs;
     }
 }
 
 .subtitle {
-    font-size: $fs-xxs;
-    margin-bottom: $spacer-md;
-    color: $gray;
-    line-height: 28px;
+    @extend %title-16;
 
-    @media (max-width: $md) {
-        font-size: $fs-xxxs;
-        margin-bottom: $spacer-sm;
-        line-height: 20px;
-    }
-    @media (max-width: $xs) {
-        font-size: $fs-xxxs -2px;
-        margin-bottom: $spacer-xs;
-        line-height: 16px;
-    }
+    color: $gray;
 }
 
 .card.vertical {
@@ -143,16 +125,16 @@
 
     .title {
         font-size: $fs-lg;
-        line-height: 48px;
+        line-height: $lh-xxl;
 
         @media (max-width: $sm) {
             font-size: $fs-md;
-            line-height: 32px;
+            line-height: $lh-lg;
         }
 
         @media (max-width: $xs) {
             font-size: $fs-sm;
-            line-height: 24px;
+            line-height: $lh-sm;
         }
     }
 

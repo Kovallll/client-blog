@@ -1,19 +1,20 @@
 import Link from 'next/link'
 
+import { bottomTitle, topTitle } from './config'
 import styles from './styles.module.scss'
 
-import { logoIcons } from '@constants'
+import { logoIcons, Paths } from '@constants'
 
-export const FeaturedInBlock = () => {
+const FeaturedInBlock = () => {
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>
-                <span className={styles.topTitle}>We are</span> <br />
-                <span className={styles.bottomTitile}>Featured in</span>
+                <span className={styles.topTitle}>{topTitle}</span> <br />
+                <span className={styles.bottomTitile}>{bottomTitle}</span>
             </h2>
             <div className={styles.sponsors}>
                 {logoIcons.map(({ icon, id }) => (
-                    <Link key={id} href="/">
+                    <Link key={id} href={Paths.Home}>
                         {icon}
                     </Link>
                 ))}
@@ -21,3 +22,5 @@ export const FeaturedInBlock = () => {
         </div>
     )
 }
+
+export default FeaturedInBlock

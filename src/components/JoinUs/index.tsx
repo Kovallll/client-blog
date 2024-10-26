@@ -1,17 +1,16 @@
+import { subtitle, title } from './config'
 import { JoinButton } from './JoinButton'
 import styles from './styles.module.scss'
 
 import { Article } from '@components/Article'
 
-export const JoinUs = () => {
+const JoinUs = () => {
     return (
         <div className={styles.container}>
-            <Article
-                title="Join our team to be a part of our story"
-                subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
-                className="joinUs"
-            />
+            <Article title={title} subtitle={subtitle} className="joinUs" />
             <JoinButton />
         </div>
     )
 }
+
+export default JoinUs
