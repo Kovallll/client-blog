@@ -6,7 +6,7 @@ import { caption, commentGap, subtitle, title } from './config'
 import styles from './styles.module.scss'
 
 import { Article } from '@components/Article'
-import AuthorCard  from '@components/AuthorCard'
+import AuthorCard from '@components/AuthorCard'
 import { commentsData, icons } from '@constants'
 import { PaginationDirection } from '@types'
 

@@ -8,6 +8,7 @@ import { ButtonProps } from './types'
 
 const Button = (props: ButtonProps) => {
     const { onClick, title, isWhiteBg, ...restProps } = props
+
     const className = classNames(styles.button, {
         [styles.whiteButton]: isWhiteBg,
     })

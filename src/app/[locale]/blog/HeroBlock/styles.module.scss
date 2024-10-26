@@ -64,30 +64,15 @@
 }
 
 .title {
-    font-size: $fs-xxxl;
-    font-weight: 700;
-    max-width: 800px;
-    margin-bottom: $spacer-sm;
-    line-height: $lh-xxxl;
+    @extend %title-56;
 
-    @media (max-width: $lg) {
-        line-height: $lh-xxl;
-        font-size: $fs-xxl;
-    }
+    max-width: 800px;
+
     @media (max-width: $md) {
-        font-size: $fs-xl;
         max-width: 500px;
-        margin-bottom: $spacer-xs;
     }
     @media (max-width: $sm) {
-        line-height: $lh-lg;
-        font-size: $fs-lg;
         max-width: 400px;
-    }
-    @media (max-width: $xs) {
-        line-height: $lh-sm;
-        font-size: $fs-xs;
-        margin-bottom: $spacer-xxs;
     }
 }
 

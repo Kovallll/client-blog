@@ -34,6 +34,14 @@
     height: auto;
 
     margin-right: $spacer-md;
+
+    @media (max-width: $lg) {
+        margin-right: $spacer-sm;
+    }
+
+    @media (max-width: $md) {
+        margin-right: $spacer-xs;
+    }
 }
 
 .active {
@@ -45,6 +53,7 @@
 }
 
 .excerpt {
+    width: 100%;
     font-size: $fs-xxs - 2px;
     margin-bottom: $spacer-xs;
     line-height: $lh-xs;
@@ -180,5 +189,51 @@
         .excerpt {
             width: 100%;
         }
+    }
+}
+
+.categoryPost {
+    .image {
+        width: 340px;
+        height: 240px;
+        object-fit: contain;
+
+        @media (max-width: $lg) {
+            width: 300px;
+            height: 200px;
+        }
+
+        @media (max-width: $md) {
+            width: 240px;
+            height: 160px;
+        }
+    }
+
+    .title {
+        @media (max-width: $lg) {
+            font-size: $fs-xs;
+            line-height: $lh-md;
+        }
+
+        @media (max-width: $md) {
+            font-size: $fs-xxs;
+            line-height: $lh-sm;
+        }
+    }
+
+    .subtitle {
+        @media (max-width: $lg) {
+            font-size: $fs-xxs - 2px;
+            line-height: $lh-xxs;
+        }
+
+        @media (max-width: $md) {
+            font-size: $fs-xxxs;
+            line-height: $lh-xxs;
+        }
+    }
+
+    @media (max-width: $xs) {
+        text-align: center;
     }
 }

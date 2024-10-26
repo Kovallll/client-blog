@@ -26,6 +26,7 @@ export {
     homeStepByStepPost,
     blogStepByStepPost,
     commentsData,
+    allTags,
 } from './postsValues'
 
 export enum Paths {

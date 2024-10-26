@@ -77,31 +77,18 @@
 }
 
 .title {
-    font-size: $fs-xxxl;
-    font-weight: 700;
-    width: 800px;
-    margin-bottom: $spacer-sm;
-    line-height: $lh-xxxl;
+    @extend %title-56;
 
-    @media (max-width: $lg) {
-        line-height: $lh-xxl;
-        font-size: $fs-xxl;
-    }
+    width: 800px;
+
     @media (max-width: $md) {
-        font-size: $fs-xl;
         width: 500px;
-        margin-bottom: $spacer-xs;
     }
     @media (max-width: $sm) {
-        line-height: $lh-lg;
-        font-size: $fs-lg;
         width: 400px;
     }
     @media (max-width: $xs) {
-        line-height: $lh-sm;
-        font-size: $fs-sm;
         width: 350px;
-        margin-bottom: $spacer-xxs;
     }
 }
 

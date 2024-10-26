@@ -4,13 +4,9 @@ import Image from 'next/image'
 import styles from './styles.module.scss'
 import { AboutUsCardProps } from './types'
 
-export const AboutUsCard = ({
-    title,
-    subtitle,
-    text,
-    image,
-    isReverse = false,
-}: AboutUsCardProps) => {
+export const AboutUsCard = (props: AboutUsCardProps) => {
+    const { title, subtitle, text, image, isReverse = false } = props
+
     const style = classNames(styles.card, { [styles.reverse]: isReverse })
 
     return (
