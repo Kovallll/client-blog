@@ -1,14 +1,16 @@
 'use client'
+
 import { memo, useRef, useState } from 'react'
 import classNames from 'classnames'
 
 import { Link } from 'src/i18n/routing'
 import styles from './styles.module.scss'
+import { BurgerMenuProps } from './types'
 
 import { navigationLinks } from '@constants'
 import { useClickOutside } from '@hooks'
 
-const BurgerMenu = () => {
+const BurgerMenu = ({ navCount }: BurgerMenuProps) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const burgerRef = useRef(null)
 
@@ -36,7 +38,7 @@ const BurgerMenu = () => {
                 <span className={lineStyle} />
             </div>
             <div className={navbarStyle}>
-                {navigationLinks.map(({ title, path }) => (
+                {navigationLinks.slice(0, navCount).map(({ title, path }) => (
                     <Link key={path} href={path} className={styles.link}>
                         {title}
                     </Link>

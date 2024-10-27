@@ -29,7 +29,8 @@ const PostCard = (props: PostCardProps) => {
     const handleClickPostCard = () => {
         if (onClick) {
             onClick(id)
-        } else {
+        }
+        if (className !== 'featurePost') {
             router.push(`${Paths.BlogPost}/${id}`)
         }
     }

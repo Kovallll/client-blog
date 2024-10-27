@@ -1,6 +1,6 @@
 'use client'
-
 import { useEffect, useRef, useState } from 'react'
+import classNames from 'classnames'
 import dynamic from 'next/dynamic'
 
 import {
@@ -49,8 +49,9 @@ const allComponents = [
 
 export default function Home() {
     const [components, setComponents] = useState<JSX.Element[]>([])
+    const [hasIntersected, setHasIntersected] = useState<boolean | null>(false)
+    const [visibleComponents, setVisibleComponents] = useState<boolean[]>([])
     const observeRef = useRef(null)
-    const [hasIntersected, setHasIntersected] = useState(false)
 
     const allComponentsCount = allComponents.length
     const componentsCount = components.length
@@ -65,14 +66,23 @@ export default function Home() {
                             ...prev,
                             allComponents[prev.length]!,
                         ])
+                        setVisibleComponents(
+                            new Array(components.length).fill(true)
+                        )
                     }
                 } else if (!entry.isIntersecting) {
                     setHasIntersected(false)
                 }
+                if (componentsCount === allComponentsCount) {
+                    setVisibleComponents(
+                        new Array(components.length).fill(true)
+                    )
+                    setHasIntersected(null)
+                }
             })
         })
-
         const element = observeRef.current
+
         if (element) {
             observer.observe(element)
         }
@@ -82,19 +92,38 @@ export default function Home() {
                 observer.unobserve(element)
             }
         }
-    }, [allComponentsCount, componentsCount, hasIntersected])
+    }, [allComponentsCount, components.length, componentsCount, hasIntersected])
 
     return (
         <div className={styles.page}>
             <HeroBlock />
             <div className={styles.content}>
-                <FeaturedPost />
-                {components.map((component, index) => (
-                    <div className={styles.component} key={index}>{component}</div>
-                ))}
-                {componentsCount !== allComponentsCount && (
-                    <div className={styles.obrerve} ref={observeRef} />
+                {componentsCount === 0 && (
+                    <div className={styles.observe} ref={observeRef} />
                 )}
+                <FeaturedPost />
+                {components.map((component, index) => {
+                    const style = classNames(styles.component, {
+                        [styles.visible]: visibleComponents[index],
+                    })
+
+                    const isObserverVisible =
+                        componentsCount === index + 1 && hasIntersected !== null
+
+                    return (
+                        <>
+                            {isObserverVisible && (
+                                <div
+                                    className={styles.observe}
+                                    ref={observeRef}
+                                />
+                            )}
+                            <div className={style} key={index}>
+                                {component}
+                            </div>
+                        </>
+                    )
+                })}
             </div>
         </div>
     )
