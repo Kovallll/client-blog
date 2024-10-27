@@ -1692,6 +1692,13 @@
     "@storybook/global" "^5.0.0"
     ts-dedent "^2.0.0"
 
+"@storybook/addon-styling-webpack@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-styling-webpack/-/addon-styling-webpack-1.0.0.tgz#a4d0d449b8e76135565bdc4745f9d0420edd2420"
+  integrity sha512-jo1kzn7pi+NA+LZxrWoRvW6w7dXIKY/BjTG80XX2uU92lIKT+X1k/9vYk/0KPVK3Bsf4tO6ToAuqIRyOk7MHtg==
+  dependencies:
+    "@storybook/node-logger" "^8.0.0-alpha.10"
+
 "@storybook/addon-toolbars@8.3.6":
   version "8.3.6"
   resolved "https://registry.yarnpkg.com/@storybook/addon-toolbars/-/addon-toolbars-8.3.6.tgz#d06068c96f5a80da2040f15f521c0927e8b0c2d4"
@@ -1873,6 +1880,11 @@
     tsconfig-paths-webpack-plugin "^4.0.1"
   optionalDependencies:
     sharp "^0.33.3"
+
+"@storybook/node-logger@^8.0.0-alpha.10":
+  version "8.3.6"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-8.3.6.tgz#f286f8ef57f98e3adf2a52d620db316f14541125"
+  integrity sha512-pRQyS+yHadp1lJIRE1fB/Oqq6AHk+/g56i79eXMTGgvrjz27S8aoh1ZPMW8ZGYPvYrzbkcm0sVCofh7Vfw8fug==
 
 "@storybook/preset-react-webpack@8.3.6":
   version "8.3.6"
@@ -2692,6 +2704,11 @@ acorn@^8.12.0, acorn@^8.12.1, acorn@^8.7.1, acorn@^8.8.2, acorn@^8.9.0:
   version "8.13.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.13.0.tgz#2a30d670818ad16ddd6a35d3842dacec9e5d7ca3"
   integrity sha512-8zSiw54Oxrdym50NlZ9sUusyO1Z1ZchgRLWRaK6c86XJFClyCgFKetdowBg5bKxyp/u+CDBJG4Mpp0m3HLZl9w==
+
+add@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
+  integrity sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==
 
 adjust-sourcemap-loader@^4.0.0:
   version "4.0.0"
@@ -7076,6 +7093,18 @@ statuses@2.0.1:
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-2.0.1.tgz#55cb000ccf1d48728bd23c685a063998cf1a1b63"
   integrity sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==
 
+storybook-i18n@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/storybook-i18n/-/storybook-i18n-3.1.1.tgz#d75f84d62682a76d58586534719a7f5042b82cb9"
+  integrity sha512-k1/lS+Rx6l5mJEYAHQWEgXuwU5IyWk7kjcJtm2FDIn1UqZwbEraGlrp/fEZKK2e/7+SXEQdKeCaTz7+63WTQxw==
+
+storybook-next-intl@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/storybook-next-intl/-/storybook-next-intl-1.1.6.tgz#0d956cf6cbeb818d82f61fb7c55797b0e5fcf697"
+  integrity sha512-z6l2jl2DtY8Dz1D8rGrWbU1B2JjE/OPpLdB7BvjNGnO8Zv+DE9wwwnc0NY6Q2IUVMFhpNwmHpGPo0APz3GYzRg==
+  dependencies:
+    storybook-i18n "3.1.1"
+
 storybook@8.3.6:
   version "8.3.6"
   resolved "https://registry.yarnpkg.com/storybook/-/storybook-8.3.6.tgz#c5e733504fac26c1a31c527a645c04ec7da4222f"
@@ -7392,7 +7421,7 @@ ts-pnp@^1.1.6:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
-tsconfig-paths-webpack-plugin@^4.0.1:
+tsconfig-paths-webpack-plugin@^4.0.1, tsconfig-paths-webpack-plugin@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/tsconfig-paths-webpack-plugin/-/tsconfig-paths-webpack-plugin-4.1.0.tgz#3c6892c5e7319c146eee1e7302ed9e6f2be4f763"
   integrity sha512-xWFISjviPydmtmgeUAuXp4N1fky+VCtfhOkDUFIv5ea7p4wuTomI4QTrXvFBX2S4jZsmyTSrStQl+E+4w+RzxA==

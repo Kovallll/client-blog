@@ -39,7 +39,7 @@ export const Header = (props: HeaderProps) => {
                             </Link>
                         ))}
                 </nav>
-                <BurgerMenu />
+                <BurgerMenu navCount={navCount} />
                 {withVideo && <VideoButton />}
             </div>
         </header>
