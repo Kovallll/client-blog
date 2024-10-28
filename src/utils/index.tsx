@@ -1,4 +1,4 @@
-import { allPosts, allTags } from '@constants'
+import { allPosts, allTags, authorsData } from '@constants'
 
 export const getPairsTags = () => {
     const pairsTags = []
@@ -14,11 +14,15 @@ export const getPairsTags = () => {
 }
 
 export const getPostsByCategory = (currentCategory: string) => {
-    return allPosts
-        .map((post) => {
-            if (post.category === currentCategory.toUpperCase()) {
-                return post
-            }
-        })
-        .filter((post) => post !== undefined)
+    return allPosts.filter(
+        (post) => post.category === currentCategory.toUpperCase()
+    )
+}
+
+export const getAuthorPosts = (authorId: string) => {
+    return allPosts.filter((post) => post.author.id === authorId)
+}
+
+export const getAuthorData = (authorId: string) => {
+    return authorsData.find((author) => author.id === authorId)!
 }
