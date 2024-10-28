@@ -1,0 +1,37 @@
+{
+    "countries": [
+        {
+            "properties": {
+                "title": "Belarus"
+            },
+            "geometry": {
+                "coordinates": {
+                    "lng": 27.555596376281522,
+                    "lat": 53.92457241600598
+                }
+            }
+        },
+        {
+            "properties": {
+                "title": "USA"
+            },
+            "geometry": {
+                "coordinates": {
+                    "lng": -97.24702709044828,
+                    "lat": 41.36948442015205
+                }
+            }
+        },
+        {
+            "properties": {
+                "title": "China"
+            },
+            "geometry": {
+                "coordinates": {
+                    "lng": 101.54372273819757,
+                    "lat": 36.005721116610786
+                }
+            }
+        }
+    ]
+}

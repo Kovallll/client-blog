@@ -29,6 +29,8 @@ export {
     allTags,
 } from './postsValues'
 
+export { countries } from './countries.json'
+
 export enum Paths {
     Home = '/home',
     Blog = '/blog',

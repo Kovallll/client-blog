@@ -62,3 +62,20 @@ export interface Article {
     caption?: string
     className?: string
 }
+
+export interface MarkerObject {
+    id: number
+    marker: mapboxgl.Marker
+}
+
+export interface CountryData {
+    properties: {
+        title: string
+    }
+    geometry: {
+        coordinates: {
+            lng: number
+            lat: number
+        }
+    }
+}
