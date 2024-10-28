@@ -1,0 +1,71 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-row-start;
+
+    align-items: start;
+    width: 100%;
+    background: $purple;
+    color: $white;
+    padding: $spacer-lg $spacer-xl;
+    margin-bottom: $spacer-xs;
+
+    @media (max-width: $sm) {
+        padding: $spacer-md $spacer-lg;
+        margin-bottom: $spacer-xxs;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xs $spacer-sm;
+        margin-bottom: $spacer-xxs;
+    }
+}
+
+.work {
+    @include flex-column-start;
+
+    margin-right: $spacer-lg;
+    width: 50%;
+}
+
+.contact {
+    width: 50%;
+}
+
+.title {
+    font-size: $fs-xxs - 2px;
+    padding-bottom: $spacer-xs;
+    margin-bottom: $spacer-xs;
+    border-bottom: 1px solid $gray;
+    opacity: 0.6;
+    width: 100%;
+
+    @media (max-width: $sm) {
+        font-size: $fs-xxxs;
+        padding-bottom: $spacer-xxs;
+        margin-bottom: $spacer-xxs;
+    }
+}
+
+.caption {
+    font-size: $fs-xs;
+    font-weight: 700;
+    line-height: $lh-lg;
+
+    @media (max-width: $sm) {
+        font-size: $fs-xxs;
+        line-height: $lh-sm;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xxs - 2px;
+        line-height: $lh-sm;
+    }
+}
+
+.text {
+    @extend %title-16;
+
+    opacity: 0.6;
+    margin-bottom: 0;
+}

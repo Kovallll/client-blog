@@ -1,0 +1,75 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-column-center;
+
+    @extend %marginBottom;
+
+    background: $light-pink;
+}
+
+.wrap {
+    width: 76%;
+
+    @media (max-width: $md) {
+        width: 100%;
+    }
+}
+
+.content {
+    @include flex-row-center;
+
+    padding: $spacer-xxxl $spacer-sm;
+
+    @media (max-width: $md) {
+        padding: $spacer-xxl $spacer-sm;
+    }
+
+    @media (max-width: $sm) {
+        padding: $spacer-xl $spacer-sm;
+    }
+
+    @media (max-width: $xs) {
+        @include flex-column-center;
+        padding: $spacer-lg $spacer-xs;
+    }
+}
+
+.info {
+    @include flex-column-start;
+
+    @media (max-width: $xs) {
+        @include flex-column-center;
+    }
+}
+
+.image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-right: $spacer-md;
+
+    @media (max-width: $xs) {
+        margin-right: 0;
+        margin-bottom: $spacer-md;
+        max-width: 220px;
+    }
+}
+
+.title {
+    @extend %title-48;
+
+    margin-bottom: $spacer-sm;
+}
+
+.text {
+    @extend %title-16;
+
+    color: $gray;
+}
+
+.links {
+    @include flex-row-sb;
+
+    width: 120px;
+}

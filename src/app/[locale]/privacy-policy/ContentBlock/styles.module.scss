@@ -1,0 +1,18 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-column-start;
+}
+
+.title {
+    @extend %title-48;
+
+    margin-bottom: $spacer-sm;
+}
+
+.text {
+    @extend %title-16;
+
+    color: $gray;
+    margin-bottom: $spacer-md;
+}

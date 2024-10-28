@@ -1,11 +1,19 @@
 import { ChangeEvent } from 'react'
+import classNames from 'classnames'
 
 import styles from './styles.module.scss'
 import { InputProps } from './types'
 
 export const Input = (props: InputProps) => {
-    const { placeholder, error, onChange, onChangeInput, value, ...restProps } =
-        props
+    const {
+        placeholder,
+        error,
+        onChange,
+        onChangeInput,
+        value,
+        className,
+        ...restProps
+    } = props
 
     const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
         if (onChangeInput) {
@@ -16,8 +24,10 @@ export const Input = (props: InputProps) => {
         }
     }
 
+    const style = classNames(styles.wrap, className ? styles[className] : '')
+
     return (
-        <div className={styles.wrap}>
+        <div className={style}>
             {!onChangeInput && (
                 <p className={styles.error}>{!!error && error}</p>
             )}

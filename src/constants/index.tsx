@@ -29,6 +29,8 @@ export {
     allTags,
 } from './postsValues'
 
+export { countries } from './countries.json'
+
 export enum Paths {
     Home = '/home',
     Blog = '/blog',
@@ -61,10 +63,10 @@ export const icons = {
 }
 
 export const socialLinks = [
-    { path: '/', icon: <FacebookIcon /> },
-    { path: '/', icon: <TwitterIcon /> },
-    { path: '/', icon: <InstagramIcon /> },
-    { path: '/', icon: <LinkedInIcon /> },
+    { path: '/facebook', icon: <FacebookIcon /> },
+    { path: '/twitter', icon: <TwitterIcon /> },
+    { path: '/insta', icon: <InstagramIcon /> },
+    { path: '/linkedin', icon: <LinkedInIcon /> },
 ]
 
 export const categoryData = {

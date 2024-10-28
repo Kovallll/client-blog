@@ -1,0 +1,23 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-column-center;
+
+    @extend %marginBottom;
+
+    width: 100%;
+    background: $light-pink;
+    padding: $spacer-xl;
+}
+
+.title {
+    @extend %title-48;
+
+    margin-bottom: $spacer-xxxs;
+}
+
+.subtitle {
+    @extend %title-16;
+
+    color: $gray;
+}

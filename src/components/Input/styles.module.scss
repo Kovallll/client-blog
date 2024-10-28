@@ -2,6 +2,8 @@
 
 .wrap {
     @include flex-column-start;
+
+    width: 100%;
 }
 
 .error {
@@ -40,5 +42,36 @@
     @media (max-width: $xs) {
         padding: $spacer-xxs $spacer-xs;
         font-size: $fs-xxxs;
+    }
+}
+
+.wrap.formInput {
+    margin-bottom: $spacer-xxs;
+
+    .input {
+        font-size: $fs-xxs;
+
+        &::placeholder {
+            color: $black;
+        }
+        @media (max-width: $sm) {
+            font-size: $fs-xxxs;
+            padding: $spacer-xxs;
+        }
+    }
+
+    .error {
+        height: $spacer-xs;
+        font-size: $fs-xxs;
+        margin-bottom: $spacer-xxxs;
+
+        @media (max-width: $sm) {
+            font-size: $fs-xxxs;
+            margin-bottom: 0;
+        }
+    }
+
+    @media (max-width: $sm) {
+        margin-bottom: 0;
     }
 }

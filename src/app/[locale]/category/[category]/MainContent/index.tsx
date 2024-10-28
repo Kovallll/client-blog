@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { useParams } from 'next/navigation'
 
 import { Categories } from '../Categories'
@@ -36,7 +36,10 @@ export const MainContent = () => {
         setIsOpenSidebar(false)
     })
 
-    const categoryPosts = getPostsByCategory(currentCategory)
+    const categoryPosts = useMemo(
+        () => getPostsByCategory(currentCategory),
+        [currentCategory]
+    )
     const isSidebar = width <= sidebarWidth
     const isVerticalCard = width <= verticalCardWidth
 

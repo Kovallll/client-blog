@@ -1,47 +1,28 @@
 'use client'
 
 import { memo } from 'react'
-import { toast } from 'react-toastify'
 import { useFormik } from 'formik'
 import { withZodSchema } from 'formik-validator-zod'
 
 import { buttonText, placeholder, title } from './config'
-import { schema, SchemaType } from './schema'
+import { footerSchema, FooterSchemaType } from './schema'
 import styles from './styles.module.scss'
 
 import Button from '@components/Button'
 import { Input } from '@components/Input'
-import emailjs from '@emailjs/browser'
+import { sendMail } from '@utils'
 
 const SubscribeBlock = () => {
-    const formik = useFormik<SchemaType>({
+    const formik = useFormik<FooterSchemaType>({
         initialValues: {
             email: '',
         },
-        onSubmit: ({ email }) => {
-            handleSendEmail(email)
+        onSubmit: (values) => {
+            sendMail(values)
         },
-        validate: withZodSchema(schema),
+        validate: withZodSchema(footerSchema),
         validateOnChange: true,
     })
-
-    const handleSendEmail = (email: string) => {
-        toast.info('Sending...')
-        emailjs
-            .send(
-                process.env.NEXT_PUBLIC_SERVICE_ID as string,
-                process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
-                { email },
-                process.env.NEXT_PUBLIC_EMAIL_JS_KEY
-            )
-            .then(() => {
-                toast.success('Send successful!')
-            })
-            .catch((error) => {
-                toast.error('Failed send!')
-                console.error('Error', error)
-            })
-    }
 
     const emailError =
         formik.errors.email && formik.touched.email ? formik.errors.email : null

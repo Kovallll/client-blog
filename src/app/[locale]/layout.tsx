@@ -30,6 +30,12 @@ export default async function RootLayout({
 
     return (
         <html lang={locale} className={sen.className}>
+            <head>
+                <link
+                    href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css"
+                    rel="stylesheet"
+                />
+            </head>
             <body className={styles.container}>
                 <NextIntlClientProvider messages={messages}>
                     <ToastContainer />

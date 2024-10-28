@@ -128,7 +128,9 @@
         }
 
         @media (max-width: $xs) {
-            max-width: 340px;
+            max-width: 420px;
+            margin-right: 0;
+            margin-bottom: $spacer-xs;
         }
     }
 
@@ -160,6 +162,16 @@
         @media (max-width: $xs) {
             font-size: $fs-xxxs - 2px;
             letter-spacing: 1px;
+        }
+    }
+
+    @media (max-width: $xs) {
+        @include flex-column-center;
+
+        text-align: center;
+
+        .title {
+            width: 100%;
         }
     }
 }
@@ -194,18 +206,16 @@
 
 .categoryPost {
     .image {
-        width: 340px;
-        height: 240px;
+        max-width: 340px;
+        width: 100%;
         object-fit: contain;
 
         @media (max-width: $lg) {
-            width: 300px;
-            height: 200px;
+            min-width: 300px;
         }
 
         @media (max-width: $md) {
-            width: 240px;
-            height: 160px;
+            min-width: 240px;
         }
     }
 
@@ -235,5 +245,47 @@
 
     @media (max-width: $xs) {
         text-align: center;
+    }
+}
+
+.authorPost {
+    .image {
+        max-width: 420px;
+        object-fit: contain;
+        width: 100%;
+
+        @media (max-width: $md) {
+            min-width: 340px;
+        }
+
+        @media (max-width: $sm) {
+            min-width: 200px;
+        }
+
+        @media (max-width: $xs) {
+            margin-bottom: $spacer-sm;
+            margin-right: 0;
+        }
+    }
+
+    @media (max-width: $xs) {
+        @include flex-column-center;
+        text-align: center;
+
+        .title {
+            width: 100%;
+            font-size: $fs-xs;
+            margin-bottom: $spacer-xxs;
+        }
+
+        .subtitle {
+            width: 100%;
+            font-size: $fs-xxxs;
+        }
+
+        .excerpt {
+            font-size: $fs-xxs;
+            margin-bottom: $spacer-xxs;
+        }
     }
 }
