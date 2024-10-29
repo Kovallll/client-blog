@@ -1,3 +1,5 @@
+import { loremTextMd } from '@constants'
+
 export const altText = 'about image'
 export const src = '/images/aboutUsImage.png'
 export const statisticInfo = [
@@ -8,8 +10,5 @@ export const statisticInfo = [
 export const cardTitle =
     'We are a team of content writers who share their learnings'
 export const cardCaption = 'ABOUT US'
-export const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-       nisi ut aliquip ex ea commodo consequat.`
+export const heroText = loremTextMd
 export const className = 'aboutImage'

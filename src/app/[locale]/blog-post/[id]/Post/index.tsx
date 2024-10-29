@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useTranslations } from 'use-intl'
 
 import { className } from './config'
 import { PostInfo } from './PostInfo'
@@ -7,9 +8,25 @@ import { PostProps } from './types'
 
 import AuthorCard from '@components/AuthorCard'
 import CategoryCard from '@components/CategoryCard'
+import { categoriesData } from '@constants'
 
 export const Post = ({ post }: PostProps) => {
-    const { author, postInfo, postTime, title, image, category } = post
+    const {
+        id: postId,
+        author,
+        postInfo,
+        postTime,
+        image,
+        category: postCategory,
+    } = post
+    const tPosts = useTranslations('Posts')
+    const tCategory = useTranslations('Category')
+    const { id: categoryId, Icon } = categoriesData.find(
+        (category) => category.category === postCategory
+    )!
+
+    const category = tCategory(`categories.${Number(categoryId) - 1}.category`)
+    const title = tPosts(`${Number(postId) - 1}.title`)
 
     return (
         <div className={styles.container}>
@@ -21,7 +38,12 @@ export const Post = ({ post }: PostProps) => {
                     className={className}
                 />
                 <div className={styles.title}>{title}</div>
-                <CategoryCard category={category} className={className} />
+                <CategoryCard
+                    id={categoryId}
+                    category={category}
+                    className={className}
+                    Icon={Icon}
+                />
             </div>
             {image && (
                 <Image
@@ -33,8 +55,13 @@ export const Post = ({ post }: PostProps) => {
                 />
             )}
             <div className={styles.postInfo}>
-                {postInfo.map((postInfoData) => (
-                    <PostInfo postInfoData={postInfoData} />
+                {postInfo.map((postInfo, index) => (
+                    <PostInfo
+                        key={postId}
+                        postInfoData={postInfo}
+                        id={postId}
+                        index={index}
+                    />
                 ))}
             </div>
         </div>

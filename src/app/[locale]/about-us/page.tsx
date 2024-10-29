@@ -1,21 +1,9 @@
+'use client'
+
+import { useTranslations } from 'use-intl'
+
 import { AboutUsCard } from './AboutUsCard'
-import {
-    countOfAuthors,
-    firstCardImage,
-    firstCardSubtitle,
-    firstCardText,
-    firstCardTitle,
-    misionCaption,
-    misionSubtitle,
-    misionTitle,
-    secondCardImage,
-    secondCardSubtitle,
-    secondCardText,
-    secondCardTitle,
-    visionCaption,
-    visionSubtitle,
-    visionTitle,
-} from './config'
+import { countOfAuthors, firstCardImage, secondCardImage } from './config'
 import { HeroBlock } from './HeroBlock'
 import styles from './page.module.scss'
 
@@ -24,33 +12,35 @@ import AuthorsList from '@components/AuthorsList'
 import JoinUs from '@components/JoinUs'
 
 export default function AboutUs() {
+    const t = useTranslations('AboutUs')
+
     return (
         <div className={styles.page}>
             <div className={styles.content}>
                 <HeroBlock />
                 <AboutUsBlock
                     firstArticle={{
-                        caption: misionCaption,
-                        title: misionTitle,
-                        subtitle: misionSubtitle,
+                        caption: t('misionCaption'),
+                        title: t('misionTitle'),
+                        subtitle: t('misionSubtitle'),
                     }}
                     secondArticle={{
-                        caption: visionCaption,
-                        title: visionTitle,
-                        subtitle: visionSubtitle,
+                        caption: t('visionCaption'),
+                        title: t('visionTitle'),
+                        subtitle: t('visionSubtitle'),
                     }}
                     withLine={false}
                 />
                 <AboutUsCard
-                    title={firstCardTitle}
-                    subtitle={firstCardSubtitle}
-                    text={firstCardText}
+                    title={t('firstCardTitle')}
+                    subtitle={t('firstCardSubtitle')}
+                    text={t('firstCardText')}
                     image={firstCardImage}
                 />
                 <AboutUsCard
-                    title={secondCardTitle}
-                    subtitle={secondCardSubtitle}
-                    text={secondCardText}
+                    title={t('secondCardTitle')}
+                    subtitle={t('secondCardSubtitle')}
+                    text={t('secondCardText')}
                     image={secondCardImage}
                     isReverse={true}
                 />

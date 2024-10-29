@@ -2,16 +2,9 @@
 
 import { useFormik } from 'formik'
 import { withZodSchema } from 'formik-validator-zod'
+import { useTranslations } from 'use-intl'
 
-import {
-    buttonText,
-    className,
-    emailPlaceholder,
-    namePlaceholder,
-    selectData,
-    selectPlaceholder,
-    textareaPlaceholder,
-} from './config'
+import { className, selectData } from './config'
 import { contactSchema, ContactSchemaType } from './schema'
 import styles from './styles.module.scss'
 
@@ -34,6 +27,8 @@ export const Form = () => {
         validateOnChange: true,
     })
 
+    const t = useTranslations('ContactUs')
+
     const emailError =
         formik.errors.email && formik.touched.email ? formik.errors.email : null
     const nameError =
@@ -45,7 +40,7 @@ export const Form = () => {
                 id="name"
                 name="name"
                 type="text"
-                placeholder={namePlaceholder}
+                placeholder={t('form.namePlaceholder')}
                 value={formik.values.name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -56,7 +51,7 @@ export const Form = () => {
                 id="email"
                 name="email"
                 type="text"
-                placeholder={emailPlaceholder}
+                placeholder={t('form.emailPlaceholder')}
                 value={formik.values.email}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -71,7 +66,7 @@ export const Form = () => {
                 onChange={formik.handleChange}
             >
                 <option selected hidden>
-                    {selectPlaceholder}
+                    {t('form.selectPlaceholder')}
                 </option>
                 {selectData.map((text) => (
                     <option key={text} value={text}>
@@ -80,7 +75,7 @@ export const Form = () => {
                 ))}
             </select>
             <textarea
-                placeholder={textareaPlaceholder}
+                placeholder={t('form.textareaPlaceholder')}
                 className={styles.textarea}
                 name="message"
                 id="message"
@@ -90,7 +85,7 @@ export const Form = () => {
             <Button
                 type="submit"
                 onClick={formik.handleSubmit}
-                title={buttonText}
+                title={t('form.buttonText')}
             />
         </div>
     )

@@ -1,14 +1,20 @@
 import styles from './styles.module.scss'
 import { ExcerptProps } from './types'
 
-export const Excerpt = ({ excerpt }: ExcerptProps) => {
-    const { beforeText, highlightText, afterText, color = 'common' } = excerpt
-
+export const Excerpt = ({ children }: ExcerptProps) => {
     return (
         <p>
-            {afterText}
-            <span className={styles[color]}>{highlightText}</span>
-            {beforeText}
+            {children({
+                purple: (chunks) => (
+                    <span className={styles.purple}>{chunks}</span>
+                ),
+                yellow: (chunks) => (
+                    <span className={styles.yellow}>{chunks}</span>
+                ),
+                common: (chunks) => (
+                    <span className={styles.common}>{chunks}</span>
+                ),
+            })}
         </p>
     )
 }

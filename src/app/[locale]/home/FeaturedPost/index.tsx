@@ -1,15 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 import { useRouter } from 'src/i18n/routing'
-import {
-    allPostsTitle,
-    buttonTitle,
-    className,
-    postTitle,
-    viewText,
-} from './config'
+import { className } from './config'
 import styles from './styles.module.scss'
 
 import Button from '@components/Button'
@@ -21,9 +16,11 @@ export const FeaturedPost = () => {
     const [featuredPostData, setFeaturedPostData] = useState<PostData>(
         homePostsData[0]
     )
-    const { excerpt, id, title, image, subtitle } = featuredPostData
+    const { id, image } = featuredPostData
 
     const router = useRouter()
+    const t = useTranslations('HomePage')
+    const tPosts = useTranslations('Posts')
 
     const handleClickReadMore = () => {
         router.push(`${Paths.BlogPost}/${id}`)
@@ -41,43 +38,53 @@ export const FeaturedPost = () => {
     return (
         <section className={styles.container}>
             <div className={styles.featuredPost}>
-                <h2 className={styles.title}>{postTitle}</h2>
+                <h2 className={styles.title}>{t('featureTitle')}</h2>
                 <div className={styles.featuredPostContent}>
                     <PostCard
                         id={id}
-                        excerpt={excerpt}
-                        title={title}
+                        excerpt={(colors) =>
+                            tPosts.rich(
+                                `${Number(id) - 1}.excerptChunk`,
+                                colors
+                            )
+                        }
+                        title={tPosts(`${Number(id) - 1}.title`)}
                         image={image}
-                        subtitle={subtitle}
+                        subtitle={tPosts(`${Number(id) - 1}.subtitle`)}
                         verticalCard={true}
                         className={className}
                     />
                     <div className={styles.button}>
                         <Button
                             onClick={handleClickReadMore}
-                            title={buttonTitle}
+                            title={t('featureButtonTitle')}
                         />
                     </div>
                 </div>
             </div>
             <div className={styles.allPosts}>
                 <div className={styles.textBlock}>
-                    <h2 className={styles.title}>{allPostsTitle}</h2>
+                    <h2 className={styles.title}>{t('allPostsTitle')}</h2>
                     <button
                         className={styles.view}
                         onClick={handleClickViewAllButton}
                     >
-                        {viewText}
+                        {t('viewAll')}
                     </button>
                 </div>
                 <div className={styles.allPostsContent}>
-                    {homePostsData.map(({ id, excerpt, title }) => (
+                    {homePostsData.map(({ id }) => (
                         <PostCard
                             onClick={handleClikcPostCard}
                             key={id}
                             id={id}
-                            excerpt={excerpt}
-                            title={title}
+                            excerpt={(colors) =>
+                                tPosts.rich(
+                                    `${Number(id) - 1}.excerptChunk`,
+                                    colors
+                                )
+                            }
+                            title={tPosts(`${Number(id) - 1}.title`)}
                         />
                     ))}
                 </div>

@@ -10,6 +10,7 @@
     background: $yellow;
     height: 20px;
     width: 60%;
+
     @media (max-width: $md) {
         height: 16px;
     }
@@ -27,6 +28,7 @@
     background: $purple;
     height: 20px;
     width: 20%;
+
     @media (max-width: $md) {
         height: 16px;
     }

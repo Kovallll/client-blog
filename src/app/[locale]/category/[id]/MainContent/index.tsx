@@ -1,14 +1,12 @@
 'use client'
 
-import { useMemo, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useParams } from 'next/navigation'
+import { useTranslations } from 'use-intl'
 
-import { Categories } from '../Categories'
-import { buttonTitle } from '../Categories/config'
+import { CategoriesBlock } from '../CategoriesBlock'
 import {
     className,
-    excerptColor,
-    noPostsText,
     postsOnPage,
     sidebarWidth,
     verticalCardWidth,
@@ -17,18 +15,22 @@ import styles from './styles.module.scss'
 
 import Button from '@components/Button'
 import PostCard from '@components/PostCard'
-import { useClickOutside, useWindowSize } from '@hooks'
-import { getPostsByCategory } from '@utils'
+import { categoriesData } from '@constants'
+import { useClickOutside, useSearchPosts, useWindowSize } from '@hooks'
 
 export const MainContent = () => {
-    const { category } = useParams()
-    const currentCategory = category as string
+    const { id } = useParams()
+
+    const { category } = categoriesData.find((category) => category.id === id)!
 
     const [isOpenSidebar, setIsOpenSidebar] = useState(false)
-    const [searchTag, setSearchTag] = useState('')
-    const [posts, setPosts] = useState(getPostsByCategory(currentCategory))
+    const { posts, searchTag, handleSearchTag, handleChangeSearchTag } =
+        useSearchPosts(category)
 
     const sidebarRef = useRef(null)
+
+    const tPosts = useTranslations('Posts')
+    const t = useTranslations('CategoryPage')
 
     const { width } = useWindowSize()
 
@@ -36,25 +38,11 @@ export const MainContent = () => {
         setIsOpenSidebar(false)
     })
 
-    const categoryPosts = useMemo(
-        () => getPostsByCategory(currentCategory),
-        [currentCategory]
-    )
     const isSidebar = width <= sidebarWidth
     const isVerticalCard = width <= verticalCardWidth
 
-    const handleChangeSearchTag = (value: string) => {
-        setSearchTag(value)
-    }
-
     const handleChangeIsOpenSidebar = () => {
         setIsOpenSidebar((prev) => !prev)
-    }
-
-    const handleSearchTag = (searchValue: string) => {
-        setPosts(
-            categoryPosts.filter((post) => post.tags.includes(searchValue))
-        )
     }
 
     return (
@@ -63,28 +51,30 @@ export const MainContent = () => {
                 {posts.length !== 0 ? (
                     posts
                         .slice(0, postsOnPage)
-                        .map(({ category, id, title, image, subtitle }) => (
+                        .map(({ id, image }) => (
                             <PostCard
                                 key={id}
-                                excerpt={{
-                                    highlightText: category,
-                                    color: excerptColor,
-                                }}
+                                excerpt={(colors) =>
+                                    tPosts.rich(
+                                        `${Number(id) - 1}.excerptChunk`,
+                                        colors
+                                    )
+                                }
                                 id={id}
-                                title={title}
+                                title={tPosts(`${Number(id) - 1}.title`)}
                                 image={image}
-                                subtitle={subtitle}
+                                subtitle={tPosts(`${Number(id) - 1}.subtitle`)}
                                 className={className}
                                 verticalCard={isVerticalCard}
                             />
                         ))
                 ) : (
-                    <p className={styles.noPosts}>{noPostsText}</p>
+                    <p className={styles.noPosts}>{t('noPostsText')}</p>
                 )}
             </div>
             <div ref={sidebarRef}>
-                <Categories
-                    currentCategory={currentCategory}
+                <CategoriesBlock
+                    currentCategory={category}
                     isOpenSidebar={isOpenSidebar}
                     searchTag={searchTag}
                     handleChangeSearchTag={handleChangeSearchTag}
@@ -93,7 +83,7 @@ export const MainContent = () => {
                 {isSidebar && (
                     <div className={styles.sidebarButton}>
                         <Button
-                            title={buttonTitle}
+                            title={t('categoryButtonTitle')}
                             onClick={handleChangeIsOpenSidebar}
                         />
                     </div>

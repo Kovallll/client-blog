@@ -1,13 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
-import {
-    afterNameText,
-    altText,
-    beforeNameText,
-    className,
-    text,
-} from './config'
+import { altText, className } from './config'
 import styles from './styles.module.scss'
 import { HeroBlockProps } from './types'
 
@@ -15,7 +10,10 @@ import ColorsLines from '@components/ColorsLines'
 import { socialLinks } from '@constants'
 
 export const HeroBlock = ({ authorData }: HeroBlockProps) => {
-    const { avatarUrl, fullName } = authorData
+    const { avatarUrl, id } = authorData
+
+    const t = useTranslations('Author')
+
     return (
         <div className={styles.container}>
             <div className={styles.wrap}>
@@ -29,11 +27,11 @@ export const HeroBlock = ({ authorData }: HeroBlockProps) => {
                     />
                     <div className={styles.info}>
                         <p className={styles.title}>
-                            {beforeNameText}
-                            {fullName}
-                            {afterNameText}
+                            {t('beforeNameText')}
+                            {t(`authors.${id}.fullName`)}
+                            {t('afterNameText')}
                         </p>
-                        <p className={styles.text}>{text}</p>
+                        <p className={styles.text}>{t(`authors.${id}.text`)}</p>
                         <div className={styles.links}>
                             {socialLinks.map(({ icon, path }) => (
                                 <Link

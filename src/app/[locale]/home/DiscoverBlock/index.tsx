@@ -1,12 +1,14 @@
 import Image from 'next/image'
+import { useTranslations } from 'use-intl'
 
-import { altText, caption, className, src, subtitle, title } from './config'
+import { altText, className, src } from './config'
 import { DiscoverButton } from './DiscoverButton'
 import styles from './styles.module.scss'
 
 import { Article } from '@components/Article'
 
 const DiscoverBlock = () => {
+    const t = useTranslations('HomePage')
     return (
         <section className={styles.container}>
             <Image
@@ -18,9 +20,9 @@ const DiscoverBlock = () => {
             />
             <div className={styles.info}>
                 <Article
-                    caption={caption}
-                    title={title}
-                    subtitle={subtitle}
+                    caption={t('discover.caption')}
+                    title={t('discover.title')}
+                    subtitle={t('discover.subtitle')}
                     className={className}
                 />
                 <DiscoverButton />

@@ -72,12 +72,34 @@
     @media (max-width: $md) {
         margin-right: $spacer-xxs;
     }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xxxs;
+    }
 }
 
 .header.footer {
     padding: 0;
 
-    @media (max-width: $sm) {
+    .nav {
+        margin: $spacer-xs 0;
+
+        @media (max-width: $sm) {
+            @include flex-row-center;
+
+            width: 100%;
+        }
+    }
+
+    .switcher {
         display: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
     }
 }

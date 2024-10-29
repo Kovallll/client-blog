@@ -3,8 +3,8 @@
 import { memo } from 'react'
 import { useFormik } from 'formik'
 import { withZodSchema } from 'formik-validator-zod'
+import { useTranslations } from 'use-intl'
 
-import { buttonText, placeholder, title } from './config'
 import { footerSchema, FooterSchemaType } from './schema'
 import styles from './styles.module.scss'
 
@@ -24,18 +24,20 @@ const SubscribeBlock = () => {
         validateOnChange: true,
     })
 
+    const t = useTranslations('Footer')
+
     const emailError =
         formik.errors.email && formik.touched.email ? formik.errors.email : null
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>{title}</h2>
+            <h2 className={styles.title}>{t('subscribeTitle')}</h2>
             <div className={styles.subscribeContent}>
                 <Input
                     id="email"
                     name="email"
                     type="text"
-                    placeholder={placeholder}
+                    placeholder={t('footerPlaceholder')}
                     value={formik.values.email}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -45,7 +47,7 @@ const SubscribeBlock = () => {
                     <Button
                         type="submit"
                         onClick={formik.handleSubmit}
-                        title={buttonText}
+                        title={t('footerButtonText')}
                     />
                 </div>
             </div>

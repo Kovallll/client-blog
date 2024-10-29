@@ -1,98 +1,57 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import { Fragment } from 'react'
 import classNames from 'classnames'
 import dynamic from 'next/dynamic'
+import { useTranslations } from 'use-intl'
 
-import {
-    aboutCaption,
-    aboutSubtitle,
-    aboutTitle,
-    categoryTitle,
-    countOfAuthors,
-    ourCaption,
-    OurSubtitle,
-    OurTitle,
-} from './config'
+import { countOfAuthors } from './config'
 import { FeaturedPost } from './FeaturedPost'
 import { HeroBlock } from './HeroBlock'
 import styles from './page.module.scss'
 
+import { useObserver } from '@hooks'
+
 const FeaturedInBlock = dynamic(() => import('./FeaturedInBlock'))
-const AboutUsBlock = dynamic(() => import('../../../components/AboutUsBlock'))
+const AboutUsBlock = dynamic(() => import('@components/AboutUsBlock'))
 const CategoryBlock = dynamic(() => import('@components/CategoryBlock'))
 const AuthorsList = dynamic(() => import('@components/AuthorsList'))
 const DiscoverBlock = dynamic(() => import('./DiscoverBlock'))
 const CommetsBlock = dynamic(() => import('./CommetsBlock'))
 const JoinUs = dynamic(() => import('@components/JoinUs'))
 
-const allComponents = [
-    <AboutUsBlock
-        firstArticle={{
-            title: aboutTitle,
-            subtitle: aboutSubtitle,
-            caption: aboutCaption,
-        }}
-        secondArticle={{
-            title: OurTitle,
-            subtitle: OurSubtitle,
-            caption: ourCaption,
-        }}
-        withLine={true}
-    />,
-    <CategoryBlock title={categoryTitle} />,
-    <DiscoverBlock />,
-    <AuthorsList countAuthors={countOfAuthors} />,
-    <FeaturedInBlock />,
-    <CommetsBlock />,
-    <JoinUs />,
-]
-
 export default function Home() {
-    const [components, setComponents] = useState<JSX.Element[]>([])
-    const [hasIntersected, setHasIntersected] = useState<boolean | null>(false)
-    const [visibleComponents, setVisibleComponents] = useState<boolean[]>([])
-    const observeRef = useRef(null)
+    const t = useTranslations('HomePage')
+    const tCategory = useTranslations('Category')
 
-    const allComponentsCount = allComponents.length
-    const componentsCount = components.length
+    const allComponents = [
+        <AboutUsBlock
+            firstArticle={{
+                title: t('aboutTitle'),
+                subtitle: t('aboutSubtitle'),
+                caption: t('aboutCaption'),
+            }}
+            secondArticle={{
+                title: t('ourTitle'),
+                subtitle: t('ourSubtitle'),
+                caption: t('ourCaption'),
+            }}
+            withLine={true}
+        />,
+        <CategoryBlock title={tCategory('categoryTitle')} />,
+        <DiscoverBlock />,
+        <AuthorsList countAuthors={countOfAuthors} />,
+        <FeaturedInBlock />,
+        <CommetsBlock />,
+        <JoinUs />,
+    ]
 
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting && !hasIntersected) {
-                    setHasIntersected(true)
-                    if (componentsCount < allComponentsCount) {
-                        setComponents((prev) => [
-                            ...prev,
-                            allComponents[prev.length]!,
-                        ])
-                        setVisibleComponents(
-                            new Array(components.length).fill(true)
-                        )
-                    }
-                } else if (!entry.isIntersecting) {
-                    setHasIntersected(false)
-                }
-                if (componentsCount === allComponentsCount) {
-                    setVisibleComponents(
-                        new Array(components.length).fill(true)
-                    )
-                    setHasIntersected(null)
-                }
-            })
-        })
-        const element = observeRef.current
-
-        if (element) {
-            observer.observe(element)
-        }
-
-        return () => {
-            if (element) {
-                observer.unobserve(element)
-            }
-        }
-    }, [allComponentsCount, components.length, componentsCount, hasIntersected])
+    const {
+        components,
+        componentsCount,
+        hasIntersected,
+        visibleComponents,
+        observeRef,
+    } = useObserver(allComponents)
 
     return (
         <div className={styles.page}>
@@ -111,7 +70,7 @@ export default function Home() {
                         componentsCount === index + 1 && hasIntersected !== null
 
                     return (
-                        <>
+                        <Fragment key={index}>
                             {isObserverVisible && (
                                 <div
                                     className={styles.observe}
@@ -121,7 +80,7 @@ export default function Home() {
                             <div className={style} key={index}>
                                 {component}
                             </div>
-                        </>
+                        </Fragment>
                     )
                 })}
             </div>

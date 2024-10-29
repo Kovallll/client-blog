@@ -1,14 +1,9 @@
 'use client'
 
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 
-import {
-    activeClassName,
-    buttonTitle,
-    categoriesTitle,
-    className,
-    tagsTitle,
-} from './config'
+import { activeClassName, className } from './config'
 import styles from './styles.module.scss'
 import { Tag } from './Tag'
 import { CategoriesProps } from './types'
@@ -19,7 +14,7 @@ import { Search } from '@components/Search'
 import { categoriesData } from '@constants'
 import { getPairsTags } from '@utils'
 
-export const Categories = ({
+export const CategoriesBlock = ({
     currentCategory,
     isOpenSidebar,
     searchTag,
@@ -27,6 +22,9 @@ export const Categories = ({
     handleSearchTag,
 }: CategoriesProps) => {
     const pairsTags = getPairsTags()
+
+    const t = useTranslations('CategoryPage')
+    const tCategory = useTranslations('Category')
 
     const handleClickTag = (value: string) => {
         handleChangeSearchTag(value)
@@ -49,37 +47,53 @@ export const Categories = ({
                     handleChangeSearchValue={handleChangeSearchTag}
                 />
                 <div className={styles.button}>
-                    <Button title={buttonTitle} onClick={handleClickButton} />
+                    <Button
+                        title={t('categoryButtonTitle')}
+                        onClick={handleClickButton}
+                    />
                 </div>
             </div>
             <div className={styles.categories}>
-                <p className={styles.title}>{categoriesTitle}</p>
-                {categoriesData.map(({ category }) => (
-                    <CategoryCard
-                        category={category}
-                        className={
-                            category.toLowerCase() === currentCategory
-                                ? `${className}${activeClassName}`
-                                : className
-                        }
-                    />
-                ))}
+                <p className={styles.title}>{t('categoriesTitle')}</p>
+                {categoriesData.map(({ id, category, Icon }) => {
+                    const categoryTitle = tCategory(
+                        `categories.${Number(id) - 1}.category`
+                    )
+                    const style =
+                        category === currentCategory
+                            ? `${className}${activeClassName}`
+                            : className
+
+                    return (
+                        <CategoryCard
+                            id={id}
+                            key={id}
+                            category={categoryTitle}
+                            className={style}
+                            Icon={Icon}
+                        />
+                    )
+                })}
             </div>
             <div className={styles.allTags}>
-                <p className={styles.title}>{tagsTitle}</p>
+                <p className={styles.title}>{t('tagsTitle')}</p>
                 <div className={styles.tags}>
-                    {pairsTags.map((pairTags) => (
-                        <div className={styles.pairTags}>
+                    {pairsTags.map((pairTags, index) => (
+                        <div className={styles.pairTags} key={index}>
                             <Tag
                                 tag={pairTags[0]}
                                 handleClickTag={handleClickTag}
-                                isActive={searchTag === pairTags[0]}
+                                isActive={
+                                    searchTag === t(`tags.${pairTags[0]}`)
+                                }
                             />
                             {pairTags[1] && (
                                 <Tag
                                     tag={pairTags[1]}
                                     handleClickTag={handleClickTag}
-                                    isActive={searchTag === pairTags[1]}
+                                    isActive={
+                                        searchTag === t(`tags.${pairTags[1]}`)
+                                    }
                                 />
                             )}
                         </div>

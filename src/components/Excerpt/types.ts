@@ -1,5 +1,9 @@
-import { ExcerptType } from '@types'
+import { ReactNode } from 'react'
 
 export interface ExcerptProps {
-    excerpt: ExcerptType
+    children: (
+        colors: Record<Colors, (chunks: ReactNode) => ReactNode>
+    ) => ReactNode
 }
+
+export type Colors = 'purple' | 'yellow' | 'common'

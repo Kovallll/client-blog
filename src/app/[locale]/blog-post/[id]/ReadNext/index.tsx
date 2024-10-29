@@ -1,13 +1,18 @@
-import { useMemo } from 'react'
+import { ReactNode, useMemo } from 'react'
+import { useTranslations } from 'use-intl'
 
-import { className, excerptColor, postsOnPage, title } from './config'
+import { className, postsOnPage } from './config'
 import styles from './styles.module.scss'
 import { ReadNextProps } from './types'
 
+import { Colors } from '@components/Excerpt/types'
 import PostCard from '@components/PostCard'
 import { allPosts } from '@constants'
 
 export const ReadNext = ({ post: currentPost }: ReadNextProps) => {
+    const tPosts = useTranslations('Posts')
+    const t = useTranslations('BlogPost')
+
     const categoryPosts = useMemo(() => {
         return allPosts
             .map((post) => {
@@ -23,17 +28,19 @@ export const ReadNext = ({ post: currentPost }: ReadNextProps) => {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>{title}</h2>
+            <h2 className={styles.title}>{t('nextTitle')}</h2>
             <div className={styles.posts}>
-                {categoryPosts
-                    .slice(0, postsOnPage)
-                    .map(({ category, id, title, image, subtitle }) => (
+                {categoryPosts.slice(0, postsOnPage).map(({ id, image }) => {
+                    const excerpt = (
+                        colors: Record<Colors, (chunks: ReactNode) => ReactNode>
+                    ) => tPosts.rich(`${Number(id) - 1}.excerptChunk`, colors)
+                    const title = tPosts(`${Number(id) - 1}.title`)
+                    const subtitle = tPosts(`${Number(id) - 1}.subtitle`)
+
+                    return (
                         <PostCard
                             key={id}
-                            excerpt={{
-                                highlightText: category,
-                                color: excerptColor,
-                            }}
+                            excerpt={excerpt}
                             id={id}
                             title={title}
                             image={image}
@@ -41,7 +48,8 @@ export const ReadNext = ({ post: currentPost }: ReadNextProps) => {
                             verticalCard={true}
                             className={className}
                         />
-                    ))}
+                    )
+                })}
             </div>
         </div>
     )

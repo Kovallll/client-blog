@@ -13,8 +13,8 @@
 
 .contentWrap {
     @include flex-column-center;
-    justify-content: start;
 
+    justify-content: start;
     width: 100%;
     flex: 1 0 auto;
 }

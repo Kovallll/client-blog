@@ -1,5 +1,5 @@
 export const workTitle = 'Working hours'
-export const contactTitle = 'Contact Us'
+export const contactUsTitle = 'Contact Us'
 export const date = 'Monday To Friday'
 export const time = '9:00 AM to 8:00 PM '
 export const text = 'Our Support Team is available 24/7'

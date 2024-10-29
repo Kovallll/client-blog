@@ -30,7 +30,7 @@ const PostCard = (props: PostCardProps) => {
         if (onClick) {
             onClick(id)
         }
-        if (className !== 'featurePost') {
+        if (className !== 'featurePost' && !onClick) {
             router.push(`${Paths.BlogPost}/${id}`)
         }
     }
@@ -52,7 +52,7 @@ const PostCard = (props: PostCardProps) => {
             )}
             <div className={styles.info}>
                 <div className={styles.excerpt}>
-                    <Excerpt excerpt={excerpt} />
+                    <Excerpt>{excerpt}</Excerpt>
                 </div>
                 <p className={styles.title}>{title}</p>
                 {subtitle && <p className={styles.subtitle}>{subtitle}</p>}

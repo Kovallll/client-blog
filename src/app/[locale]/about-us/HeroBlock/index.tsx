@@ -1,29 +1,26 @@
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
-import {
-    altText,
-    cardCaption,
-    cardTitle,
-    className,
-    src,
-    statisticInfo,
-    text,
-} from './config'
+import { altText, className, src, statisticInfo } from './config'
 import styles from './styles.module.scss'
 
 import ColorsLines from '@components/ColorsLines'
 
 export const HeroBlock = () => {
+    const t = useTranslations('AboutUs')
+
     return (
         <div className={styles.container}>
             <div className={styles.imageBlock}>
                 <div className={styles.topImageOverwiew}>
                     <div className={styles.cardWrap}>
                         <div className={styles.overviewCard}>
-                            <p className={styles.cardCaption}>{cardCaption}</p>
-                            <p className={styles.cardTitle}>{cardTitle}</p>
+                            <p className={styles.cardCaption}>
+                                {t('cardCaption')}
+                            </p>
+                            <p className={styles.cardTitle}>{t('cardTitle')}</p>
                         </div>
-                        <p className={styles.text}>{text}</p>
+                        <p className={styles.text}>{t('heroText')}</p>
                     </div>
                 </div>
                 <Image
@@ -35,11 +32,13 @@ export const HeroBlock = () => {
                 />
                 <div className={styles.bottomImageOverwiew}>
                     <div className={styles.statistic}>
-                        {statisticInfo.map(({ title, subtitle }) => (
+                        {statisticInfo.map((_, index) => (
                             <div className={styles.info}>
-                                <p className={styles.infoTitle}>{title}</p>
+                                <p className={styles.infoTitle}>
+                                    {t(`statisticInfo.${index}.title`)}
+                                </p>
                                 <p className={styles.infoSubtitle}>
-                                    {subtitle}
+                                    {t(`statisticInfo.${index}.subtitle`)}
                                 </p>
                             </div>
                         ))}

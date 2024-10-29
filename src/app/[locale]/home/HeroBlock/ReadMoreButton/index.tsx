@@ -1,7 +1,8 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
+
 import { useRouter } from 'src/i18n/routing'
-import { buttonTitle } from '../config'
 import styles from './styles.module.scss'
 import { ReadMoreButtonProps } from './types'
 
@@ -10,6 +11,7 @@ import { Paths } from '@constants'
 
 export const ReadMoreButton = ({ id }: ReadMoreButtonProps) => {
     const router = useRouter()
+    const t = useTranslations('HomePage')
 
     const handleClickReadMore = () => {
         router.push(`${Paths.BlogPost}/${id}`)
@@ -17,7 +19,10 @@ export const ReadMoreButton = ({ id }: ReadMoreButtonProps) => {
 
     return (
         <div className={styles.wrap}>
-            <Button onClick={handleClickReadMore} title={buttonTitle} />
+            <Button
+                onClick={handleClickReadMore}
+                title={t('heroButtonTitle')}
+            />
         </div>
     )
 }

@@ -7,15 +7,21 @@ import { useRouter } from 'src/i18n/routing'
 import styles from './styles.module.scss'
 import { CategoryCardProps } from './types'
 
-import { categoryData, Paths } from '@constants'
+import { Paths } from '@constants'
 
-const CategoryCard = ({ category, subtitle, className }: CategoryCardProps) => {
+const CategoryCard = ({
+    id,
+    category,
+    subtitle,
+    className,
+    Icon,
+}: CategoryCardProps) => {
     const cardRef = useRef(null)
 
     const router = useRouter()
 
     const handleClickCard = () => {
-        router.push(`${Paths.Category}/${category.toLowerCase()}`)
+        router.push(`${Paths.Category}/${id}`)
     }
 
     const isWithOutSubtitle = subtitle === undefined ? true : false
@@ -28,12 +34,10 @@ const CategoryCard = ({ category, subtitle, className }: CategoryCardProps) => {
         }
     )
 
-    const { Icon, title } = categoryData[category]
-
     return (
         <article className={style} onClick={handleClickCard} ref={cardRef}>
             <div className={styles.iconWrap}>{Icon}</div>
-            <p className={styles.title}>{title}</p>
+            <p className={styles.title}>{category.toLocaleLowerCase()}</p>
             {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         </article>
     )

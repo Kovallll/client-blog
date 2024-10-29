@@ -1,1 +1,1 @@
-export const title = 'List of Authors'
+export const listTitle = 'List of Authors'

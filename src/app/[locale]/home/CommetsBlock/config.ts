@@ -1,5 +1,6 @@
-export const caption = 'TESTIMONIALS'
-export const title = 'What people say about our blog'
-export const subtitle =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
+import { loremTextSm } from '@constants'
+
+export const commentCaption = 'TESTIMONIALS'
+export const commentTitle = 'What people say about our blog'
+export const commentSubtitle = loremTextSm
 export const commentGap = 16
