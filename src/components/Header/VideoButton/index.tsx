@@ -1,8 +1,8 @@
 'use client'
 
 import { memo, useState } from 'react'
+import { useTranslations } from 'use-intl'
 
-import { buttonTitle } from '../config'
 import styles from './styles.module.scss'
 
 import Button from '@components/Button'
@@ -10,6 +10,7 @@ import Modal from '@components/Modal'
 
 const VideoButton = () => {
     const [isVideoOpen, setIsVideoOpen] = useState(false)
+    const t = useTranslations('Header')
 
     const handleClickVideoButton = () => {
         setIsVideoOpen((prev) => !prev)
@@ -20,7 +21,7 @@ const VideoButton = () => {
             <Button
                 isWhiteBg={true}
                 onClick={handleClickVideoButton}
-                title={buttonTitle}
+                title={t('buttonTitle')}
             />
             {isVideoOpen && (
                 <Modal onCloseModal={handleClickVideoButton}>

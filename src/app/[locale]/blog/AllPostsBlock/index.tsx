@@ -1,12 +1,11 @@
 'use client'
 
-import { useState } from 'react'
 import classNames from 'classnames'
+import { useTranslations } from 'use-intl'
 
 import {
     allPosts,
     className,
-    exceprtColor,
     nextText,
     postsOnPage,
     prevText,
@@ -16,40 +15,16 @@ import styles from './styles.module.scss'
 
 import PostCard from '@components/PostCard'
 import { blogPostsData } from '@constants'
-import { PaginationDirection } from '@types'
+import { usePostPagination } from '@hooks'
 
 export const AllPostsBlock = () => {
-    const [posts, setPosts] = useState(blogPostsData.slice(0, postsOnPage))
-    const [postsPage, setPostsPage] = useState(1)
+    const { posts, postsPage, handleClickNextButton, handleClickPrevButton } =
+        usePostPagination(postsOnPage, blogPostsData)
+
+    const tPosts = useTranslations('Posts')
 
     const isNextDisabled = postsPage * postsOnPage === allPosts
     const isPrevDisabled = postsPage === 1
-
-    const paginationSwap = (
-        direction: PaginationDirection,
-        countPosts: number
-    ) => {
-        const pageSwap = direction === 'next' ? 1 : -1
-        setPostsPage((prev) => (prev += pageSwap))
-
-        const startSlice =
-            direction === 'next' ? countPosts : countPosts - postsOnPage
-        const endSlice =
-            direction === 'next' ? countPosts + postsOnPage : countPosts
-
-        const newPosts = blogPostsData.slice(startSlice, endSlice)
-        setPosts(newPosts)
-    }
-
-    const handleClickNextButton = () => {
-        const countPosts = postsPage * postsOnPage
-        paginationSwap('next', countPosts)
-    }
-
-    const handleClickPrevButton = () => {
-        const countPosts = (postsPage - 1) * postsOnPage
-        paginationSwap('prev', countPosts)
-    }
 
     const prevStyles = classNames(styles.prev, {
         [styles.disabledButton]: isPrevDisabled,
@@ -62,13 +37,16 @@ export const AllPostsBlock = () => {
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>{title}</h2>
-            {posts.map(({ id, image, category, subtitle, title }) => (
+            {posts.map(({ id, image }) => (
                 <PostCard
                     id={id}
+                    key={id}
                     image={image}
-                    excerpt={{ highlightText: category, color: exceprtColor }}
-                    subtitle={subtitle}
-                    title={title}
+                    excerpt={(colors) =>
+                        tPosts.rich(`${Number(id) - 1}.excerptChunk`, colors)
+                    }
+                    subtitle={tPosts(`${Number(id) - 1}.subtitle`)}
+                    title={tPosts(`${Number(id) - 1}.title`)}
                     className={className}
                 />
             ))}

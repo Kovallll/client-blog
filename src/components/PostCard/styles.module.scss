@@ -63,6 +63,7 @@
         margin-bottom: $spacer-xxs;
         line-height: $lh-xxs;
     }
+
     @media (max-width: $xs) {
         font-size: $fs-xxxs -2px;
         margin-bottom: $spacer-xxxs;
@@ -100,6 +101,7 @@
         @media (max-width: $md) {
             font-size: $fs-sm;
         }
+
         @media (max-width: $xs) {
             font-size: $fs-xs;
         }
@@ -270,6 +272,7 @@
 
     @media (max-width: $xs) {
         @include flex-column-center;
+
         text-align: center;
 
         .title {

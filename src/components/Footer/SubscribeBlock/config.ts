@@ -1,4 +1,4 @@
-export const title =
+export const subscribeTitle =
     'Subscribe to our news letter to get latest updates and news'
-export const placeholder = 'Enter Your Email'
-export const buttonText = 'Subscribe'
+export const footerPlaceholder = 'Enter Your Email'
+export const footerButtonText = 'Subscribe'

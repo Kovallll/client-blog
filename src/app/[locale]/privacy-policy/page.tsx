@@ -8,8 +8,12 @@ export default function Home() {
         <div className={styles.page}>
             <HeroBlock />
             <div className={styles.content}>
-                {contentData.map((contentData) => (
-                    <ContentBlock contentData={contentData} />
+                {contentData.map((content, index) => (
+                    <ContentBlock
+                        contentData={content}
+                        index={index}
+                        key={index}
+                    />
                 ))}
             </div>
         </div>

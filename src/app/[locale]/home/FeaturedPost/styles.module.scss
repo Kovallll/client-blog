@@ -16,6 +16,7 @@
 
 .allPosts {
     @include flex-column-start;
+
     max-width: 520px;
     width: 100%;
 
@@ -28,8 +29,10 @@
     @include flex-column-start;
 
     margin-right: $spacer-md;
+
     @media (max-width: $sm) {
         @include flex-column-center;
+
         margin-right: 0;
         margin-bottom: $spacer-xs;
     }
@@ -69,6 +72,7 @@
 
     @media (max-width: $xs) {
         @include flex-column-center;
+
         flex-direction: column-reverse;
     }
 }
@@ -90,6 +94,7 @@
     @media (max-width: $md) {
         margin-bottom: $spacer-sm;
     }
+
     @media (max-width: $xs) {
         margin-bottom: $spacer-xs;
     }

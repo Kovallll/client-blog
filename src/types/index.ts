@@ -5,7 +5,7 @@ export type LocaleType = 'en' | 'ru'
 export interface PostData {
     id: string
     title: string
-    excerpt: ExcerptType
+    excerptChunk: string
     category: Categories
     author: AuthorType
     postTime: string
@@ -16,18 +16,12 @@ export interface PostData {
     className?: string
 }
 
-export interface ExcerptType {
-    beforeText?: string
-    highlightText: string
-    afterText?: string
-    color?: 'common' | 'yellow' | 'purple'
-}
-
 export interface AuthorType {
     id: string
     avatarUrl: string
     fullName: string
     description?: string
+    text: string
 }
 
 export interface ImageType {

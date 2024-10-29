@@ -39,15 +39,18 @@
         line-height: $lh-xxl;
         font-size: $fs-xxl;
     }
+
     @media (max-width: $md) {
         font-size: $fs-xl;
 
         margin-bottom: $spacer-xs;
     }
+
     @media (max-width: $sm) {
         line-height: $lh-lg;
         font-size: $fs-lg;
     }
+
     @media (max-width: $xs) {
         line-height: $lh-sm;
         font-size: $fs-xs;

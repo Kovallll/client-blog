@@ -1,8 +1,9 @@
 'use client'
 
 import { memo, useRef } from 'react'
+import { useTranslations } from 'use-intl'
 
-import { caption, commentGap, subtitle, title } from './config'
+import { commentGap } from './config'
 import styles from './styles.module.scss'
 
 import { Article } from '@components/Article'
@@ -12,6 +13,7 @@ import { PaginationDirection } from '@types'
 
 const CommetsBlock = () => {
     const carouselRef = useRef(null)
+    const t = useTranslations('HomePage')
 
     const { NextArrowIcon, PrevArrowIcon } = icons
 
@@ -45,13 +47,17 @@ const CommetsBlock = () => {
     return (
         <div className={styles.container}>
             <div className={styles.article}>
-                <Article caption={caption} title={title} subtitle={subtitle} />
+                <Article
+                    caption={t('comment.caption')}
+                    title={t('comment.title')}
+                    subtitle={t('comment.subtitle')}
+                />
             </div>
             <span className={styles.line}></span>
             <div className={styles.comments} ref={carouselRef}>
-                {commentsData.map(({ author, comment, id, location }) => (
+                {commentsData.map(({ author, id, location }) => (
                     <div className={styles.comment} key={id}>
-                        <p className={styles.commetText}>{comment}</p>
+                        <p className={styles.commetText}>{t('comment.text')}</p>
                         <AuthorCard
                             author={author}
                             subtitle={location}

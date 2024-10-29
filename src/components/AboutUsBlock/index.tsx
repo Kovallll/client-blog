@@ -1,5 +1,7 @@
+import { useTranslations } from 'next-intl'
+
 import { Link } from 'src/i18n/routing'
-import { className, linkText } from './config'
+import { className } from './config'
 import styles from './styles.module.scss'
 
 import { Article } from '@components/Article'
@@ -9,6 +11,7 @@ import { AboutUsProps } from '@types'
 
 const AboutUsBlock = (props: AboutUsProps) => {
     const { firstArticle, secondArticle, withLine } = props
+    const t = useTranslations('Global')
 
     return (
         <section className={styles.container}>
@@ -21,7 +24,7 @@ const AboutUsBlock = (props: AboutUsProps) => {
                         subtitle={firstArticle.subtitle}
                     />
                     <div className={styles.link}>
-                        <Link href={Paths.AboutUs}>{linkText}</Link>
+                        <Link href={Paths.AboutUs}>{t('buttonTitle')}</Link>
                     </div>
                 </div>
                 <div className={styles.mision}>

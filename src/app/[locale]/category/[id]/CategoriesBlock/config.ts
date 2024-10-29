@@ -1,4 +1,4 @@
-export const buttonTitle = 'Search'
+export const categoryButtonTitle = 'Search'
 export const categoriesTitle = 'Categories'
 export const tagsTitle = 'All Tags'
 export const activeClassName = 'Active'

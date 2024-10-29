@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify'
 
 import { FooterSchemaType } from '@components/Footer/SubscribeBlock/schema'
-import { allPosts, allTags, authorsData } from '@constants'
+import { allTags } from '@constants'
 import emailjs from '@emailjs/browser'
 import { ContactSchemaType } from '@pages/contact-us/Form/schema'
 
@@ -16,20 +16,6 @@ export const getPairsTags = () => {
     }
 
     return pairsTags
-}
-
-export const getPostsByCategory = (currentCategory: string) => {
-    return allPosts.filter(
-        (post) => post.category === currentCategory.toUpperCase()
-    )
-}
-
-export const getAuthorPosts = (authorId: string) => {
-    return allPosts.filter((post) => post.author.id === authorId)
-}
-
-export const getAuthorData = (authorId: string) => {
-    return authorsData.find((author) => author.id === authorId)!
 }
 
 export const sendMail = (values: FooterSchemaType | ContactSchemaType) => {

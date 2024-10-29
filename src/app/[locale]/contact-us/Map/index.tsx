@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { memo, useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import mapboxgl, { LngLatLike } from 'mapbox-gl'
 
@@ -11,7 +11,7 @@ import styles from './styles.module.scss'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { countries } from '@constants'
 
-export const Map = () => {
+const Map = () => {
     const [map, setMap] = useState<mapboxgl.Map>()
     const mapNode = useRef(null)
 
@@ -52,3 +52,5 @@ export const Map = () => {
 
     return <div ref={mapNode} className={styles.mapContainer} />
 }
+
+export default memo(Map)

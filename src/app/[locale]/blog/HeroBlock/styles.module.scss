@@ -31,9 +31,11 @@
     @media (max-width: $md) {
         min-height: 280px;
     }
+
     @media (max-width: $sm) {
         min-height: 220px;
     }
+
     @media (max-width: $xs) {
         width: auto;
         min-height: 0px;
@@ -71,6 +73,7 @@
     @media (max-width: $md) {
         max-width: 500px;
     }
+
     @media (max-width: $sm) {
         max-width: 400px;
     }
@@ -85,10 +88,12 @@
     @media (max-width: $md) {
         margin-bottom: $spacer-md;
     }
+
     @media (max-width: $sm) {
         margin-bottom: $spacer-sm;
         max-width: 400px;
     }
+
     @media (max-width: $xs) {
         margin-bottom: $spacer-xs;
     }

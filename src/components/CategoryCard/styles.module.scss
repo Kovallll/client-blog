@@ -26,6 +26,7 @@
 
 .iconWrap {
     @include flex-row-center;
+
     background: $beige;
     width: 48px;
     height: 48px;
@@ -37,6 +38,7 @@
     font-size: $fs-md;
     font-weight: 700;
     margin-bottom: $spacer-xxxs;
+    text-transform: capitalize;
 
     @media (max-width: $md) {
         font-size: $fs-xs;
@@ -58,6 +60,7 @@
 
 .container.miniCard {
     @include flex-row-start;
+
     flex-direction: row;
     padding: $spacer-sm;
 

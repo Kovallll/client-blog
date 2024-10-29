@@ -1,4 +1,4 @@
-import { Categories } from './postsValues'
+import { Categories, loremTextXs } from './postsValues'
 
 import BusinessIcon from '@assets/icons/business.svg'
 import CloseIcon from '@assets/icons/close.svg'
@@ -27,6 +27,13 @@ export {
     blogStepByStepPost,
     commentsData,
     allTags,
+    loremTextLg,
+    loremTextMd,
+    loremTextSm,
+    loremTextXs,
+    loremList,
+    loremTextXl,
+    loremTitle,
 } from './postsValues'
 
 export { countries } from './countries.json'
@@ -69,32 +76,30 @@ export const socialLinks = [
     { path: '/linkedin', icon: <LinkedInIcon /> },
 ]
 
-export const categoryData = {
-    [Categories.STARTUP]: { Icon: <StartupIcon />, title: 'Startup' },
-    [Categories.BUSINESS]: { Icon: <BusinessIcon />, title: 'Business' },
-    [Categories.ECONOMY]: { Icon: <EconomyIcon />, title: 'Economy' },
-    [Categories.TECHNOLOGY]: {
-        Icon: <TechnologyIcon />,
-        title: 'Technology',
-    },
-}
-
 export const categoriesData = [
     {
+        id: '1',
         category: Categories.BUSINESS,
-        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        subtitle: loremTextXs,
+        Icon: <BusinessIcon />,
     },
     {
+        id: '2',
         category: Categories.STARTUP,
-        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        subtitle: loremTextXs,
+        Icon: <StartupIcon />,
     },
     {
+        id: '3',
         category: Categories.ECONOMY,
-        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        subtitle: loremTextXs,
+        Icon: <EconomyIcon />,
     },
     {
+        id: '4',
         category: Categories.TECHNOLOGY,
-        subtitle: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        subtitle: loremTextXs,
+        Icon: <TechnologyIcon />,
     },
 ]
 

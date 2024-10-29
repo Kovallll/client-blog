@@ -1,4 +1,4 @@
-export const buttonText = 'Send Message'
+export const formButtonText = 'Send Message'
 export const namePlaceholder = 'Full Name'
 export const emailPlaceholder = 'Your Email'
 export const selectPlaceholder = 'Query Related'

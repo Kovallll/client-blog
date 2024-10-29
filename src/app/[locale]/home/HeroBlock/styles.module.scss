@@ -18,9 +18,11 @@
         top: 12%;
         margin-left: $spacer-lg;
     }
+
     @media (max-width: $md) {
         margin-left: $spacer-md;
     }
+
     @media (max-width: $xs) {
         top: 8%;
         margin-left: $spacer-xxs;
@@ -84,9 +86,11 @@
     @media (max-width: $md) {
         width: 500px;
     }
+
     @media (max-width: $sm) {
         width: 400px;
     }
+
     @media (max-width: $xs) {
         width: 350px;
     }
@@ -97,15 +101,22 @@
 
     width: 600px;
     margin-bottom: $spacer-lg;
+
     @media (max-width: $md) {
         margin-bottom: $spacer-md;
     }
+
     @media (max-width: $sm) {
         margin-bottom: $spacer-sm;
         width: 400px;
     }
+
     @media (max-width: $xs) {
         margin-bottom: $spacer-xs;
         width: 300px;
     }
+}
+
+.highlightText {
+    color: $yellow;
 }

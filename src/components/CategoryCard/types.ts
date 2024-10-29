@@ -1,7 +1,7 @@
-import { Categories } from '@constants'
-
 export interface CategoryCardProps {
-    category: Categories
+    id: string
+    category: string
+    Icon: React.ReactNode
     subtitle?: string
     className?: string
 }

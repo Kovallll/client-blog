@@ -4,6 +4,7 @@ import { memo, useRef } from 'react'
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslations } from 'use-intl'
 
 import { useRouter } from 'src/i18n/routing'
 import { altText } from './config'
@@ -13,9 +14,12 @@ import { AuthorCardProps } from './types'
 import { Paths, socialLinks } from '@constants'
 
 const AuthorCard = (props: AuthorCardProps) => {
-    const { author, subtitle, horizontalCard = false, className } = props
+    const { author, horizontalCard = false, className } = props
+
+    const t = useTranslations('Author')
 
     const cardRef = useRef(null)
+
     const router = useRouter()
 
     const handleClickCard = () => {
@@ -30,7 +34,8 @@ const AuthorCard = (props: AuthorCardProps) => {
         }
     )
 
-    const subtitleText = subtitle ? subtitle : author.description
+    const fullName = t(`authors.${Number(author.id) - 1}.fullName`)
+    const description = t(`authors.${Number(author.id) - 1}.description`)
 
     return (
         <article className={style} onClick={handleClickCard} ref={cardRef}>
@@ -42,8 +47,8 @@ const AuthorCard = (props: AuthorCardProps) => {
                 className={styles.image}
             />
             <div className={styles.text}>
-                <p className={styles.fullName}>{author.fullName}</p>
-                <p className={styles.subtitle}>{subtitleText}</p>
+                <p className={styles.fullName}>{fullName}</p>
+                <p className={styles.description}>{description}</p>
             </div>
             <div className={styles.links}>
                 {socialLinks.map(({ icon, path }) => (

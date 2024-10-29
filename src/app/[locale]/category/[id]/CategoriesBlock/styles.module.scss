@@ -79,6 +79,7 @@
 
 .pairTags {
     @include flex-row-sb;
+
     gap: $spacer-xs;
     margin-bottom: $spacer-xs;
 

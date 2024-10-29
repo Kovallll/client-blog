@@ -1,6 +1,6 @@
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
-import { captionBoldText, captionText } from './config'
 import { ReadMoreButton } from './ReadMoreButton'
 import styles from './styles.module.scss'
 
@@ -8,7 +8,8 @@ import { Excerpt } from '@components/Excerpt'
 import { homeStepByStepPost } from '@constants'
 
 export const HeroBlock = () => {
-    const { id, image, title, subtitle, excerpt } = homeStepByStepPost
+    const { id, image } = homeStepByStepPost
+    const t = useTranslations('HomePage')
 
     return (
         <div className={styles.container}>
@@ -24,16 +25,18 @@ export const HeroBlock = () => {
             <div className={styles.overlay}></div>
             <div className={styles.content}>
                 <p className={styles.caption}>
-                    {captionText}
+                    {t('captionText')}
                     <span className={styles.captionBold}>
-                        {captionBoldText}
+                        {t('captionBoldText')}
                     </span>
                 </p>
-                <p className={styles.title}>{title}</p>
+                <p className={styles.title}>{t('heroTitle')}</p>
                 <div className={styles.publicationInfo}>
-                    <Excerpt excerpt={excerpt} />
+                    <Excerpt>
+                        {(colors) => t.rich('heroExcerpt', colors)}
+                    </Excerpt>
                 </div>
-                <p className={styles.subtitle}>{subtitle}</p>
+                <p className={styles.subtitle}>{t('heroSubtitle')}</p>
                 <ReadMoreButton id={id} />
             </div>
         </div>
