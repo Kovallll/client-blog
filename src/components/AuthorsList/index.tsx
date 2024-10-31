@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations } from 'use-intl'
 
 import styles from './styles.module.scss'

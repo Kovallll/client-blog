@@ -32,7 +32,7 @@ export const Search = ({
     const t = useTranslations('CategoryPage')
     useClickOutside(searchRef, () => handleChangeFocus(false))
 
-    const value = searchValue ? t(`tags.${searchValue}`) : searchValue
+    const value = searchValue
 
     return (
         <div className={styles.search} ref={searchRef}>

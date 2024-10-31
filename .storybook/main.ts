@@ -11,6 +11,7 @@ const config: StorybookConfig = {
         '@storybook/addon-styling-webpack',
         'storybook-next-intl',
     ],
+    staticDirs: ['../public'],
     framework: {
         name: '@storybook/nextjs',
         options: {},

@@ -1,10 +1,13 @@
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 
 import styles from './styles.module.scss'
 import { ArticleProps } from './types'
 
 export const Article = (props: ArticleProps) => {
-    const { caption, title, subtitle, className } = props
+    const { withCaption = true, translate, numberCard, className } = props
+
+    const t = useTranslations(`Article.${translate}.${numberCard - 1}`)
 
     const style = classNames(
         styles.container,
@@ -12,9 +15,9 @@ export const Article = (props: ArticleProps) => {
     )
     return (
         <article className={style}>
-            {caption && <p className={styles.caption}>{caption}</p>}
-            <p className={styles.title}>{title}</p>
-            <p className={styles.subtitle}>{subtitle}</p>
+            {withCaption && <p className={styles.caption}>{t('caption')}</p>}
+            <p className={styles.title}>{t('title')}</p>
+            <p className={styles.subtitle}>{t('subtitle')}</p>
         </article>
     )
 }

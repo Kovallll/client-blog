@@ -48,6 +48,7 @@ import {
     afterNameText,
     beforeNameText,
 } from '@pages/author/[id]/HeroBlock/config'
+import { blogTitle } from '@pages/blog/AllPostsBlock/config'
 import { allCategoryTitle } from '@pages/blog/config'
 import { nextTitle } from '@pages/blog-post/[id]/ReadNext/config'
 import {
@@ -119,15 +120,12 @@ const {
     excerptChunk: homeExcerptChunk,
 } = homeStepByStepPost
 const {
-    title: blogTitle,
+    title: blogHeroTitle,
     subtitle: blogSubtitle,
     excerptChunk: blogExcerptChunk,
 } = blogStepByStepPost
 
 const translate = {
-    Global: {
-        buttonTitle: featureButtonTitle,
-    },
     Header: {
         buttonTitle: vadeoButtonTitle,
         nav: {
@@ -144,8 +142,6 @@ const translate = {
         footerButtonText,
     },
     JoinUs: {
-        title: joinTitle,
-        subtitle: loremTextSm,
         buttonTitle: joinButtonTitle,
     },
     PrivacyPolicy: {
@@ -165,23 +161,81 @@ const translate = {
     NotFoundPage: {
         title: 'Not Found',
     },
+    Article: {
+        Discover: [
+            {
+                caption,
+                title: discoverTitle,
+                subtitle: discoverSubtitle,
+                buttonTitle,
+            },
+        ],
+        JoinUs: [{ title: joinTitle, subtitle: loremTextSm }],
+        HomePage: [
+            {
+                caption: aboutCaption,
+                subtitle: aboutSubtitle,
+                title: aboutTitle,
+            },
+            {
+                caption: ourCaption,
+                subtitle: ourSubtitle,
+                title: ourTitle,
+            },
+        ],
+        AboutUs: [
+            {
+                caption: misionCaption,
+                title: misionTitle,
+                subtitle: misionSubtitle,
+            },
+            {
+                caption: visionCaption,
+                title: visionTitle,
+                subtitle: visionSubtitle,
+            },
+        ],
+        Comment: [
+            {
+                caption: commentCaption,
+                title: commentTitle,
+                subtitle: commentSubtitle,
+            },
+        ],
+    },
+    AboutUsCard: [
+        {
+            title: firstCardTitle,
+            subtitle: firstCardSubtitle,
+            text: firstCardText,
+        },
+        {
+            title: secondCardTitle,
+            subtitle: secondCardSubtitle,
+            text: secondCardText,
+        },
+    ],
+    AboutUsBlock: {
+        HomePage: {
+            buttonTitle: featureButtonTitle,
+        },
+        AboutUs: {
+            buttonTitle: featureButtonTitle,
+        },
+    },
     AboutUs: {
-        misionCaption,
-        misionTitle,
-        misionSubtitle,
-        visionCaption,
-        visionTitle,
-        visionSubtitle,
-        firstCardTitle,
-        firstCardSubtitle,
-        firstCardText,
-        secondCardSubtitle,
-        secondCardText,
-        secondCardTitle,
         cardCaption,
         cardTitle,
         heroText,
         statisticInfo,
+    },
+    CategoryBlock: {
+        HomePage: {
+            title: categoryTitle,
+        },
+        BlogPage: {
+            title: allCategoryTitle,
+        },
     },
     CategoryPage: {
         categoriesTitle,
@@ -200,7 +254,6 @@ const translate = {
         },
     },
     Category: {
-        categoryTitle,
         allCategoryTitle,
         categories: {
             ...categoriesData,
@@ -233,9 +286,10 @@ const translate = {
     Blog: {
         captionBoldText,
         captionText,
-        heroTitle: blogTitle,
+        heroTitle: blogHeroTitle,
         heroSubtitle: blogSubtitle,
         heroExcerpt: blogExcerptChunk,
+        title: blogTitle,
     },
     HomePage: {
         featureTitle,
@@ -248,28 +302,11 @@ const translate = {
         viewAll: viewText,
         heroButtonTitle,
         featureButtonTitle,
-        aboutCaption,
-        aboutSubtitle,
-        aboutTitle,
-        ourCaption,
-        ourSubtitle,
-        ourTitle,
         featuredIn: {
             bottomTitle,
             topTitle,
         },
-        comment: {
-            caption: commentCaption,
-            title: commentTitle,
-            subtitle: commentSubtitle,
-            text: commentsData[0].comment,
-        },
-        discover: {
-            caption,
-            title: discoverTitle,
-            subtitle: discoverSubtitle,
-            buttonTitle,
-        },
+        commentText: commentsData[0].comment,
     },
     Posts: { ...allPosts },
 }

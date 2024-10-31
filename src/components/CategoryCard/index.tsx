@@ -2,6 +2,7 @@
 
 import { memo, useRef } from 'react'
 import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
 
 import { useRouter } from 'src/i18n/routing'
 import styles from './styles.module.scss'
@@ -9,28 +10,25 @@ import { CategoryCardProps } from './types'
 
 import { Paths } from '@constants'
 
-const CategoryCard = ({
-    id,
-    category,
-    subtitle,
-    className,
-    Icon,
-}: CategoryCardProps) => {
-    const cardRef = useRef(null)
+const CategoryCard = (props: CategoryCardProps) => {
+    const { id, className, Icon, withSubtitle = true } = props
 
+    const cardRef = useRef(null)
+    const t = useTranslations('Category')
     const router = useRouter()
+
+    const category = t(`categories.${Number(id) - 1}.category`)
+    const subtitle = t(`categories.${Number(id) - 1}.subtitle`)
 
     const handleClickCard = () => {
         router.push(`${Paths.Category}/${id}`)
     }
 
-    const isWithOutSubtitle = subtitle === undefined ? true : false
-
     const style = classNames(
         styles.container,
         className ? styles[className] : '',
         {
-            [styles.miniCard]: isWithOutSubtitle,
+            [styles.miniCard]: !withSubtitle,
         }
     )
 
@@ -38,7 +36,7 @@ const CategoryCard = ({
         <article className={style} onClick={handleClickCard} ref={cardRef}>
             <div className={styles.iconWrap}>{Icon}</div>
             <p className={styles.title}>{category.toLocaleLowerCase()}</p>
-            {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+            {withSubtitle && <p className={styles.subtitle}>{subtitle}</p>}
         </article>
     )
 }

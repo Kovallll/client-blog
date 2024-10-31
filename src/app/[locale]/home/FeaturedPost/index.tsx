@@ -20,7 +20,6 @@ export const FeaturedPost = () => {
 
     const router = useRouter()
     const t = useTranslations('HomePage')
-    const tPosts = useTranslations('Posts')
 
     const handleClickReadMore = () => {
         router.push(`${Paths.BlogPost}/${id}`)
@@ -42,15 +41,7 @@ export const FeaturedPost = () => {
                 <div className={styles.featuredPostContent}>
                     <PostCard
                         id={id}
-                        excerpt={(colors) =>
-                            tPosts.rich(
-                                `${Number(id) - 1}.excerptChunk`,
-                                colors
-                            )
-                        }
-                        title={tPosts(`${Number(id) - 1}.title`)}
                         image={image}
-                        subtitle={tPosts(`${Number(id) - 1}.subtitle`)}
                         verticalCard={true}
                         className={className}
                     />
@@ -81,13 +72,7 @@ export const FeaturedPost = () => {
                             onClick={handleClikcPostCard}
                             key={id}
                             id={id}
-                            excerpt={(colors) =>
-                                tPosts.rich(
-                                    `${Number(id) - 1}.excerptChunk`,
-                                    colors
-                                )
-                            }
-                            title={tPosts(`${Number(id) - 1}.title`)}
+                            withSubtitle={false}
                         />
                     ))}
                 </div>

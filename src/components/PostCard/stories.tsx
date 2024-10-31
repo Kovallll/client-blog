@@ -19,14 +19,11 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const { excerptChunk, title, subtitle, id, image } = allPosts[0]
+const { id, image } = allPosts[0]
 
 export const DefaultPostCard: Story = {
     args: {
-        excerpt: () => <>{excerptChunk}</>,
         id,
-        title,
-        subtitle,
         image,
     },
 }
