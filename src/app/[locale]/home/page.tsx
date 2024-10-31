@@ -69,7 +69,6 @@ export default function Home() {
                     const style = classNames(styles.component, {
                         [styles.visible]: visibleComponents[index],
                     })
-
                     const isObserverVisible =
                         componentsCount === index + 1 && hasIntersected !== null
 

@@ -250,6 +250,8 @@ test.describe('Test Home Page', () => {
     })
 
     test('test dynamic import content', async ({ page }) => {
+        const oberverDiv = page.getByTestId('observer')
+
         await expect(
             page
                 .locator('section')
@@ -281,7 +283,7 @@ test.describe('Test Home Page', () => {
 
         await expect(page.locator('.styles_container__nkBZr')).not.toBeVisible()
 
-        await page.getByTestId('observer').click()
+        await oberverDiv.scrollIntoViewIfNeeded()
 
         await expect(
             page
@@ -291,7 +293,7 @@ test.describe('Test Home Page', () => {
                 .nth(1)
         ).toBeVisible({ timeout: 10000 })
 
-        await page.getByTestId('observer').click()
+        await oberverDiv.scrollIntoViewIfNeeded()
 
         await expect(
             page.getByText(
@@ -299,7 +301,7 @@ test.describe('Test Home Page', () => {
             )
         ).toBeVisible({ timeout: 10000 })
 
-        await page.getByTestId('observer').click()
+        await oberverDiv.scrollIntoViewIfNeeded()
 
         await expect(
             page
@@ -307,13 +309,13 @@ test.describe('Test Home Page', () => {
                 .filter({ hasText: 'Why we startedIt started out' })
         ).toBeVisible({ timeout: 10000 })
 
-        await page.getByTestId('observer').click()
+        await oberverDiv.scrollIntoViewIfNeeded()
 
         await expect(page.getByText('List of AuthorsFloyd')).toBeVisible({
             timeout: 10000,
         })
 
-        await page.getByTestId('observer').click()
+        await oberverDiv.scrollIntoViewIfNeeded()
 
         await expect(
             page
@@ -322,7 +324,7 @@ test.describe('Test Home Page', () => {
                 .nth(1)
         ).toBeVisible({ timeout: 10000 })
 
-        await page.getByTestId('observer').click()
+        await oberverDiv.scrollIntoViewIfNeeded()
 
         await expect(page.locator('.styles_container__nkBZr')).toBeVisible({
             timeout: 10000,

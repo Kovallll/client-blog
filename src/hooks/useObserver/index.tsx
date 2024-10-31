@@ -10,6 +10,11 @@ export const useObserver = (allComponents: JSX.Element[]) => {
     const componentsCount = components.length
 
     useEffect(() => {
+        const options = {
+            rootMargin: '0px',
+            threshold: 0.01,
+        }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting && !hasIntersected) {
@@ -33,7 +38,7 @@ export const useObserver = (allComponents: JSX.Element[]) => {
                     setHasIntersected(null)
                 }
             })
-        })
+        }, options)
         const element = observeRef.current
 
         if (element) {
