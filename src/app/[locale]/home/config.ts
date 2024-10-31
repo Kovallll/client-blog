@@ -10,3 +10,4 @@ export const ourCaption = 'Our mision'
 export const ourTitle =
     ' Creating valuable content for creatives all around the world'
 export const ourSubtitle = loremTextLg
+export const translate = 'HomePage'

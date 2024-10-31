@@ -29,7 +29,6 @@ export const MainContent = () => {
 
     const sidebarRef = useRef(null)
 
-    const tPosts = useTranslations('Posts')
     const t = useTranslations('CategoryPage')
 
     const { width } = useWindowSize()
@@ -54,16 +53,8 @@ export const MainContent = () => {
                         .map(({ id, image }) => (
                             <PostCard
                                 key={id}
-                                excerpt={(colors) =>
-                                    tPosts.rich(
-                                        `${Number(id) - 1}.excerptChunk`,
-                                        colors
-                                    )
-                                }
                                 id={id}
-                                title={tPosts(`${Number(id) - 1}.title`)}
                                 image={image}
-                                subtitle={tPosts(`${Number(id) - 1}.subtitle`)}
                                 className={className}
                                 verticalCard={isVerticalCard}
                             />

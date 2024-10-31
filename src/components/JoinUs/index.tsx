@@ -1,17 +1,16 @@
-import { useTranslations } from 'use-intl'
-
+import { translate } from './config'
 import { JoinButton } from './JoinButton'
 import styles from './styles.module.scss'
 
 import { Article } from '@components/Article'
 
 const JoinUs = () => {
-    const t = useTranslations('JoinUs')
     return (
         <div className={styles.container}>
             <Article
-                title={t('title')}
-                subtitle={t('subtitle')}
+                numberCard={1}
+                translate={translate}
+                withCaption={false}
                 className="joinUs"
             />
             <JoinButton />

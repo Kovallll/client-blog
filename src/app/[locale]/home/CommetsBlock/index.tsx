@@ -3,7 +3,7 @@
 import { memo, useRef } from 'react'
 import { useTranslations } from 'use-intl'
 
-import { commentGap } from './config'
+import { commentGap, translate } from './config'
 import styles from './styles.module.scss'
 
 import { Article } from '@components/Article'
@@ -47,17 +47,13 @@ const CommetsBlock = () => {
     return (
         <div className={styles.container}>
             <div className={styles.article}>
-                <Article
-                    caption={t('comment.caption')}
-                    title={t('comment.title')}
-                    subtitle={t('comment.subtitle')}
-                />
+                <Article numberCard={1} translate={translate} />
             </div>
             <span className={styles.line}></span>
             <div className={styles.comments} ref={carouselRef}>
                 {commentsData.map(({ author, id, location }) => (
                     <div className={styles.comment} key={id}>
-                        <p className={styles.commetText}>{t('comment.text')}</p>
+                        <p className={styles.commetText}>{t('commentText')}</p>
                         <AuthorCard
                             author={author}
                             subtitle={location}

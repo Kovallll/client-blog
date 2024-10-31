@@ -1,22 +1,8 @@
 import { toast } from 'react-toastify'
 
 import { FooterSchemaType } from '@components/Footer/SubscribeBlock/schema'
-import { allTags } from '@constants'
 import emailjs from '@emailjs/browser'
 import { ContactSchemaType } from '@pages/contact-us/Form/schema'
-
-export const getPairsTags = () => {
-    const pairsTags = []
-
-    for (let i = 0; i < allTags.length; i += 2) {
-        if (allTags[i + 1]) pairsTags.push([allTags[i], allTags[i + 1]])
-        else {
-            pairsTags.push([allTags[i]])
-        }
-    }
-
-    return pairsTags
-}
 
 export const sendMail = (values: FooterSchemaType | ContactSchemaType) => {
     toast.info('Sending...')

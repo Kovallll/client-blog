@@ -1,3 +1,5 @@
+'use client'
+
 import classNames from 'classnames'
 import { useTranslations } from 'use-intl'
 
@@ -7,8 +9,8 @@ import { CategoryBlockProps } from './types'
 import CategoryCard from '@components/CategoryCard'
 import { categoriesData } from '@constants'
 
-const CategoryBlock = ({ title, className }: CategoryBlockProps) => {
-    const t = useTranslations('Category')
+const CategoryBlock = ({ translate, className }: CategoryBlockProps) => {
+    const tPage = useTranslations(`CategoryBlock.${translate}`)
 
     const style = classNames(
         styles.container,
@@ -17,18 +19,13 @@ const CategoryBlock = ({ title, className }: CategoryBlockProps) => {
 
     return (
         <section className={style}>
-            <h2 className={styles.title}>{title}</h2>
-            <div className={styles.categories} data-testid='categories'>
+            <h2 className={styles.title}>{tPage('title')}</h2>
+            <div className={styles.categories} data-testid="categories">
                 {categoriesData.map(({ id, Icon }) => {
-                    const category = t(`categories.${Number(id) - 1}.category`)
-                    const subtitle = t(`categories.${Number(id) - 1}.subtitle`)
-
                     return (
                         <CategoryCard
                             id={id}
                             key={id}
-                            category={category}
-                            subtitle={subtitle}
                             Icon={Icon}
                         />
                     )

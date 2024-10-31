@@ -3,6 +3,7 @@
 import { memo, useRef } from 'react'
 import classNames from 'classnames'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 import { useRouter } from 'src/i18n/routing'
 import styles from './styles.module.scss'
@@ -15,16 +16,15 @@ const PostCard = (props: PostCardProps) => {
     const {
         id,
         image,
-        subtitle,
-        title,
-        excerpt,
         className,
         onClick,
         verticalCard = false,
+        withSubtitle = true,
     } = props
 
     const cardRef = useRef(null)
     const router = useRouter()
+    const t = useTranslations('Posts')
 
     const handleClickPostCard = () => {
         if (onClick) {
@@ -52,10 +52,18 @@ const PostCard = (props: PostCardProps) => {
             )}
             <div className={styles.info}>
                 <div className={styles.excerpt}>
-                    <Excerpt>{excerpt}</Excerpt>
+                    <Excerpt>
+                        {(colors) =>
+                            t.rich(`${Number(id) - 1}.excerptChunk`, colors)
+                        }
+                    </Excerpt>
                 </div>
-                <p className={styles.title}>{title}</p>
-                {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+                <p className={styles.title}>{t(`${Number(id) - 1}.title`)}</p>
+                {withSubtitle && (
+                    <p className={styles.subtitle}>
+                        {t(`${Number(id) - 1}.subtitle`)}
+                    </p>
+                )}
             </div>
         </article>
     )

@@ -45,15 +45,14 @@ export interface CommentsData {
 export type PaginationDirection = 'prev' | 'next'
 
 export interface AboutUsProps {
-    firstArticle: Article
-    secondArticle: Article
     withLine: boolean
+    translate: string
 }
 
 export interface Article {
-    title: string
-    subtitle: string
-    caption?: string
+    translate: string
+    numberCard: number
+    withCaption?: boolean
     className?: string
 }
 

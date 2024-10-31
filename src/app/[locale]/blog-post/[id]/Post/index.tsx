@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import { useTranslations } from 'use-intl'
 
@@ -20,12 +22,11 @@ export const Post = ({ post }: PostProps) => {
         category: postCategory,
     } = post
     const tPosts = useTranslations('Posts')
-    const tCategory = useTranslations('Category')
+
     const { id: categoryId, Icon } = categoriesData.find(
         (category) => category.category === postCategory
     )!
 
-    const category = tCategory(`categories.${Number(categoryId) - 1}.category`)
     const title = tPosts(`${Number(postId) - 1}.title`)
 
     return (
@@ -40,9 +41,9 @@ export const Post = ({ post }: PostProps) => {
                 <div className={styles.title}>{title}</div>
                 <CategoryCard
                     id={categoryId}
-                    category={category}
                     className={className}
                     Icon={Icon}
+                    withSubtitle={false}
                 />
             </div>
             {image && (

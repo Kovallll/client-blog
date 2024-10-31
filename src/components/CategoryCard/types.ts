@@ -1,7 +1,6 @@
 export interface CategoryCardProps {
     id: string
-    category: string
+    withSubtitle?: boolean
     Icon: React.ReactNode
-    subtitle?: string
     className?: string
 }

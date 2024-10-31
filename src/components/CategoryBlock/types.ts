@@ -1,4 +1,4 @@
 export interface CategoryBlockProps {
-    title: string
+    translate: string
     className?: string
 }

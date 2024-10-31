@@ -1,10 +1,10 @@
 'use client'
+
 import { Fragment } from 'react'
 import classNames from 'classnames'
 import dynamic from 'next/dynamic'
-import { useTranslations } from 'use-intl'
 
-import { countOfAuthors } from './config'
+import { countOfAuthors, translate } from './config'
 import { FeaturedPost } from './FeaturedPost'
 import { HeroBlock } from './HeroBlock'
 import styles from './page.module.scss'
@@ -19,32 +19,17 @@ const DiscoverBlock = dynamic(() => import('./DiscoverBlock'))
 const CommetsBlock = dynamic(() => import('./CommetsBlock'))
 const JoinUs = dynamic(() => import('@components/JoinUs'))
 
+const allComponents = [
+    <AboutUsBlock translate={translate} withLine={true} />,
+    <CategoryBlock translate={translate} />,
+    <DiscoverBlock />,
+    <AuthorsList countAuthors={countOfAuthors} />,
+    <FeaturedInBlock />,
+    <CommetsBlock />,
+    <JoinUs />,
+]
+
 export default function Home() {
-    const t = useTranslations('HomePage')
-    const tCategory = useTranslations('Category')
-
-    const allComponents = [
-        <AboutUsBlock
-            firstArticle={{
-                title: t('aboutTitle'),
-                subtitle: t('aboutSubtitle'),
-                caption: t('aboutCaption'),
-            }}
-            secondArticle={{
-                title: t('ourTitle'),
-                subtitle: t('ourSubtitle'),
-                caption: t('ourCaption'),
-            }}
-            withLine={true}
-        />,
-        <CategoryBlock title={tCategory('categoryTitle')} />,
-        <DiscoverBlock />,
-        <AuthorsList countAuthors={countOfAuthors} />,
-        <FeaturedInBlock />,
-        <CommetsBlock />,
-        <JoinUs />,
-    ]
-
     const {
         components,
         componentsCount,

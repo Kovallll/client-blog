@@ -29,9 +29,6 @@ const postInfo = {
 const contentWriter = 'Автор контента @Company'
 
 export default {
-    Global: {
-        buttonTitle: 'Подробнее >',
-    },
     Header: {
         buttonTitle: 'Видео о нас',
         nav: {
@@ -49,8 +46,6 @@ export default {
         footerButtonText: 'Подписаться',
     },
     JoinUs: {
-        title: 'Присоединяйтесь к нашей команде, чтобы стать частью нашей истории',
-        subtitle: lorem.loremTextSm,
         buttonTitle: 'Присоединиться',
     },
     CategoryPage: {
@@ -72,9 +67,16 @@ export default {
     NotFoundPage: {
         title: 'Страница не найдена',
     },
+    CategoryBlock: {
+        HomePage: {
+            title: 'Выберите категорию',
+        },
+
+        BlogPage: {
+            title: 'Все категории',
+        },
+    },
     Category: {
-        categoryTitle: 'Выберите категорию',
-        allCategoryTitle: 'Все категории',
         categories: [
             {
                 category: 'Бизнес',
@@ -161,20 +163,74 @@ export default {
             },
         ],
     },
+    AboutUsBlock: {
+        HomePage: {
+            buttonTitle: 'Подробнее >',
+        },
+        AboutUs: {
+            buttonTitle: 'Подробнее >',
+        },
+    },
+    Article: {
+        Discover: [
+            {
+                caption: 'Почему мы начали',
+                title: 'Все началось с простой идеи, а затем переросло в нашу страсть',
+                subtitle: lorem.loremTextMd,
+                buttonTitle: 'Узнать больше',
+            },
+        ],
+        JoinUs: [
+            {
+                title: 'Присоединяйтесь к нашей команде, чтобы стать частью нашей истории',
+                subtitle: lorem.loremTextSm,
+            },
+        ],
+        HomePage: [
+            {
+                caption: 'О нас',
+                subtitle: lorem.loremTextSm,
+                title: 'Мы - сообщество авторов контента, которые делятся своими знаниями',
+            },
+            {
+                caption: 'Наша задача',
+                subtitle: lorem.loremTextLg,
+                title: 'Создание ценного контента для креативщиков по всему миру',
+            },
+        ],
+        AboutUs: [
+            {
+                caption: 'Наша миссия',
+                title: 'Создание ценного контента для креативщиков по всему миру',
+                subtitle: lorem.loremTextLg,
+            },
+            {
+                caption: 'Наше видение',
+                title: 'Платформа, которая дает людям возможность совершенствоваться',
+                subtitle: lorem.loremTextLg,
+            },
+        ],
+        Comment: [
+            {
+                caption: 'рекомендации',
+                title: 'Что люди говорят о нашем блоге',
+                subtitle: lorem.loremTextSm,
+            },
+        ],
+    },
+    AboutUsCard: [
+        {
+            title: 'Наша команда креативщиков',
+            subtitle: lorem.loremTextSm,
+            text: lorem.loremTextLg,
+        },
+        {
+            title: 'Почему мы завели этот блог',
+            subtitle: lorem.loremTextSm,
+            text: lorem.loremTextLg,
+        },
+    ],
     AboutUs: {
-        misionCaption: 'Наша миссия',
-        misionTitle: 'Создание ценного контента для креативщиков по всему миру',
-        misionSubtitle: lorem.loremTextLg,
-        visionCaption: 'Наше видение',
-        visionTitle:
-            'Платформа, которая дает людям возможность совершенствоваться',
-        visionSubtitle: lorem.loremTextLg,
-        firstCardTitle: 'Наша команда креативщиков',
-        firstCardSubtitle: lorem.loremTextSm,
-        firstCardText: lorem.loremTextLg,
-        secondCardSubtitle: lorem.loremTextSm,
-        secondCardText: lorem.loremTextLg,
-        secondCardTitle: 'Почему мы завели этот блог',
         cardCaption: 'О нас',
         cardTitle:
             'Мы - команда авторов контента, которые делятся своими знаниями',
@@ -215,6 +271,7 @@ export default {
         heroTitle: 'Пошаговое руководство по выбору отличных шрифтов',
         heroSubtitle: lorem.loremTextSm,
         heroExcerpt: 'Автор: <purple>Джеймс Уэст</purple> | 23 мая 2022',
+        title: 'Все посты',
     },
     HomePage: {
         featureTitle: 'Избранный пост',
@@ -227,29 +284,11 @@ export default {
         viewAll: 'Просмотреть все',
         heroButtonTitle: 'Подробнее',
         featureButtonTitle: 'Подробнее >',
-        aboutCaption: 'О нас',
-        aboutSubtitle: lorem.loremTextSm,
-        aboutTitle:
-            'Мы - сообщество авторов контента, которые делятся своими знаниями',
-        ourCaption: 'Наша задача',
-        ourSubtitle: lorem.loremTextLg,
-        ourTitle: 'Создание ценного контента для креативщиков по всему миру',
         featuredIn: {
             bottomTitle: 'Представлены в',
             topTitle: 'Мы',
         },
-        discover: {
-            caption: 'Почему мы начали',
-            title: 'Все началось с простой идеи, а затем переросло в нашу страсть',
-            subtitle: lorem.loremTextMd,
-            buttonTitle: 'Узнать больше',
-        },
-        comment: {
-            caption: 'рекомендации',
-            title: 'Что люди говорят о нашем блоге',
-            subtitle: lorem.loremTextSm,
-            text: lorem.loremTextSm,
-        },
+        commentText: lorem.loremTextSm,
     },
     Posts: [
         {

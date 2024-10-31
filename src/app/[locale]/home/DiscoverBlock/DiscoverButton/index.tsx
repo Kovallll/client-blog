@@ -10,7 +10,8 @@ import { Paths } from '@constants'
 
 export const DiscoverButton = () => {
     const router = useRouter()
-    const t = useTranslations('HomePage')
+    const t = useTranslations('Article.Discover.0')
+
     const handleClickDiscoverButton = () => {
         router.push(Paths.AboutUs)
     }
@@ -19,7 +20,7 @@ export const DiscoverButton = () => {
         <div className={styles.wrap}>
             <Button
                 onClick={handleClickDiscoverButton}
-                title={t('discover.buttonTitle')}
+                title={t('buttonTitle')}
             />
         </div>
     )

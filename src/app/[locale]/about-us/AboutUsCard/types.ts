@@ -1,7 +1,5 @@
 export interface AboutUsCardProps {
-    title: string
-    subtitle: string
-    text: string
+    numberCard: number
     image: { src: string; altText: string }
     isReverse?: boolean
 }

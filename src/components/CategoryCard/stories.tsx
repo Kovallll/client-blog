@@ -16,6 +16,5 @@ export const DefaultCategoryCard: Story = {
     args: {
         Icon: categoriesData[0].Icon,
         id: categoriesData[0].id,
-        category: categoriesData[0].category,
     },
 }
