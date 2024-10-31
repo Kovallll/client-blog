@@ -47,7 +47,7 @@ export const MainContent = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.posts}>
+            <div className={styles.posts} data-testid='category-posts'>
                 {posts.length !== 0 ? (
                     posts
                         .slice(0, postsOnPage)

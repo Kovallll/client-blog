@@ -58,7 +58,11 @@ export default function Home() {
             <HeroBlock />
             <div className={styles.content}>
                 {componentsCount === 0 && (
-                    <div className={styles.observe} ref={observeRef} />
+                    <div
+                        className={styles.observe}
+                        ref={observeRef}
+                        data-testid="observer"
+                    />
                 )}
                 <FeaturedPost />
                 {components.map((component, index) => {
@@ -75,6 +79,7 @@ export default function Home() {
                                 <div
                                     className={styles.observe}
                                     ref={observeRef}
+                                    data-testid="observer"
                                 />
                             )}
                             <div className={style} key={index}>

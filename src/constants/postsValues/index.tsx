@@ -137,7 +137,7 @@ export const commentsData: CommentsData[] = [
 ]
 
 export const homeStepByStepPost: PostData = {
-    id: 'home-step-by-step',
+    id: '17',
     excerptChunk: 'By <yellow>James West</yellow> | May 23, 2022',
     category: Categories.STARTUP,
     title: 'Step-by-step guide to choosing great font pairs',
@@ -153,7 +153,7 @@ export const homeStepByStepPost: PostData = {
 }
 
 export const blogStepByStepPost: PostData = {
-    id: 'blog-step-by-step',
+    id: '18',
     excerptChunk: 'By <purple>James West</purple> | May 23, 2022',
     category: Categories.STARTUP,
     title: 'Step-by-step guide to choosing great font pairs',

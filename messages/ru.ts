@@ -69,6 +69,9 @@ export default {
             Marketing: 'Маркетинг',
         },
     },
+    NotFoundPage: {
+        title: 'Страница не найдена',
+    },
     Category: {
         categoryTitle: 'Выберите категорию',
         allCategoryTitle: 'Все категории',
@@ -340,6 +343,18 @@ export default {
         },
         {
             title: '4 Системы проектирования Figma, которые вы можете скачать бесплатно уже сегодня.',
+            excerptChunk: 'Автор: <purple>Джеймс Уэст</purple> | 23 мая 2022',
+            subtitle: lorem.loremTextSm,
+            postInfo,
+        },
+        {
+            title: 'Пошаговое руководство по выбору отличных шрифтов',
+            excerptChunk: 'Автор: <purple>Джеймс Уэст</purple> | 23 мая 2022',
+            subtitle: lorem.loremTextSm,
+            postInfo,
+        },
+        {
+            title: 'Пошаговое руководство по выбору отличных шрифтов',
             excerptChunk: 'Автор: <purple>Джеймс Уэст</purple> | 23 мая 2022',
             subtitle: lorem.loremTextSm,
             postInfo,

@@ -1,6 +1,6 @@
 import CategoryCard from '.'
 
-import { Categories } from '@constants'
+import { categoriesData } from '@constants'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
@@ -14,6 +14,8 @@ type Story = StoryObj<typeof meta>
 
 export const DefaultCategoryCard: Story = {
     args: {
-        category: Categories.BUSINESS,
+        Icon: categoriesData[0].Icon,
+        id: categoriesData[0].id,
+        category: categoriesData[0].category,
     },
 }

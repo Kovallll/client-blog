@@ -34,7 +34,11 @@ export const Header = (props: HeaderProps) => {
             <div className={styles.content}>
                 <nav className={styles.nav}>
                     {navigationLinks.slice(0, navCount).map(({ path }) => (
-                        <Link key={path} className={styles.link} href={path}>
+                        <Link
+                            key={path}
+                            className={styles.link}
+                            href={path}
+                        >
                             {t(`nav.${path}`)}
                         </Link>
                     ))}

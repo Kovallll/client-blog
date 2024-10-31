@@ -35,7 +35,7 @@ export const AllPostsBlock = () => {
     })
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} data-testid='all-posts'>
             <h2 className={styles.title}>{title}</h2>
             {posts.map(({ id, image }) => (
                 <PostCard
