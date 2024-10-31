@@ -38,7 +38,7 @@ export default function Home() {
         <div className={styles.page}>
             <HeroBlock authorData={authorData} />
             <div className={styles.content}>
-                <div className={styles.posts}>
+                <div className={styles.posts} data-testid="author-posts">
                     <h2 className={styles.title}>{t('postTitle')}</h2>
                     {authorPosts.map(({ id, image }) => (
                         <PostCard

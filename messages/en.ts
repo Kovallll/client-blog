@@ -162,6 +162,9 @@ const translate = {
             ...authorsData,
         },
     },
+    NotFoundPage: {
+        title: 'Not Found',
+    },
     AboutUs: {
         misionCaption,
         misionTitle,

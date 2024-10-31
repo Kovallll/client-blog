@@ -29,7 +29,7 @@ export const ReadNext = ({ post: currentPost }: ReadNextProps) => {
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>{t('nextTitle')}</h2>
-            <div className={styles.posts}>
+            <div className={styles.posts} data-testid='next-posts'>
                 {categoryPosts.slice(0, postsOnPage).map(({ id, image }) => {
                     const excerpt = (
                         colors: Record<Colors, (chunks: ReactNode) => ReactNode>

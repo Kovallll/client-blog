@@ -53,7 +53,7 @@ export const CategoriesBlock = ({
                     />
                 </div>
             </div>
-            <div className={styles.categories}>
+            <div className={styles.categories} data-testid='category-cards'>
                 <p className={styles.title}>{t('categoriesTitle')}</p>
                 {categoriesData.map(({ id, category, Icon }) => {
                     const categoryTitle = tCategory(
@@ -77,7 +77,7 @@ export const CategoriesBlock = ({
             </div>
             <div className={styles.allTags}>
                 <p className={styles.title}>{t('tagsTitle')}</p>
-                <div className={styles.tags}>
+                <div className={styles.tags} data-testid='category-tags'>
                     {pairsTags.map((pairTags, index) => (
                         <div className={styles.pairTags} key={index}>
                             <Tag

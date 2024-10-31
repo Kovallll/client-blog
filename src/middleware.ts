@@ -6,7 +6,7 @@ import { routing } from './i18n/routing'
 import { Paths } from '@constants'
 
 export const config = {
-    matcher: ['/', '/(ru|en)/:path*'],
+    matcher: ['/', `/(en|ru)/:path*`],
 }
 
 export default function middleware(request: NextRequest) {

@@ -72,7 +72,10 @@ export const FeaturedPost = () => {
                         {t('viewAll')}
                     </button>
                 </div>
-                <div className={styles.allPostsContent}>
+                <div
+                    className={styles.allPostsContent}
+                    data-testid="feature-allposts"
+                >
                     {homePostsData.map(({ id }) => (
                         <PostCard
                             onClick={handleClikcPostCard}

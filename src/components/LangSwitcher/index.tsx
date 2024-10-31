@@ -1,5 +1,5 @@
 'use client'
-import { ChangeEvent, memo } from 'react'
+import { ChangeEvent, memo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useLocale } from 'next-intl'
 
@@ -8,6 +8,7 @@ import { en, ru } from './config'
 import styles from './styles.module.scss'
 
 const LangSwitcher = () => {
+    const [isRuSelected, setIsRuSelected] = useState(false)
     const router = useRouter()
     const pathName = usePathname()
     const locale = useLocale()
@@ -20,8 +21,10 @@ const LangSwitcher = () => {
             : '/' + pathName
         if (locale === 'en') {
             router.push(`/en${cleanedPathName}`)
+            setIsRuSelected(false)
         } else {
             router.push(`/ru${cleanedPathName}`)
+            setIsRuSelected(true)
         }
     }
 
@@ -30,9 +33,14 @@ const LangSwitcher = () => {
             className={styles.select}
             onChange={handleLanguageChange}
             defaultValue={locale}
+            data-testid="lang-selectt"
         >
-            <option value="ru">{en}</option>
-            <option value="en">{ru}</option>
+            <option selected={isRuSelected} value="ru">
+                {ru}
+            </option>
+            <option selected={!isRuSelected} value="en">
+                {en}
+            </option>
         </select>
     )
 }

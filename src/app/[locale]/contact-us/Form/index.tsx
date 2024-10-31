@@ -62,6 +62,7 @@ export const Form = () => {
                 className={styles.select}
                 name="query"
                 id="query"
+                data-testid="form-select"
                 value={formik.values.query}
                 onChange={formik.handleChange}
             >

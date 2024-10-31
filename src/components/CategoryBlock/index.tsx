@@ -18,7 +18,7 @@ const CategoryBlock = ({ title, className }: CategoryBlockProps) => {
     return (
         <section className={style}>
             <h2 className={styles.title}>{title}</h2>
-            <div className={styles.categories}>
+            <div className={styles.categories} data-testid='categories'>
                 {categoriesData.map(({ id, Icon }) => {
                     const category = t(`categories.${Number(id) - 1}.category`)
                     const subtitle = t(`categories.${Number(id) - 1}.subtitle`)
