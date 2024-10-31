@@ -28,7 +28,7 @@ export default defineConfig({
         },
     ],
     webServer: {
-        command: 'yarn start',
+        command: 'yarn dev',
         url: 'http://localhost:3000/',
         timeout: 120000,
     },
