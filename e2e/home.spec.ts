@@ -190,7 +190,7 @@ test.describe('Test Home Page', () => {
 
         await expect(
             page.getByTestId('feature-allposts').locator('article')
-        ).toHaveCount(4)  
+        ).toHaveCount(4)
     })
 
     test('test russian posts block', async ({ page }) => {
@@ -238,7 +238,7 @@ test.describe('Test Home Page', () => {
 
         await expect(
             page.getByTestId('feature-allposts').locator('article')
-        ).toHaveCount(4) 
+        ).toHaveCount(4)
     })
 
     test('test posts block readme button', async ({ page }) => {
@@ -258,6 +258,29 @@ test.describe('Test Home Page', () => {
                 .nth(1)
         ).not.toBeVisible()
 
+        await expect(
+            page.getByText(
+                'Choose A CatagorybusinessLorem ipsum dolor sit amet, consectetuer adipiscing'
+            )
+        ).not.toBeVisible()
+
+        await expect(
+            page
+                .locator('section')
+                .filter({ hasText: 'Why we startedIt started out' })
+        ).not.toBeVisible()
+
+        await expect(
+            page
+                .locator('div')
+                .filter({ hasText: /^We areFeatured in$/ })
+                .nth(1)
+        ).not.toBeVisible()
+
+        await expect(page.getByText('List of AuthorsFloyd')).not.toBeVisible()
+
+        await expect(page.locator('.styles_container__nkBZr')).not.toBeVisible()
+
         await page.getByTestId('observer').click()
 
         await expect(
@@ -268,12 +291,6 @@ test.describe('Test Home Page', () => {
                 .nth(1)
         ).toBeVisible({ timeout: 10000 })
 
-        await expect(
-            page.getByText(
-                'Choose A CatagorybusinessLorem ipsum dolor sit amet, consectetuer adipiscing'
-            )
-        ).not.toBeVisible()
-
         await page.getByTestId('observer').click()
 
         await expect(
@@ -282,12 +299,6 @@ test.describe('Test Home Page', () => {
             )
         ).toBeVisible({ timeout: 10000 })
 
-        await expect(
-            page
-                .locator('section')
-                .filter({ hasText: 'Why we startedIt started out' })
-        ).not.toBeVisible()
-
         await page.getByTestId('observer').click()
 
         await expect(
@@ -295,8 +306,6 @@ test.describe('Test Home Page', () => {
                 .locator('section')
                 .filter({ hasText: 'Why we startedIt started out' })
         ).toBeVisible({ timeout: 10000 })
-
-        await expect(page.getByText('List of AuthorsFloyd')).not.toBeVisible()
 
         await page.getByTestId('observer').click()
 
@@ -304,14 +313,7 @@ test.describe('Test Home Page', () => {
             timeout: 10000,
         })
 
-        await expect(
-            page
-                .locator('div')
-                .filter({ hasText: /^We areFeatured in$/ })
-                .nth(1)
-        ).not.toBeVisible()
-
-         await page.getByTestId('observer').click()
+        await page.getByTestId('observer').click()
 
         await expect(
             page
@@ -319,8 +321,6 @@ test.describe('Test Home Page', () => {
                 .filter({ hasText: /^We areFeatured in$/ })
                 .nth(1)
         ).toBeVisible({ timeout: 10000 })
-
-        await expect(page.locator('.styles_container__nkBZr')).not.toBeVisible()
 
         await page.getByTestId('observer').click()
 
