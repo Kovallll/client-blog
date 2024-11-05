@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 import { useRouter } from 'src/i18n/routing'
+import { imageHeight, imageWidth } from './config'
 import styles from './styles.module.scss'
 import { PostCardProps } from './types'
 
@@ -43,8 +44,8 @@ const PostCard = (props: PostCardProps) => {
         <article className={style} onClick={handleClickPostCard} ref={cardRef}>
             {image && (
                 <Image
-                    width={600}
-                    height={350}
+                    width={imageWidth}
+                    height={imageHeight}
                     src={image.imageUrl}
                     alt={image.altText ?? ''}
                     className={styles.image}

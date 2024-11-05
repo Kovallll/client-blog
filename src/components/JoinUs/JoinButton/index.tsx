@@ -11,6 +11,7 @@ import { Paths } from '@constants'
 export const JoinButton = () => {
     const router = useRouter()
     const t = useTranslations('JoinUs')
+
     const handleClickJoinButton = () => {
         router.push(Paths.ContactUs)
     }

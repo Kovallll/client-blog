@@ -12,6 +12,7 @@ export const Input = (props: InputProps) => {
         onChangeInput,
         value,
         className,
+        onFocusInput,
         ...restProps
     } = props
 
@@ -24,6 +25,10 @@ export const Input = (props: InputProps) => {
         }
     }
 
+    const handleFocus = () => {
+        if (onFocusInput) onFocusInput(true)
+    }
+
     const style = classNames(styles.wrap, className ? styles[className] : '')
 
     return (
@@ -33,6 +38,7 @@ export const Input = (props: InputProps) => {
             )}
             <input
                 {...restProps}
+                onFocus={handleFocus}
                 placeholder={placeholder}
                 className={styles.input}
                 value={value}

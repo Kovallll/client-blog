@@ -4,10 +4,16 @@ import { memo, useRef } from 'react'
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useTranslations } from 'use-intl'
+import { useTranslations } from 'next-intl'
 
 import { useRouter } from 'src/i18n/routing'
-import { altText } from './config'
+import {
+    altText,
+    imageCardHeight,
+    imageCardWidth,
+    imagePageHeight,
+    imagePageWidth,
+} from './config'
 import styles from './styles.module.scss'
 import { AuthorCardProps } from './types'
 
@@ -36,14 +42,16 @@ const AuthorCard = (props: AuthorCardProps) => {
 
     const fullName = t(`authors.${Number(author.id) - 1}.fullName`)
     const description = t(`authors.${Number(author.id) - 1}.description`)
+    const imageWidth = horizontalCard ? imageCardWidth : imagePageWidth
+    const imageHeight = horizontalCard ? imageCardHeight : imagePageHeight
 
     return (
         <article className={style} onClick={handleClickCard} ref={cardRef}>
             <Image
                 alt={altText}
                 src={author.avatarUrl}
-                width={horizontalCard ? 48 : 130}
-                height={horizontalCard ? 48 : 130}
+                width={imageWidth}
+                height={imageHeight}
                 className={styles.image}
             />
             <div className={styles.text}>

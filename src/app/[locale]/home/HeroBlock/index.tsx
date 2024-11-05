@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
+import { imageHeight, imageWidth } from './config'
 import { ReadMoreButton } from './ReadMoreButton'
 import styles from './styles.module.scss'
 
@@ -15,11 +16,12 @@ export const HeroBlock = () => {
         <div className={styles.container}>
             {image && (
                 <Image
-                    width={1440}
-                    height={720}
+                    width={imageWidth}
+                    height={imageHeight}
                     alt={image?.altText}
                     src={image?.imageUrl}
                     className={styles.image}
+                    loading="lazy"
                 />
             )}
             <div className={styles.overlay}></div>

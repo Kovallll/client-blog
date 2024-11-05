@@ -37,6 +37,7 @@ export const CategoriesBlock = ({
     const t = useTranslations('CategoryPage')
 
     const handleClickTag = (value: string) => {
+        console.log(value, 'value')
         handleChangeSearchTag(t(`tags.${value}`))
         handleSearchTag(value)
     }

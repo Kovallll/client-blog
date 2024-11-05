@@ -12,3 +12,5 @@ export const cardTitle =
 export const cardCaption = 'ABOUT US'
 export const heroText = loremTextMd
 export const className = 'aboutImage'
+export const imageWidth = 1280
+export const imageHeight = 440

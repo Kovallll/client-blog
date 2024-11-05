@@ -4,7 +4,7 @@ import { memo, useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import mapboxgl, { LngLatLike } from 'mapbox-gl'
 
-import { center, zoom } from './config'
+import { centerMap, zoom } from './config'
 import { Marker } from './Marker'
 import styles from './styles.module.scss'
 
@@ -21,7 +21,7 @@ const Map = () => {
         const mapboxMap = new mapboxgl.Map({
             container: node,
             accessToken: process.env.NEXT_PUBLIC_MAPBOX_TOKEN,
-            center: center as LngLatLike,
+            center: centerMap as LngLatLike,
             zoom,
         })
 

@@ -6,3 +6,5 @@ export const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
  Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem.
   At risus viverra adipiscing at in tellus.`
 export const className = 'authorLine'
+export const imageWidth = 250
+export const imageHeight = 300

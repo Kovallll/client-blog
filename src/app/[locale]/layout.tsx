@@ -31,10 +31,13 @@ export default async function RootLayout({
     return (
         <html lang={locale} className={sen.className}>
             <head>
+                <meta name="description" content="Blog for clients." />
+                <meta name="robots" content="all" />
                 <link
                     href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css"
                     rel="stylesheet"
                 />
+                <title>Client Blog</title>
             </head>
             <body className={styles.container}>
                 <NextIntlClientProvider messages={messages}>

@@ -70,10 +70,22 @@ export const icons = {
 }
 
 export const socialLinks = [
-    { path: '/facebook', icon: <FacebookIcon /> },
-    { path: '/twitter', icon: <TwitterIcon /> },
-    { path: '/insta', icon: <InstagramIcon /> },
-    { path: '/linkedin', icon: <LinkedInIcon /> },
+    {
+        path: '/facebook',
+        icon: <FacebookIcon title="facebookIcon" />,
+    },
+    {
+        path: '/twitter',
+        icon: <TwitterIcon title="twitterIcon" />,
+    },
+    {
+        path: '/instagram',
+        icon: <InstagramIcon title="instagramIcon" />,
+    },
+    {
+        path: '/linkedin',
+        icon: <LinkedInIcon title="linkedinIcon" />,
+    },
 ]
 
 export const categoriesData = [

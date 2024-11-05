@@ -12,7 +12,7 @@ export const config = {
 export default function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl
     const [, locale] = pathname.split('/')
-
+    
     if (pathname === '/') {
         request.nextUrl.pathname = `/${locale}/${Paths.Home}`
     }
