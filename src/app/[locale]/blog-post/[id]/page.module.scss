@@ -1,0 +1,11 @@
+@import '@styles/global.scss';
+
+.page {
+    @include flex-column-center;
+
+    margin: 0px $spacer-xs;
+}
+
+.content {
+    @extend %contentWrap;
+}

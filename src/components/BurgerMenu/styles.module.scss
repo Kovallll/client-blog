@@ -1,0 +1,106 @@
+@import '@styles/global.scss';
+
+.container {
+    display: none;
+
+    @media (max-width: $sm) {
+        @include flex-row-start;
+
+        width: 100%;
+        margin-right: $spacer-sm;
+    }
+
+    @media (max-width: $xs) {
+        margin-right: $spacer-xs;
+    }
+}
+
+.menu {
+    @include flex-column-center;
+
+    justify-content: space-between;
+    height: 30px;
+    position: relative;
+
+    @media (max-width: $md) {
+        height: 28px;
+    }
+
+    @media (max-width: $sm) {
+        height: 24px;
+    }
+
+    @media (max-width: $xs) {
+        height: 20px;
+    }
+}
+
+.line {
+    position: relative;
+    background: $white;
+    width: 40px;
+    height: 4px;
+    border-radius: 16px;
+    transition:
+        transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        opacity 0.55s ease,
+        top 0.55s ease;
+
+    @media (max-width: $md) {
+        width: 36px;
+    }
+
+    @media (max-width: $xs) {
+        height: 3px;
+        width: 30px;
+    }
+}
+
+.activeLine {
+    &:nth-child(1) {
+        transform: rotate(45deg);
+        top: 42%;
+    }
+
+    &:nth-child(3) {
+        transform: rotate(135deg);
+        top: -42%;
+    }
+
+    &:nth-child(2) {
+        opacity: 0;
+    }
+}
+
+.navbar {
+    display: none;
+    width: 100%;
+    position: absolute;
+
+    background: $light-pink;
+    padding: $spacer-xs;
+    z-index: 10;
+    top: 42px;
+
+    @media (max-width: $xs) {
+        top: 34px;
+    }
+}
+
+.activeNavbar {
+    @include flex-column-center;
+}
+
+.link {
+    @include flex-row-center;
+
+    text-decoration: none;
+    color: $black;
+    padding: $spacer-xxxs;
+    font-size: $fs-xs;
+    width: 100%;
+
+    @media (max-width: $md) {
+        font-size: $fs-xxs;
+    }
+}

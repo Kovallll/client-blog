@@ -1,0 +1,33 @@
+@import '@styles/global.scss';
+
+.page {
+    @include flex-column-center;
+}
+
+.content {
+    @extend %contentWrap;
+}
+
+.posts {
+    @include flex-column-start;
+
+    @extend %marginBottom;
+
+    @media (max-width: $xs) {
+        @include flex-column-center;
+    }
+}
+
+.title {
+    @extend %title-48;
+
+    margin-bottom: $spacer-xl;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-md;
+    }
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-sm;
+    }
+}

@@ -1,0 +1,294 @@
+@import '@styles/global.scss';
+
+.card {
+    @include flex-row-center;
+
+    padding: $spacer-sm;
+    cursor: pointer;
+    width: 100%;
+
+    &:hover {
+        background: $beige;
+    }
+
+    @media (max-width: $md) {
+        padding: $spacer-xs;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xxs;
+    }
+}
+
+.card.featurePost {
+    padding: 0;
+    cursor: default;
+
+    &:hover {
+        background: transparent;
+    }
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+
+    margin-right: $spacer-md;
+
+    @media (max-width: $lg) {
+        margin-right: $spacer-sm;
+    }
+
+    @media (max-width: $md) {
+        margin-right: $spacer-xs;
+    }
+}
+
+.active {
+    background: $beige;
+}
+
+.info {
+    @include flex-column-start;
+}
+
+.excerpt {
+    width: 100%;
+    font-size: $fs-xxs - 2px;
+    margin-bottom: $spacer-xs;
+    line-height: $lh-xs;
+
+    @media (max-width: $md) {
+        font-size: $fs-xxxs;
+        margin-bottom: $spacer-xxs;
+        line-height: $lh-xxs;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xxxs -2px;
+        margin-bottom: $spacer-xxxs;
+        line-height: $lh-xxxs;
+    }
+}
+
+.title {
+    @extend %title-24;
+
+    margin-bottom: $spacer-xxs;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-xxxs;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xxs;
+        line-height: $lh-xs;
+    }
+}
+
+.subtitle {
+    @extend %title-16;
+
+    color: $gray;
+}
+
+.card.vertical {
+    @include flex-column-center;
+
+    .title {
+        font-size: $fs-md;
+
+        @media (max-width: $md) {
+            font-size: $fs-sm;
+        }
+
+        @media (max-width: $xs) {
+            font-size: $fs-xs;
+        }
+    }
+
+    img {
+        margin-bottom: $spacer-md;
+        margin-right: 0;
+    }
+
+    @media (max-width: $xs) {
+        img {
+            margin-bottom: $spacer-xs;
+        }
+    }
+}
+
+.card.blog {
+    .image {
+        max-width: 490px;
+        width: 100%;
+        height: auto;
+
+        @media (max-width: $sm) {
+            max-width: 420px;
+        }
+
+        @media (max-width: $xs) {
+            max-width: 420px;
+            margin-right: 0;
+            margin-bottom: $spacer-xs;
+        }
+    }
+
+    .title {
+        font-size: $fs-lg;
+        line-height: $lh-xxl;
+
+        @media (max-width: $sm) {
+            font-size: $fs-md;
+            line-height: $lh-lg;
+        }
+
+        @media (max-width: $xs) {
+            font-size: $fs-sm;
+            line-height: $lh-sm;
+        }
+    }
+
+    .excerpt {
+        font-size: $fs-xxs;
+        letter-spacing: 3px;
+        font-weight: 600;
+
+        @media (max-width: $sm) {
+            font-size: $fs-xxxs;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: $xs) {
+            font-size: $fs-xxxs - 2px;
+            letter-spacing: 1px;
+        }
+    }
+
+    @media (max-width: $xs) {
+        @include flex-column-center;
+
+        text-align: center;
+
+        .title {
+            width: 100%;
+        }
+    }
+}
+
+.card.blogPost {
+    .image {
+        height: 300px;
+        width: 420px;
+        object-fit: cover;
+
+        @media (max-width: $sm) {
+            height: 220px;
+            width: 360px;
+        }
+
+        @media (max-width: $xs) {
+            height: 180px;
+            width: 300px;
+        }
+    }
+
+    @media (max-width: $md) {
+        text-align: center;
+        .title {
+            width: 100%;
+        }
+        .excerpt {
+            width: 100%;
+        }
+    }
+}
+
+.categoryPost {
+    .image {
+        max-width: 340px;
+        width: 100%;
+        object-fit: contain;
+
+        @media (max-width: $lg) {
+            min-width: 300px;
+        }
+
+        @media (max-width: $md) {
+            min-width: 240px;
+        }
+    }
+
+    .title {
+        @media (max-width: $lg) {
+            font-size: $fs-xs;
+            line-height: $lh-md;
+        }
+
+        @media (max-width: $md) {
+            font-size: $fs-xxs;
+            line-height: $lh-sm;
+        }
+    }
+
+    .subtitle {
+        @media (max-width: $lg) {
+            font-size: $fs-xxs - 2px;
+            line-height: $lh-xxs;
+        }
+
+        @media (max-width: $md) {
+            font-size: $fs-xxxs;
+            line-height: $lh-xxs;
+        }
+    }
+
+    @media (max-width: $xs) {
+        text-align: center;
+    }
+}
+
+.authorPost {
+    .image {
+        max-width: 420px;
+        object-fit: contain;
+        width: 100%;
+
+        @media (max-width: $md) {
+            min-width: 340px;
+        }
+
+        @media (max-width: $sm) {
+            min-width: 200px;
+        }
+
+        @media (max-width: $xs) {
+            margin-bottom: $spacer-sm;
+            margin-right: 0;
+        }
+    }
+
+    @media (max-width: $xs) {
+        @include flex-column-center;
+
+        text-align: center;
+
+        .title {
+            width: 100%;
+            font-size: $fs-xs;
+            margin-bottom: $spacer-xxs;
+        }
+
+        .subtitle {
+            width: 100%;
+            font-size: $fs-xxxs;
+        }
+
+        .excerpt {
+            font-size: $fs-xxs;
+            margin-bottom: $spacer-xxs;
+        }
+    }
+}

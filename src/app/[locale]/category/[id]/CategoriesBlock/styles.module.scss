@@ -1,0 +1,121 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-column-center;
+
+    max-width: 300px;
+    width: 100%;
+
+    @media (max-width: $lg) {
+        max-width: 260px;
+    }
+
+    @media (max-width: $md) {
+        max-width: 200px;
+    }
+
+    @media (max-width: $sm) {
+        background: $white;
+        max-width: 240px;
+        position: absolute;
+        padding: $spacer-xs;
+        right: 0;
+        top: 0;
+    }
+}
+
+.search {
+    @include flex-row-start;
+
+    margin-bottom: $spacer-lg;
+    position: relative;
+    width: 100%;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-md;
+    }
+}
+
+.button {
+    width: 25%;
+    height: 56px;
+    position: absolute;
+    right: $spacer-xxs;
+
+    button {
+        border-radius: 8px;
+        font-size: $fs-xxs - 2px;
+
+        @media (max-width: $md) {
+            font-size: $fs-xxxs;
+        }
+    }
+
+    @media (max-width: $lg) {
+        height: 52px;
+    }
+
+    @media (max-width: $md) {
+        height: 32px;
+    }
+}
+
+.categories {
+    margin-bottom: $spacer-lg;
+    width: 100%;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-md;
+    }
+}
+
+.title {
+    @extend %title-36;
+}
+
+.allTags {
+    width: 100%;
+}
+
+.pairTags {
+    @include flex-row-sb;
+
+    gap: $spacer-xs;
+    margin-bottom: $spacer-xs;
+
+    p:last-child {
+        width: 100%;
+    }
+
+    @media (max-width: $lg) {
+        gap: $spacer-xxs;
+    }
+
+    @media (max-width: $md) {
+        gap: $spacer-xxxs;
+        margin-bottom: $spacer-xxs;
+    }
+}
+
+.tags {
+    @for $i from 1 through 6 {
+        div:nth-child(#{$i}) {
+            @if $i % 2 != 0 {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}
+
+.closeSidebar {
+    @media (max-width: $sm) {
+        transform: translateX(260px);
+        transition: all 0.5s ease;
+    }
+}
+
+.openSidebar {
+    @media (max-width: $sm) {
+        transform: translateX(0);
+    }
+}

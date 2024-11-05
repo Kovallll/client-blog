@@ -1,0 +1,17 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-column-center;
+
+    @extend %marginBottom;
+
+    width: 400px;
+
+    @media (max-width: $sm) {
+        width: 300px;
+    }
+
+    @media (max-width: $xs) {
+        width: 280px;
+    }
+}

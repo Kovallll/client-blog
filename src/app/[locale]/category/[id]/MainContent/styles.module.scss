@@ -1,0 +1,42 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-row-sb;
+
+    @extend %marginBottom;
+
+    gap: $spacer-lg;
+    width: 100%;
+    position: relative;
+    align-items: start;
+
+    @media (max-width: $lg) {
+        gap: $spacer-md;
+    }
+
+    @media (max-width: $md) {
+        gap: $spacer-xxs;
+    }
+}
+
+.posts {
+    min-height: 540px;
+}
+
+.noPosts {
+    @extend %title-24;
+}
+
+.sidebarButton {
+    position: absolute;
+    top: -$spacer-lg;
+    right: 0;
+
+    button {
+        border-radius: 16px;
+    }
+
+    @media (max-width: $xs) {
+        top: -$spacer-md;
+    }
+}

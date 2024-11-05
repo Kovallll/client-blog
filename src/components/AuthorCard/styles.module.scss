@@ -1,0 +1,131 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-column-center;
+
+    padding: $spacer-lg;
+    background: $light-gray;
+    max-width: 300px;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+        background: $beige;
+    }
+
+    @media (max-width: $md) {
+        padding: $spacer-sm;
+        max-width: 250px;
+    }
+
+    @media (max-width: $sm) {
+        padding: $spacer-xs;
+        max-width: 210px;
+    }
+}
+
+.image {
+    border-radius: 50%;
+    margin-bottom: $spacer-xs;
+
+    @media (max-width: $sm) {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.fullName {
+    font-size: $fs-md;
+    font-weight: 700;
+    margin-bottom: $spacer-xxxs;
+    line-height: $lh-xl;
+    white-space: nowrap;
+
+    @media (max-width: $sm) {
+        font-size: $fs-sm;
+        line-height: $lh-md;
+    }
+}
+
+.description {
+    font-size: $fs-xxs - 2px;
+    line-height: $lh-xs;
+    margin-bottom: $spacer-xs;
+
+    @media (max-width: $sm) {
+        font-size: $fs-xxxs - 2px;
+        margin-bottom: $spacer-xxs;
+    }
+}
+
+.text {
+    @include flex-column-center;
+}
+
+.links {
+    display: flex;
+    gap: $spacer-xs;
+}
+
+.container.horizontalCard {
+    @include flex-row-start;
+
+    background: transparent;
+    padding: 0;
+
+    .links {
+        display: none;
+    }
+
+    .fullName {
+        font-size: $fs-sm;
+        margin-bottom: 0;
+
+        @media (max-width: $sm) {
+            font-size: $fs-xxs;
+            line-height: $lh-sm;
+        }
+
+        @media (max-width: $xs) {
+            font-size: $fs-xxxs;
+            line-height: $lh-xs;
+        }
+    }
+
+    .subtitle {
+        font-size: $fs-xxs;
+        margin-bottom: 0;
+
+        @media (max-width: $sm) {
+            font-size: $fs-xxxs;
+        }
+
+        @media (max-width: $xs) {
+            font-size: $fs-xxxs - 2px;
+        }
+    }
+
+    .image {
+        margin-bottom: 0;
+        margin-right: $spacer-xs;
+
+        @media (max-width: $sm) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+
+.container.blogPost {
+    .text {
+        @include flex-column-start;
+    }
+
+    .fullName {
+        color: $purple;
+    }
+
+    @media (max-width: $sm) {
+        @include flex-row-center;
+    }
+}

@@ -1,0 +1,50 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-column-center;
+
+    width: 100%;
+    padding: $spacer-xs;
+    margin-bottom: $spacer-xxxl;
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-xxl;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xxs;
+        margin-bottom: $spacer-xl;
+    }
+}
+
+.title {
+    @extend %title-36;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    width: 100%;
+    gap: 12px;
+
+    @media (max-width: $md) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
+        gap: 16px;
+    }
+
+    @media (max-width: $xs) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+.container.blogCategories {
+    @include flex-column-start;
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
+    }
+}

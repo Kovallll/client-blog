@@ -1,0 +1,9 @@
+@import '@styles/global.scss';
+
+.page {
+    @include flex-column-center;
+}
+
+.content {
+    @extend %contentWrap;
+}

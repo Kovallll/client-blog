@@ -1,0 +1,23 @@
+@import '@styles/global.scss';
+
+.infoTitle {
+    @extend %title-36;
+
+    @media (max-width: $sm) {
+        font-size: $fs-md;
+        line-height: $lh-lg;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-sm;
+        line-height: $lh-sm;
+    }
+}
+
+.infoText {
+    @extend %title-16;
+}
+
+.infoList {
+    @extend %title-24;
+}

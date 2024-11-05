@@ -1,0 +1,23 @@
+@import '@styles/global.scss';
+
+.input {
+    width: 75%;
+
+    input {
+        border-radius: 8px;
+        color: $black;
+
+        &::placeholder {
+            color: $black;
+        }
+
+        @media (max-width: $lg) {
+            font-size: $fs-xxs;
+        }
+
+        @media (max-width: $md) {
+            padding: $spacer-xxs $spacer-xs;
+            font-size: $fs-xxxs;
+        }
+    }
+}

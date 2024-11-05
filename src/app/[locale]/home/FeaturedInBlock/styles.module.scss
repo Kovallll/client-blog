@@ -1,0 +1,53 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-row-sb;
+
+    @extend %marginBottom;
+
+    width: 100%;
+    padding: $spacer-xs;
+
+    @media (max-width: $xs) {
+        @include flex-column-center;
+
+        padding: $spacer-xxs;
+    }
+}
+
+.title {
+    margin-right: $spacer-xxl;
+    color: $gray;
+    white-space: nowrap;
+
+    @media (max-width: $sm) {
+        margin-right: $spacer-xl;
+    }
+
+    @media (max-width: $xs) {
+        margin-right: 0;
+        margin-bottom: $spacer-xs;
+    }
+}
+
+.topTitle {
+    font-size: $fs-xxs;
+    line-height: $lh-xs;
+}
+
+.bottomTitle {
+    font-size: $fs-sm;
+    font-weight: 700;
+    line-height: $lh-lg;
+}
+
+.sponsors {
+    @include flex-row-sb;
+
+    overflow-x: auto;
+    width: 100%;
+
+    a {
+        margin-left: $spacer-xs;
+    }
+}

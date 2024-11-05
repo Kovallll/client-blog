@@ -1,0 +1,77 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-row-center;
+
+    width: 100%;
+    background: $light-blue-gray;
+    padding: $spacer-xl;
+    margin: $spacer-lg 0;
+
+    @media (max-width: $md) {
+        @include flex-column-center;
+
+        padding: $spacer-lg;
+    }
+
+    @media (max-width: $sm) {
+        margin: 0;
+        margin-bottom: $spacer-md;
+        padding: $spacer-md;
+    }
+}
+
+.title {
+    font-size: $fs-xl;
+    color: $white;
+    flex: 1.2;
+    margin-right: $spacer-md;
+
+    @media (max-width: $xl) {
+        font-size: $fs-lg;
+    }
+
+    @media (max-width: $lg) {
+        font-size: $fs-md;
+        margin-right: $spacer-sm;
+    }
+
+    @media (max-width: $md) {
+        margin-right: 0;
+        margin-bottom: $spacer-sm;
+        text-align: center;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-sm;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xs;
+    }
+}
+
+.subscribeContent {
+    @include flex-row-center;
+
+    flex: 1;
+}
+
+.button {
+    max-width: 180px;
+    margin-left: $spacer-sm;
+    margin-top: $spacer-sm;
+
+    @media (max-width: $lg) {
+        max-width: 140px;
+        margin-left: $spacer-xs;
+    }
+
+    @media (max-width: $md) {
+        max-width: 120px;
+    }
+
+    @media (max-width: $xs) {
+        margin-top: $spacer-xs;
+    }
+}

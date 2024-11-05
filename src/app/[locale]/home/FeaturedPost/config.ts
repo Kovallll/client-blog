@@ -1,0 +1,5 @@
+export const featureTitle = 'Featured Post'
+export const allPostsTitle = 'All Posts'
+export const className = 'featurePost'
+export const featureButtonTitle = 'Read More >'
+export const viewText = 'View All'

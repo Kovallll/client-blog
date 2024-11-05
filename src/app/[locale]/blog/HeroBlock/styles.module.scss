@@ -1,0 +1,100 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-row-se;
+
+    margin-bottom: $spacer-xxxl;
+    background: $light-pink;
+    padding: $spacer-xxl $spacer-sm;
+
+    @media (max-width: $md) {
+        padding: $spacer-lg $spacer-xs;
+        margin-bottom: $spacer-xxl;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-md $spacer-xxs;
+        margin-bottom: $spacer-xl;
+    }
+}
+
+.content {
+    @include flex-column-start;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    margin-left: $spacer-xs;
+    min-height: 320px;
+
+    @media (max-width: $md) {
+        min-height: 280px;
+    }
+
+    @media (max-width: $sm) {
+        min-height: 220px;
+    }
+
+    @media (max-width: $xs) {
+        width: auto;
+        min-height: 0px;
+        max-height: 130px;
+    }
+}
+
+.caption {
+    @extend %title-16;
+
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.captionBold {
+    font-weight: 900;
+}
+
+.publicationInfo {
+    @extend %title-16;
+
+    margin-bottom: $spacer-xs;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-xxs;
+    }
+}
+
+.title {
+    @extend %title-56;
+
+    max-width: 800px;
+
+    @media (max-width: $md) {
+        max-width: 500px;
+    }
+
+    @media (max-width: $sm) {
+        max-width: 400px;
+    }
+}
+
+.subtitle {
+    @extend %title-16;
+
+    max-width: 600px;
+    margin-bottom: $spacer-lg;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-md;
+    }
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-sm;
+        max-width: 400px;
+    }
+
+    @media (max-width: $xs) {
+        margin-bottom: $spacer-xs;
+    }
+}

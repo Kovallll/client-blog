@@ -1,0 +1,70 @@
+@import '@styles/global.scss';
+
+$currencyHeight-xl: 58px;
+$currencyHeight-lg: 53px;
+$currencyHeight-md: 39px;
+$currencyHeight-sm: 29px;
+
+$countValues: 6;
+
+$search-height-xl: 56px;
+$search-height-lg: 51px;
+$search-height-md: 31px;
+
+.container {
+    position: absolute;
+    top: $search-height-xl + 1;
+    background: $white;
+    width: 100%;
+    z-index: 10;
+    border-radius: 12px;
+    max-height: calc($currencyHeight-xl * $countValues);
+    overflow-y: auto;
+
+    @media (max-width: $lg) {
+        top: $search-height-lg + 1;
+    }
+
+    @media (max-width: $md) {
+        top: $search-height-md + 1;
+    }
+
+    @media (max-width: $sm) {
+        top: $search-height-md;
+    }
+}
+
+.textWrap {
+    @include flex-row-start;
+
+    padding: $spacer-xxs $spacer-xs;
+
+    &:hover {
+        background: $light-gray;
+    }
+
+    @media (max-width: $md) {
+        padding: $spacer-xxxs $spacer-xxs;
+    }
+}
+
+.active {
+    background: $yellow;
+}
+
+.text {
+    color: $black;
+    font-size: $fs-md;
+
+    @media (max-width: $lg) {
+        font-size: $fs-xs;
+    }
+
+    @media (max-width: $md) {
+        font-size: $fs-xxs;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-xxxs;
+    }
+}

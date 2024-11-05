@@ -1,0 +1,17 @@
+@import '@styles/global.scss';
+
+.page {
+    @include flex-column-center;
+}
+
+.content {
+    @include flex-column-center;
+
+    max-width: 800px;
+    width: 100%;
+    padding: 0 $spacer-sm;
+
+    @media (max-width: $md) {
+        padding: 0 $spacer-xs;
+    }
+}

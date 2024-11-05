@@ -1,0 +1,147 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-column-start;
+
+    padding: $spacer-md;
+    border: 1px solid $cardBorderColor;
+    max-width: 300px;
+    cursor: pointer;
+
+    &:hover {
+        background: $light-gray;
+    }
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
+
+        padding: $spacer-xs;
+        text-align: center;
+
+        &:hover {
+            background: $yellow;
+        }
+    }
+}
+
+.iconWrap {
+    @include flex-row-center;
+
+    background: $beige;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    margin-bottom: $spacer-xs;
+}
+
+.title {
+    font-size: $fs-md;
+    font-weight: 700;
+    margin-bottom: $spacer-xxxs;
+    text-transform: capitalize;
+
+    @media (max-width: $md) {
+        font-size: $fs-xs;
+    }
+}
+
+.subtitle {
+    @extend %title-16;
+
+    @media (max-width: $sm) {
+        max-width: 200px;
+    }
+}
+
+.active {
+    background: $yellow;
+    border: 0;
+}
+
+.container.miniCard {
+    @include flex-row-start;
+
+    flex-direction: row;
+    padding: $spacer-sm;
+
+    .iconWrap {
+        margin-bottom: 0;
+        margin-right: $spacer-xs;
+    }
+}
+
+.container.blogPost {
+    padding: 0;
+    border: 0;
+    cursor: default;
+    background: $white;
+    margin-bottom: $spacer-xl;
+    margin-top: $spacer-md;
+
+    &:hover {
+        background: $white;
+    }
+
+    @media (max-width: $sm) {
+        @include flex-row-center;
+
+        margin-bottom: $spacer-md;
+        margin-top: $spacer-xs;
+
+        .iconWrap {
+            width: 32px;
+            height: 32px;
+            background: $white;
+        }
+
+        .title {
+            font-size: $fs-xxs;
+        }
+    }
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-xs;
+        margin-top: $spacer-xxs;
+    }
+}
+
+%categoryCard {
+    margin-bottom: $spacer-sm;
+
+    @media (max-width: $lg) {
+        padding: $spacer-xs;
+    }
+
+    @media (max-width: $md) {
+        padding: $spacer-xxs;
+        margin-bottom: $spacer-xs;
+    }
+
+    .title {
+        margin-bottom: 0;
+
+        @media (max-width: $lg) {
+            font-size: $fs-xs;
+        }
+    }
+
+    .iconWrap {
+        @include flex-row-center;
+
+        @media (max-width: $md) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+
+.container.categoryCard {
+    @extend %categoryCard;
+}
+
+.container.categoryCardActive {
+    @extend %categoryCard;
+
+    background: $yellow;
+    border: 0;
+}

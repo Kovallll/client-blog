@@ -1,0 +1,77 @@
+@import '@styles/global.scss';
+
+.wrap {
+    @include flex-column-start;
+
+    width: 100%;
+}
+
+.error {
+    height: $spacer-sm;
+    color: $red;
+    font-size: $fs-xs;
+
+    @media (max-width: $lg) {
+        font-size: $fs-xxs;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xxxs;
+        height: $spacer-xs;
+    }
+}
+
+.input {
+    background-color: transparent;
+    padding: $spacer-xs;
+    font-size: $fs-xs;
+    color: $black;
+    white-space: nowrap;
+    border: 1px solid $dark-gray;
+    width: 100%;
+
+    @media (max-width: $lg) {
+        padding: $spacer-xs $spacer-sm;
+    }
+
+    @media (max-width: $sm) {
+        padding: $spacer-xxs $spacer-sm;
+        font-size: $fs-xxs;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xxs $spacer-xs;
+        font-size: $fs-xxxs;
+    }
+}
+
+.wrap.formInput {
+    margin-bottom: $spacer-xxs;
+
+    .input {
+        font-size: $fs-xxs;
+
+        &::placeholder {
+            color: $black;
+        }
+        @media (max-width: $sm) {
+            font-size: $fs-xxxs;
+            padding: $spacer-xxs;
+        }
+    }
+
+    .error {
+        height: $spacer-xs;
+        font-size: $fs-xxs;
+        margin-bottom: $spacer-xxxs;
+
+        @media (max-width: $sm) {
+            font-size: $fs-xxxs;
+            margin-bottom: 0;
+        }
+    }
+
+    @media (max-width: $sm) {
+        margin-bottom: 0;
+    }
+}

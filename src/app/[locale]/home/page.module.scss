@@ -1,0 +1,30 @@
+@import '@styles/global.scss';
+
+.page {
+    @include flex-column-center;
+}
+
+.content {
+    @extend %contentWrap;
+}
+
+.observe {
+    height: 100px;
+    width: 1px;
+}
+
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.component {
+    @include flex-row-center;
+
+    width: 100%;
+    opacity: 0;
+    transform: translateY(200px);
+    transition:
+        opacity 2.5s ease,
+        transform 1.5s ease;
+}

@@ -1,0 +1,20 @@
+@import '@styles/global.scss';
+
+.wrap {
+    width: 260px;
+    margin-top: $spacer-md;
+
+    @media (max-width: $md) {
+        width: 200px;
+    }
+
+    @media (max-width: $sm) {
+        margin-top: $spacer-sm;
+        width: 160px;
+    }
+
+    @media (max-width: $xs) {
+        margin-top: $spacer-xxs;
+        width: 100px;
+    }
+}

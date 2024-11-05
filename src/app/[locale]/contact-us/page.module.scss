@@ -1,0 +1,15 @@
+@import '@styles/global.scss';
+
+.page {
+    @include flex-column-center;
+}
+
+.content {
+    @extend %contentWrap;
+
+    max-width: $sm + $spacer-xs * 2;
+
+    @media (max-width: $md) {
+        max-width: $xs + $spacer-xs * 2;
+    }
+}

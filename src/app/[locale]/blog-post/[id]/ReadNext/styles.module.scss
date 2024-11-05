@@ -1,0 +1,48 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-column-start;
+
+    @media (max-width: $md) {
+        @include flex-column-center;
+    }
+
+    @extend %marginBottom;
+}
+
+.title {
+    font-weight: 700;
+    line-height: $lh-xxl;
+    font-size: $fs-xl;
+    margin-bottom: $spacer-md;
+
+    @media (max-width: $sm) {
+        line-height: $lh-xl;
+        font-size: $fs-lg;
+        margin-bottom: $spacer-sm;
+    }
+
+    @media (max-width: $xs) {
+        line-height: $lh-lg;
+        font-size: $fs-md;
+    }
+}
+
+.posts {
+    @include flex-row-center;
+
+    align-items: start;
+
+    article {
+        padding: $spacer-xs;
+        min-width: 280px;
+
+        @media (max-width: $md) {
+            padding: $spacer-xxs;
+        }
+    }
+
+    @media (max-width: $md) {
+        @include flex-column-center;
+    }
+}

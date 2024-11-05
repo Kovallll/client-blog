@@ -1,0 +1,102 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-column-start;
+
+    width: 100%;
+}
+
+.caption {
+    @extend %title-16;
+
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-xs;
+        letter-spacing: 2px;
+    }
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-xxs;
+        letter-spacing: 1px;
+    }
+}
+
+.title {
+    @extend %title-36;
+
+    margin-bottom: $spacer-xs;
+    letter-spacing: -2px;
+
+    @media (max-width: $md) {
+        font-size: $fs-md;
+        margin-bottom: $spacer-xxs;
+        letter-spacing: 0;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-xs;
+        margin-bottom: $spacer-xxxs;
+    }
+}
+
+.subtitle {
+    font-size: $fs-xxs;
+    color: $gray;
+    line-height: $lh-md;
+
+    @media (max-width: $md) {
+        font-size: $fs-xxxs;
+        line-height: $lh-xs;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-xxxs - 2px;
+        line-height: $lh-xxxs;
+    }
+}
+
+.container.misionTitle {
+    .title {
+        font-size: $fs-md;
+
+        @media (max-width: $md) {
+            font-size: $fs-xs;
+        }
+    }
+}
+
+.container.discover {
+    .title {
+        font-size: $fs-xxl;
+        line-height: $lh-xxxl;
+
+        @media (max-width: $lg) {
+            font-size: $fs-xl;
+            line-height: $lh-xxl;
+        }
+
+        @media (max-width: $md) {
+            font-size: $fs-lg - 4px;
+            line-height: $lh-xl;
+        }
+
+        @media (max-width: $sm) {
+            font-size: $fs-md;
+            line-height: $lh-lg;
+        }
+
+        @media (max-width: $xs) {
+            font-size: $fs-xs;
+            line-height: $lh-xs;
+        }
+    }
+}
+
+.container.joinUs {
+    p {
+        text-align: center;
+    }
+}

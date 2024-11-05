@@ -1,0 +1,109 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-row-center;
+
+    @extend %marginBottom;
+
+    align-items: start;
+    margin-left: $spacer-xs;
+    margin-right: $spacer-xs;
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
+    }
+}
+
+.allPosts {
+    @include flex-column-start;
+
+    max-width: 520px;
+    width: 100%;
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
+    }
+}
+
+.featuredPost {
+    @include flex-column-start;
+
+    margin-right: $spacer-md;
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
+
+        margin-right: 0;
+        margin-bottom: $spacer-xs;
+    }
+}
+
+.featuredPostContent {
+    padding: $spacer-md;
+    border: 1px solid $light-pink;
+}
+
+.allPostsContent {
+    max-width: 560px;
+
+    article {
+        min-width: 280px;
+    }
+
+    @media (max-width: $sm) {
+        display: flex;
+        overflow: auto;
+    }
+
+    @media (max-width: $xs) {
+        max-width: 360px;
+        article {
+            min-width: 220px;
+            padding: $spacer-xxxs;
+        }
+    }
+}
+
+.textBlock {
+    @include flex-row-sb;
+
+    align-items: start;
+    width: 100%;
+
+    @media (max-width: $xs) {
+        @include flex-column-center;
+
+        flex-direction: column-reverse;
+    }
+}
+
+.view {
+    line-height: $lh-xl;
+    color: $purple;
+    border: 0;
+    background: transparent;
+    font-size: $fs-xxs;
+    cursor: pointer;
+}
+
+.title {
+    @extend %title-36;
+
+    margin-bottom: $spacer-md;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-sm;
+    }
+
+    @media (max-width: $xs) {
+        margin-bottom: $spacer-xs;
+    }
+}
+
+.button {
+    width: 200px;
+
+    @media (max-width: $md) {
+        width: 160px;
+    }
+}

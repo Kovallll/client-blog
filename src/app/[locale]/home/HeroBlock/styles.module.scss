@@ -1,0 +1,122 @@
+@import '@styles/global.scss';
+
+.container {
+    @extend %marginBottom;
+
+    position: relative;
+}
+
+.content {
+    @include flex-column-start;
+
+    position: absolute;
+    top: 18%;
+    color: $white;
+    margin-left: $spacer-xl;
+
+    @media (max-width: $lg) {
+        top: 12%;
+        margin-left: $spacer-lg;
+    }
+
+    @media (max-width: $md) {
+        margin-left: $spacer-md;
+    }
+
+    @media (max-width: $xs) {
+        top: 8%;
+        margin-left: $spacer-xxs;
+    }
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+
+    @media (max-width: $sm) {
+        min-height: 320px;
+    }
+
+    @media (max-width: $xs) {
+        min-height: 240px;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        80.99% 71.93% at 74.58% 0%,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+}
+
+.caption {
+    @extend %title-16;
+
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.publicationInfo {
+    @extend %title-16;
+
+    margin-bottom: $spacer-xs;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-xxs;
+    }
+}
+
+.captionBold {
+    font-weight: 900;
+}
+
+.title {
+    @extend %title-56;
+
+    width: 800px;
+
+    @media (max-width: $md) {
+        width: 500px;
+    }
+
+    @media (max-width: $sm) {
+        width: 400px;
+    }
+
+    @media (max-width: $xs) {
+        width: 350px;
+    }
+}
+
+.subtitle {
+    @extend %title-16;
+
+    width: 600px;
+    margin-bottom: $spacer-lg;
+
+    @media (max-width: $md) {
+        margin-bottom: $spacer-md;
+    }
+
+    @media (max-width: $sm) {
+        margin-bottom: $spacer-sm;
+        width: 400px;
+    }
+
+    @media (max-width: $xs) {
+        margin-bottom: $spacer-xs;
+        width: 300px;
+    }
+}
+
+.highlightText {
+    color: $yellow;
+}

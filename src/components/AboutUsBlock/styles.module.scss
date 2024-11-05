@@ -1,0 +1,72 @@
+@import '@styles/global.scss';
+
+.container {
+    @include flex-column-center;
+
+    @extend %marginBottom;
+
+    margin-left: $spacer-xs;
+    margin-right: $spacer-xs;
+    width: 100%;
+}
+
+.content {
+    @include flex-row-center;
+
+    background: $light-pink;
+    padding: $spacer-xxl $spacer-xl;
+
+    @media (max-width: $md) {
+        padding: $spacer-xl $spacer-lg;
+    }
+
+    @media (max-width: $sm) {
+        padding: $spacer-lg $spacer-md;
+    }
+
+    @media (max-width: $xs) {
+        @include flex-column-center;
+    }
+}
+
+.about {
+    flex: 1;
+    margin-right: $spacer-xl;
+
+    @media (max-width: $md) {
+        margin-right: $spacer-lg;
+    }
+
+    @media (max-width: $sm) {
+        margin-right: $spacer-md;
+    }
+
+    @media (max-width: $xs) {
+        margin-right: 0;
+        margin-bottom: $spacer-xs;
+    }
+}
+
+.mision {
+    flex: 1;
+}
+
+.link {
+    margin-top: $spacer-xs;
+    color: $purple;
+    font-size: $fs-xs - 2px;
+
+    &:hover {
+        color: $yellow;
+    }
+
+    @media (max-width: $md) {
+        font-size: $fs-xs;
+        margin-top: $spacer-xxs;
+    }
+
+    @media (max-width: $sm) {
+        font-size: $fs-xxs;
+        margin-top: $spacer-xxxs;
+    }
+}

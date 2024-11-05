@@ -1,0 +1,7 @@
+export const workTitle = 'Working hours'
+export const contactUsTitle = 'Contact Us'
+export const date = 'Monday To Friday'
+export const time = '9:00 AM to 8:00 PM '
+export const text = 'Our Support Team is available 24/7'
+export const contactId = '020 7993 2905'
+export const email = 'hello@finsweet.com'

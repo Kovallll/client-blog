@@ -1,0 +1,105 @@
+@import '@styles/global.scss';
+
+.header {
+    @include flex-row-sb;
+
+    background: $dark-blue-gray;
+    padding: $spacer-xs 0px;
+    padding-left: $spacer-xl;
+    padding-right: $spacer-md;
+    color: $white;
+
+    @media (max-width: $md) {
+        padding: $spacer-xxs 0px;
+        padding-left: $spacer-lg;
+        padding-right: $spacer-sm;
+    }
+
+    @media (max-width: $sm) {
+        padding-left: $spacer-md;
+        padding-right: $spacer-xs;
+    }
+
+    @media (max-width: $xs) {
+        padding: $spacer-xxxs 0px;
+        padding-left: $spacer-sm;
+        padding-right: $spacer-xxs;
+    }
+}
+
+.content {
+    @include flex-row-center;
+
+    position: relative;
+}
+
+.title {
+    font-weight: 700;
+    font-size: $fs-sm;
+
+    @media (max-width: $sm) {
+        font-size: $fs-xs;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xxs;
+    }
+}
+
+.nav {
+    @include flex-row-center;
+
+    @media (max-width: $sm) {
+        display: none;
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: $white;
+    white-space: nowrap;
+    margin-right: $spacer-sm;
+    font-size: $fs-xxs;
+
+    &:hover {
+        color: $yellow;
+    }
+
+    @media (max-width: $lg) {
+        margin-right: $spacer-xs;
+    }
+
+    @media (max-width: $md) {
+        margin-right: $spacer-xxs;
+    }
+
+    @media (max-width: $xs) {
+        font-size: $fs-xxxs;
+    }
+}
+
+.header.footer {
+    padding: 0;
+
+    .nav {
+        margin: $spacer-xs 0;
+
+        @media (max-width: $sm) {
+            @include flex-row-center;
+
+            width: 100%;
+        }
+    }
+
+    .switcher {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    @media (max-width: $sm) {
+        @include flex-column-center;
+    }
+}
