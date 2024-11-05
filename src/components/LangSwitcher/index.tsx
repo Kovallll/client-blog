@@ -34,6 +34,7 @@ const LangSwitcher = () => {
             onChange={handleLanguageChange}
             defaultValue={locale}
             data-testid="lang-selectt"
+            aria-label="language"
         >
             <option selected={isRuSelected} value="ru">
                 {ru}

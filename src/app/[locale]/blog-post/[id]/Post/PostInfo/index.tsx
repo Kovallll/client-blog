@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { useTranslations } from 'next-intl'
 
 import styles from './styles.module.scss'
@@ -17,11 +18,16 @@ export const PostInfo = ({ postInfoData, id, index }: PostInfoProps) => {
         return tPosts(`${Number(id) - 1}.postInfo.${index}.listData.${i}`)
     }
 
+    const textPrevList = useMemo(
+        () => textData.slice(0, textLength - 2),
+        [textData, textLength]
+    )
+
     if (listData) {
         return (
             <>
                 <p className={styles.infoTitle}>{title}</p>
-                {textData.slice(0, textLength - 2).map((_, i) => (
+                {textPrevList.map((_, i) => (
                     <p className={styles.infoText} key={i}>
                         {getText(i)}
                     </p>

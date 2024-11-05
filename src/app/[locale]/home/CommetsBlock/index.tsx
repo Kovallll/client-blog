@@ -3,46 +3,17 @@
 import { memo, useRef } from 'react'
 import { useTranslations } from 'use-intl'
 
-import { commentGap, translate } from './config'
+import { translate } from './config'
+import { Pagination } from './Pagination'
 import styles from './styles.module.scss'
 
 import { Article } from '@components/Article'
 import AuthorCard from '@components/AuthorCard'
-import { commentsData, icons } from '@constants'
-import { PaginationDirection } from '@types'
+import { commentsData } from '@constants'
 
 const CommetsBlock = () => {
     const carouselRef = useRef(null)
     const t = useTranslations('HomePage')
-
-    const { NextArrowIcon, PrevArrowIcon } = icons
-
-    const paginationScroll = (direction: PaginationDirection) => {
-        if (carouselRef.current) {
-            const carousel = carouselRef.current as HTMLDivElement
-            const px = direction === 'next' ? 1 : -1
-            const scrollPosition = carousel.scrollLeft + px
-
-            const itemWidth = carousel.offsetWidth + commentGap
-            const itemIndex =
-                direction === 'next'
-                    ? Math.ceil(scrollPosition / itemWidth)
-                    : Math.floor(scrollPosition / itemWidth)
-
-            carousel.scrollTo({
-                left: itemIndex * itemWidth,
-                behavior: 'smooth',
-            })
-        }
-    }
-
-    const handleClickPrevButton = () => {
-        paginationScroll('prev')
-    }
-
-    const handleClickNextButton = () => {
-        paginationScroll('next')
-    }
 
     return (
         <div className={styles.container}>
@@ -62,20 +33,7 @@ const CommetsBlock = () => {
                     </div>
                 ))}
             </div>
-            <div className={styles.pagination}>
-                <button
-                    className={styles.prevArrow}
-                    onClick={handleClickPrevButton}
-                >
-                    <PrevArrowIcon />
-                </button>
-                <button
-                    className={styles.nextArrow}
-                    onClick={handleClickNextButton}
-                >
-                    <NextArrowIcon />
-                </button>
-            </div>
+            <Pagination carouselRef={carouselRef} />
         </div>
     )
 }

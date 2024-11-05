@@ -19,6 +19,7 @@ export interface PostData {
 export interface AuthorType {
     id: string
     avatarUrl: string
+    avatarPageUrl: string
     fullName: string
     description?: string
     text: string
@@ -27,6 +28,7 @@ export interface AuthorType {
 export interface ImageType {
     imageUrl: string
     altText: string
+    hqImageUrl: string
 }
 
 export interface PostInfoData {

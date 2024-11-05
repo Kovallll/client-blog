@@ -1,9 +1,8 @@
-'use client'
-
 import classNames from 'classnames'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
+import { imageHeight, imageWidth } from './config'
 import styles from './styles.module.scss'
 import { AboutUsCardProps } from './types'
 
@@ -24,9 +23,10 @@ export const AboutUsCard = (props: AboutUsCardProps) => {
             <Image
                 alt={image.altText}
                 src={image.src}
-                width={620}
-                height={480}
+                width={imageWidth}
+                height={imageHeight}
                 className={styles.image}
+                loading="lazy"
             />
         </div>
     )

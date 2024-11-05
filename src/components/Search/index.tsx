@@ -1,6 +1,5 @@
 'use client'
 
-import { useRef } from 'react'
 import { useTranslations } from 'next-intl'
 
 import { SearchPopup } from './SearchPopup'
@@ -19,34 +18,29 @@ export const Search = ({
         searchedValues,
         activeIndex,
         isFocus,
-        popupRef,
-        handleFocusInput,
+        searchRef,
         handleKeyClick,
         handleMouseLeave,
         handleMouseOver,
         handleChangeFocus,
     } = useSearch(searchValue, handleChangeSearchValue, allTags)
 
-    const searchRef = useRef(null)
-
     const t = useTranslations('CategoryPage')
     useClickOutside(searchRef, () => handleChangeFocus(false))
-
-    const value = searchValue
 
     return (
         <div className={styles.search} ref={searchRef}>
             <div className={styles.input}>
                 <Input
                     placeholder={t('searchPlaceholder')}
-                    value={value}
+                    value={searchValue}
                     onChangeInput={handleChangeSearchValue}
                     type="search"
-                    onFocus={handleFocusInput}
+                    onFocusInput={handleChangeFocus}
                     onKeyDown={handleKeyClick}
                 />
             </div>
-            <div ref={popupRef}>
+            <div>
                 {isFocus && (
                     <SearchPopup
                         activeIndex={activeIndex}

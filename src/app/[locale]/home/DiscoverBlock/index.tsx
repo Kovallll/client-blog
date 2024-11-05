@@ -1,6 +1,13 @@
 import Image from 'next/image'
 
-import { altText, className, src, translate } from './config'
+import {
+    altText,
+    className,
+    imageHeight,
+    imageWidth,
+    src,
+    translate,
+} from './config'
 import { DiscoverButton } from './DiscoverButton'
 import styles from './styles.module.scss'
 
@@ -12,9 +19,10 @@ const DiscoverBlock = () => {
             <Image
                 src={src}
                 alt={altText}
-                width={900}
-                height={700}
+                width={imageWidth}
+                height={imageHeight}
                 className={styles.image}
+                loading="lazy"
             />
             <div className={styles.info}>
                 <Article

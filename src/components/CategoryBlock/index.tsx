@@ -1,7 +1,5 @@
-'use client'
-
 import classNames from 'classnames'
-import { useTranslations } from 'use-intl'
+import { useTranslations } from 'next-intl'
 
 import styles from './styles.module.scss'
 import { CategoryBlockProps } from './types'

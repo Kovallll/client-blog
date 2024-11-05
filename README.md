@@ -1,156 +1,276 @@
-# Tестовое задание Modsen Client Blog
+# Client Blog
 
-## Содержание
+Client Blog — это приложение для просмотра постов популярных авторов
 
--   [Техническое задание](#Техническое-задание)
--   [Используемые технологии](#Используемые-технологии)
--   [Необходимый функционал](#Необходимый-функционал)
--   [Дополнительный функционал](#Дополнительный-функционал)
--   [Описание экранов](#Описание-экранов)
--   [Тестирование](#Тестирование)
--   [Полезные ссылки](#Полезные-ссылки)
+## Установка
 
-## Техническое задание
+У вас должны быть установлены [зависимости проекта](#зависимости)
 
-Необходимо реализовать React приложение "Modsen Client Blog" по предоставленному дизайну из Figma
-с использование server-side rendering(NextJS).
+1. Клонирование репозитория
+   `git clone https://github.com/Kovallll/client-blog`
 
-## Используемые технологии
+2. Загрузка зависимостей `yarn install`
 
--   **_yarn_** - менеджер пакетов;
--   **_TS_** - инструмент строгой типизации;
--   **_email-js_** - библиотека позволяющая отправлять электронные письма на почту;
--   **_SCSS_** - препроцессор, позволяющий писать код для стилей CSS;
--   **_playwright_** — e2e тестирование для web-приложений;
--   **_jest_** — unit-тестирование;
--   **_zod_** - библиотека для валидации форм;
--   **_nextJS_** - фреймворк на JavaScript, использующий React для построения server-side render.
+3. Запуск приложения `yarn start`
 
-## Необходимый функционал:
+## О приложении
 
-Приложение должно предоставлять возможность:
+### React
 
--   Отправки писем на электронную почту;
--   Реализацию elastic search;
--   Реализацию infinity scroll;
--   Просмотр интерактивной карты;
--   Смены языка (продумать самостоятельно).
+В качестве основной библиотеки использовался [React](https://react.dev/)
 
-## Дополнительный функционал
+### Типизация
 
--   Развернуть приложение на хостинге (heroku, vercel);
--   Настроить CI/CD, используя [GitHub Actions](https://github.com/features/actions);
--   Собрать проект с нуля(с настройками всех конфигов: eslint, prettier, husky, commitlint).
+В приложении в качестве типизации использовался [Typescript](https://www.typescriptlang.org/)
 
-### Пример графического представления:
+Для типизации props используется interface.
 
-Ссылка на макет: [Макет "Modsen Client Blog"](https://www.figma.com/file/fhmK69xjYdFpfoVhY7t6u1/Client-Blog-Modsen-Template?node-id=0%3A1&t=FIUQOCF7mw0vjeF8-0).
+### Стилизация
 
-### Также проект предполагает:
+Стилизация с помощью sass [Sass](https://sass-lang.com/)
 
--   Организацию файловой структуры описанной в [structure](https://github.com/mkrivel/structure);
--   Придерживаться требований по написанию и организации кода react приложения. Ссылка на требования: [Требования к тестовому заданию](https://github.com/annaprystavka/requirements);
--   Обработку ошибок через паттерн _"Error Boundaries"_;
--   Настроить конфигурации **_babel_**, **_eslint_**, **_prettier_**, **_husky_**, **_commitlint_**;
--   Использование TypeScript для типизирования и уменьшения количества потенциальных багов;
--   Использование алиасов для импортирования файлов;
--   Реализация должна быть выполнена без использования UI библиотек;
--   Обязательная валидация всех текстовых полей с использованием _zod_;
--   Оптимизацию дизайна под мобильные устройства;
--   Покрытие тестами всего приложения (playwright, jest);
--   Создание UI библиотеки компонентов, используя storybook;
--   Обязательную анимацию при наведения, нажатии на кнопки, прокрутки карусели и слайдеров, появлении элементов на странице при рендере и скролле;
--   Творчество в контексте анимации, помимо обязательной выше, приветствуется.
+### Тестирование
 
-## Описание экранов
+e2e тестирование с помошью [Playwright](https://playwright.dev/)
 
-1. [Главная Home](https://www.figma.com/file/fhmK69xjYdFpfoVhY7t6u1/Client-Blog-Modsen-Template?node-id=2%3A509&t=5YoUOACNZ3dRVibl-0).
+### Storybook
 
-Все страницы включают в себя верхний блок, который предполагает реализацию перехода между страницами и при нажатии на кнопку "Video about us" открывается модальное окно в котором сразу начинает проигрываться видео(выбранное выполняющим).
-На странице необходимо реализовать загрузку контента с помощью infinity scroll.
-В блоке "Step-by-step" при нажатии на кнопку "read more" происходит переход на страницу поста, который представлен на [экране](https://www.figma.com/file/fhmK69xjYdFpfoVhY7t6u1/Client-Blog-Modse-Template?node-id=14%3A919&t=5YoUOACNZ3dRVibl-0).
-В блоке "Featured Post" при нажатии на кнопку "read more" происходит переход на страницу Blog Post.
-В блоке "All Posts" при нажатии на кнопку "View All" происходит переход на страницу происходит переход на BLog.
-В блоке "About Us" при нажатии на кнопку "read more" происходит переход на страницу About Us.
-В блоке "Choose A Category" при нажатии на одну из категорий, пользователь попадает на страницу Category.
-В блоке "Why we started" при нажатии на кнопку "Discover our story" пользователь попадает на страницу About Us.
-В блоке "List of Authors" при нажатии на одного из авторов, пользователь попадает на Author.
-В блоке "TESTIMONIALS" реализована карусель, которая имеет горизонтальный список включающий в себя 1 карточку с отзывом и есть возможность навигации на следующую страницу списка с использованием двух стрелок навигации.
-В блоке "Join our team to be a part of our story" при нажатии на кнопку "Join Now" пользователь попадает на страницу Contact.
-На каждой странице в блоке "Subscribe to our news letter" должна быть реализована форма отправки сообщения на электронную почту выполняющего.
-При нажатии на ссылку "Privacy Policy", которая находится в футере, должна открываться страница Privacy Policy.
+Для изоляционного построения пользовательского интерфейса использовался [Storybook](https://storybook.js.org/)
 
-2. [Главная Blog](https://www.figma.com/file/fhmK69xjYdFpfoVhY7t6u1/Client-Blog-Modsen-Template?node-id=14%3A738&t=5YoUOACNZ3dRVibl-0).
+### Линтеры
 
-В блоке "Step-by-step" при нажатии на кнопку "Read more" происходит переход на страницу поста, который представлен на [экране](https://www.figma.com/file/fhmK69xjYdFpfoVhY7t6u1/Client-Blog?node-id=2%3A323&t=mb2rG2iYAU6MVs3n-0)
-На странице расположен список постов с разными категориями. С помощью кнопок prev/next можно листать список постов.
-При нажатии на любой из постов, открывается страница Blog Post, на которой для каждого из постов располагается своё содержимое.
-В блоке "All Categories" при нажатии на определенную категорию, пользователь попадает на страницу Category.
-В блоке "Join our team to be a part of our story" при нажатии на кнопку "Join Now" пользователь попадает на Contact.
+Для анализа JS кода использовался [Eslint](https://eslint.org/), для его форматирования [Prettier](https://prettier.io/)
 
-3. [Главная Blog Post](https://www.figma.com/file/fhmK69xjYdFpfoVhY7t6u1/Client-Blog-Modsen-Template?node-id=14%3A919&t=5YoUOACNZ3dRVibl-0).
+### Деплой
 
-На данной странице помимо содержимого определенного поста, в блоке "What to read next" находится список с постами с той же категорией, что и основной пост на странице.
-В блоке "Join our team to be a part of our story" при нажатии на кнопку "Join Now" пользователь попадает на страницу Contact.
-В блоке "Subscribe to our news letter" должна быть реализована форма отправки сообщения на электронную почту пользователя.
+Деплой приложения находится на [Vercel](https://vercel.com)
 
-4. [Главная About Us](https://www.figma.com/file/fhmK69xjYdFpfoVhY7t6u1/Client-Blog-Modsen-Template?node-id=14%3A1045&t=5YoUOACNZ3dRVibl-0).
+# Интернализация с использованием next-intl
 
-В блоке "List of Authors" находится список авторов, при нажатии на определенного автора, открывается страница с информацией о нём на странице About Us.
-Каждая из иконок социальных сетей является уникальной для каждого автора.
-В блоке "Join our team to be a part of our story" при нажатии на кнопку "Join Now" пользователь попадает на страницу Contact.
+next-intl — это библиотека для интернализации (i18n) приложений на Next.js. Она позволяет легко управлять переводами и поддерживает динамическую подмену языков.
 
-5. [Главная Category](https://www.figma.com/file/fhmK69xjYdFpfoVhY7t6u1/Client-Blog-Modsen-Template?node-id=14%3A1304&t=5YoUOACNZ3dRVibl-0).
+## Установка
 
-На данной странице расположен список постов с той же категорией, которую первоначально выбрал пользователь на странице Blog.
-К каждому посту привязаны один и более тегов. В блоке "Search for tag..." можно найти посты с определенным тегом, который введет пользователь.
-Такой поиск реализован с помощью elastic search. В блоке "Categories" при выборе категории должен отображаться список постов с выбранной категорией.
-В блоке "All Tags" происходит поиск постов по тегу, таким образом происходит дополнительная фильтрация постов с текущей категорией.
-Если же пользователь ввел определенный тег в "Search for tag...", то при выборе тега в "All tags" отображение постов тоже должно измениться.
-Если же никаких совпадений нет, то необходимо отображать альтернативный текст на странице пользователя.
+Перед началом работы убедитесь, что необходимые библиотеки установлены:
 
-6. [Главная Author](https://www.figma.com/file/fhmK69xjYdFpfoVhY7t6u1/Client-Blog-Modsen-Template?node-id=14%3A1483&t=5YoUOACNZ3dRVibl-0).
+`yarn add next-intl`
 
-На данной странице отображается краткая информация об авторе и список его социальных сетей.
-В блоке "My Posts" отображается список его постов, если же они принадлежат автору.
-В случае отсутствия постов, которые принадлежат автору, если же постов нет, то должен отображаться альтернативный текст.
-При нажатии на один из постов, происходит переход на страницу Blog Post.
+## Локализация
 
-7. [Главная Contact](https://www.figma.com/file/fhmK69xjYdFpfoVhY7t6u1/Client-Blog-Modsen-Template?node-id=14%3A1581&t=5YoUOACNZ3dRVibl-0).
+Файлы локализации хранятся в папке messages и структура выглядит так:
 
-Данная страница хранит в себе форму для связи, которая отправляется на почту (выбранную пользователем) с заранее заготовленным текстом.
-Карта является интерактивной, на которой отображаются точки (минимум 3) удаленные друг от друга (точки определяет выполняющий, но они должны быть расположены в разных странах).
+```
+/messages
+  ├─ en.ts
+  ├─ ru.ts
+```
 
-8. [Главная Privacy Policy](https://www.figma.com/file/fhmK69xjYdFpfoVhY7t6u1/Client-Blog-Modsen-Template?node-id=14%3A1678&t=5YoUOACNZ3dRVibl-0).
+## Конфигурация next-intl
 
-## Тестирование
+В файле next.config.js используется плагин createNextIntlPlugin, который создаёт псевдоним для предоставления серверным компонентам конфигурации i18n для конкретного запроса:
 
-Реализовать тестирование(e2e и unit) c полным покрытием функционала приложения.
+```
+import createNextIntlPlugin from 'next-intl/plugin'
 
-## Полезные ссылки
+const withNextIntl = createNextIntlPlugin()
+const nextConfig = {
+    ...
+}
+export default withNextIntl(nextConfig)
+```
 
-[React](https://react.dev/reference/react)
+## Обработка языковых данных
 
-[React hooks](https://react.dev/reference/react/hooks)
+Состоит из двух частей:
 
-[React redux](https://react-redux.js.org/introduction/quick-start)
+1. Промежуточное ПО: определяет локаль и обрабатывает перенаправления и перезаписи (например, / → /en)
+2. Навигационные API: упрощенные оболочки вокруг Next.js ’навигационные API, такие как <Link />
 
-[NextJS](https://nextjs.org/docs)
+### В файле routing.ts описано общая конфигурация навигационного API:
 
-[Тестирование Playwright](https://playwright.dev/)
+```
+import { createSharedPathnamesNavigation } from 'next-intl/navigation'
+import { defineRouting } from 'next-intl/routing'
 
-[Тестирование Jest](https://jestjs.io/ru/docs/getting-started)
+export const routing = defineRouting({
+    locales: ['en', 'ru'],
 
-[Email-js](https://www.emailjs.com/docs/examples/reactjs/)
+    defaultLocale: 'en',
+})
 
-[SCSS](https://sass-lang.com/documentation/)
+export const { Link, redirect, usePathname, useRouter } =
+    createSharedPathnamesNavigation(routing)
 
-[Zod](https://zod.dev/)
+```
 
-[Storybook](https://dev.to/iamrishupatel/how-to-create-a-react-component-library-using-storybook-typescript-scss-and-rollup-4pin)
+### Настройка промежуточного программного обеспечения:
 
-[Next-intl](https://next-intl-docs.vercel.app/)
+```
+import { NextRequest } from 'next/server'
+import createMiddleware from 'next-intl/middleware'
 
-[GitHub Actions](https://github.com/features/actions)
+import { routing } from './i18n/routing'
 
-[Heroku](https://devcenter.heroku.com/articles/heroku-cli)
+import { Paths } from '@constants'
+
+export const config = {
+    matcher: ['/', `/(en|ru)/:path*`],
+}
+
+export default function middleware(request: NextRequest) {
+    const { pathname } = request.nextUrl
+    const [, locale] = pathname.split('/')
+
+    if (pathname === '/') {
+        request.nextUrl.pathname = `/${locale}/${Paths.Home}`
+    }
+
+    const handleI18nRouting = createMiddleware(routing)
+    const response = handleI18nRouting(request)
+    return response
+}
+
+```
+
+Эта конфигурация применяется к текущему запросу и может использоваться для отображения сообщений и других параметров в зависимости от языка пользователя. i18n/requesr.ts
+
+```
+import { getRequestConfig } from 'next-intl/server'
+
+import { routing } from './routing'
+
+import { LocaleType } from '@types'
+
+export default getRequestConfig(async ({ locale }) => {
+    if (!locale || !routing.locales.includes(locale as LocaleType)) {
+        locale = routing.defaultLocale
+    }
+
+    return {
+        locale,
+        messages: (await import(`../../messages/${locale}.ts`)).default,
+    }
+})
+```
+
+## В корневом layout добавлен NextIntlProvider для получения переводов.
+
+```
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
+...
+
+const messages = await getMessages()
+...
+<html lang={locale}>
+    <NextIntlClientProvider messages={messages}>
+        <ToastContainer />
+        <Header />
+            <div className={styles.contentWrap}>
+                <div className={styles.content}>{children}</div>
+            </div>
+        <Footer />
+    </NextIntlClientProvider>
+</html>
+```
+
+## Использование
+
+Пример использования в компоненте:
+
+```
+import { useTranslations } from 'next-intl'
+
+export const Button = () => {
+    const t = useTranslations('JoinUs')
+
+    return (
+        <div>
+            <Button title={t('buttonTitle')} />
+        </div>
+    )
+}
+```
+
+## Интеграция со Storybook
+
+### Next-intl.js
+
+Файл с данными о переводах, который будет использоваться в preview.tsx
+
+```
+import en from '../messages/en'
+import ru from '../messages/ru'
+
+const messagesByLocale: Record<string, any> = { en, ru }
+
+const nextIntl = {
+    defaultLocale: 'en',
+    messagesByLocale,
+}
+
+export default nextIntl
+```
+
+### Prewiew.tsx
+
+```
+import React from 'react'
+import {
+    AppRouterContext,
+    type AppRouterInstance,
+} from 'next/dist/shared/lib/app-router-context.shared-runtime'
+import { NextIntlClientProvider } from 'next-intl'
+
+import nextIntl from './next-intl'
+
+import '../src/styles/global.scss'
+import type { Preview } from '@storybook/react'
+
+const preview: Preview = {
+    initialGlobals: {
+        locale: 'en',
+        locales: {
+            en: 'English',
+            ru: 'Russian',
+        },
+    },
+    parameters: {
+        nextIntl,
+        meta: {
+            decorators: [
+                (Story) => (
+                    <AppRouterContext.Provider value={{} as AppRouterInstance}>
+                        <NextIntlClientProvider messages={{}}>
+                            <Story />
+                        </NextIntlClientProvider>
+                    </AppRouterContext.Provider>
+                ),
+            ],
+        },
+        ...
+    },
+}
+
+export default preview
+```
+
+В preview.tsx доавляется глобальный декоратор, который оборачивает стори в NextIntlClientProvider и AppRouterContext.Provider для совместимости с app router и next-intl
+
+## Main.ts
+
+В данный файл добвляется аддон `storybook-next-intl`
+Также для корректной загрузки изображений указан путь к статическим файлам `staticDirs: ['../public'],`
+
+
+## Зависимости
+
+Node >= 18v
+
+## Ссылки
+
+Мой [gitHub](https://github.com/Kovallll)
+
+```
+
+```

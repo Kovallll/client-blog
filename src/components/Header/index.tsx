@@ -1,7 +1,5 @@
-'use client'
-
 import classNames from 'classnames'
-import { useTranslations } from 'use-intl'
+import { useTranslations } from 'next-intl'
 
 import { Link } from 'src/i18n/routing'
 import { logoTitle } from './config'
@@ -34,11 +32,7 @@ export const Header = (props: HeaderProps) => {
             <div className={styles.content}>
                 <nav className={styles.nav}>
                     {navigationLinks.slice(0, navCount).map(({ path }) => (
-                        <Link
-                            key={path}
-                            className={styles.link}
-                            href={path}
-                        >
+                        <Link key={path} className={styles.link} href={path}>
                             {t(`nav.${path}`)}
                         </Link>
                     ))}

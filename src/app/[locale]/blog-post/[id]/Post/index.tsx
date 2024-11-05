@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useTranslations } from 'use-intl'
 
-import { className } from './config'
+import { className, imageHeight, imageWidth } from './config'
 import { PostInfo } from './PostInfo'
 import styles from './styles.module.scss'
 import { PostProps } from './types'
@@ -48,11 +48,12 @@ export const Post = ({ post }: PostProps) => {
             </div>
             {image && (
                 <Image
-                    src={image.imageUrl}
+                    src={image.hqImageUrl}
                     alt={image.altText}
-                    width={1280}
-                    height={580}
+                    width={imageWidth}
+                    height={imageHeight}
                     className={styles.image}
+                    loading="lazy"
                 />
             )}
             <div className={styles.postInfo}>

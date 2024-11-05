@@ -1,8 +1,7 @@
-'use client'
-
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
+import { imageHeight, imageWidth } from './config'
 import styles from './styles.module.scss'
 
 import { Excerpt } from '@components/Excerpt'
@@ -34,11 +33,12 @@ export const HeroBlock = () => {
             </div>
             {image && (
                 <Image
-                    width={520}
-                    height={360}
+                    width={imageWidth}
+                    height={imageHeight}
                     alt={image?.altText}
                     src={image?.imageUrl}
                     className={styles.image}
+                    loading="lazy"
                 />
             )}
         </div>

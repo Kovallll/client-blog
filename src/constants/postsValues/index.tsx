@@ -54,6 +54,7 @@ export const authorsData: AuthorType[] = [
     {
         id: '1',
         avatarUrl: '/images/author1.png',
+        avatarPageUrl: '/images/author1-512.png',
         fullName: 'Floyd Miles',
         description: 'Content Writer @Company',
         text: loremTextMd,
@@ -61,6 +62,7 @@ export const authorsData: AuthorType[] = [
     {
         id: '2',
         avatarUrl: '/images/author2.png',
+        avatarPageUrl: '/images/author2-512.png',
         fullName: 'Dianne Russell',
         description: 'Content Writer @Company',
         text: loremTextMd,
@@ -68,6 +70,7 @@ export const authorsData: AuthorType[] = [
     {
         id: '3',
         avatarUrl: '/images/author3.png',
+        avatarPageUrl: '/images/author3-512.png',
         fullName: 'Jenny Wilson',
         description: 'Content Writer @Company',
         text: loremTextMd,
@@ -75,6 +78,7 @@ export const authorsData: AuthorType[] = [
     {
         id: '4',
         avatarUrl: '/images/author4.png',
+        avatarPageUrl: '/images/author4-512.png',
         fullName: 'Leslie Alexander',
         description: 'Content Writer @Company',
         text: loremTextMd,
@@ -82,6 +86,7 @@ export const authorsData: AuthorType[] = [
     {
         id: '5',
         avatarUrl: '/images/author5.png',
+        avatarPageUrl: '/images/author5-512.png',
         fullName: 'Guy Hawkins',
         description: 'Content Writer @Company',
         text: loremTextMd,
@@ -89,6 +94,7 @@ export const authorsData: AuthorType[] = [
     {
         id: '6',
         avatarUrl: '/images/author6.png',
+        avatarPageUrl: '/images/author6-512.png',
         fullName: 'Eleanor Pena',
         description: 'Content Writer @Company',
         text: loremTextMd,
@@ -96,6 +102,7 @@ export const authorsData: AuthorType[] = [
     {
         id: '7',
         avatarUrl: '/images/author7.png',
+        avatarPageUrl: '/images/author7-512.png',
         fullName: 'Robert Fox',
         description: 'Content Writer @Company',
         text: loremTextMd,
@@ -103,6 +110,7 @@ export const authorsData: AuthorType[] = [
     {
         id: '8',
         avatarUrl: '/images/author8.png',
+        avatarPageUrl: '/images/author8-512.png',
         fullName: 'Jacob Jones',
         description: 'Content Writer @Company',
         text: loremTextMd,
@@ -147,6 +155,7 @@ export const homeStepByStepPost: PostData = {
     image: {
         imageUrl: '/images/homeTopImage.png',
         altText: 'home top image',
+        hqImageUrl: '/images/homeTopImage-high-quality.png',
     },
     postInfo,
     tags: [allTags[0], allTags[1]],
@@ -163,6 +172,7 @@ export const blogStepByStepPost: PostData = {
     image: {
         imageUrl: '/images/blogTopImage.png',
         altText: 'blog top image',
+        hqImageUrl: '/images/blogTopImage-high-quality.png',
     },
     postInfo,
     tags: [allTags[0], allTags[3]],
@@ -180,6 +190,7 @@ export const homePostsData: PostData[] = [
         image: {
             imageUrl: '/images/featurePost.png',
             altText: 'feature post image',
+            hqImageUrl: '/images/featurePost-high-quality.png',
         },
         postInfo,
         tags: [allTags[0], allTags[5], allTags[4]],
@@ -195,6 +206,7 @@ export const homePostsData: PostData[] = [
         image: {
             imageUrl: '/images/featurePost.png',
             altText: 'feature post image',
+            hqImageUrl: '/images/featurePost-high-quality.png',
         },
         postInfo,
         tags: [allTags[0], allTags[2], allTags[4]],
@@ -210,6 +222,7 @@ export const homePostsData: PostData[] = [
         image: {
             imageUrl: '/images/featurePost.png',
             altText: 'feature post image',
+            hqImageUrl: '/images/featurePost-high-quality.png',
         },
         postInfo,
         tags: [allTags[3], allTags[4]],
@@ -225,6 +238,7 @@ export const homePostsData: PostData[] = [
         image: {
             imageUrl: '/images/featurePost.png',
             altText: 'feature post image',
+            hqImageUrl: '/images/featurePost-high-quality.png',
         },
         postInfo,
         tags: [allTags[1], allTags[3], allTags[2]],
@@ -240,7 +254,11 @@ export const blogPostsData: PostData[] = [
         subtitle: loremTextSm,
         author: authorsData[0],
         postTime: 'Posted on 27th January 2022',
-        image: { imageUrl: '/images/postImage1.png', altText: 'post image' },
+        image: {
+            imageUrl: '/images/postImage1.png',
+            altText: 'post image',
+            hqImageUrl: '/images/postImage1-high-quality.png',
+        },
         postInfo,
         tags: [...allTags],
     },
@@ -252,7 +270,11 @@ export const blogPostsData: PostData[] = [
         subtitle: loremTextSm,
         author: authorsData[1],
         postTime: 'Posted on 27th January 2022',
-        image: { imageUrl: '/images/postImage2.png', altText: 'post image' },
+        image: {
+            imageUrl: '/images/postImage2.png',
+            altText: 'post image',
+            hqImageUrl: '/images/postImage2-high-quality.png',
+        },
         postInfo,
         tags: [allTags[1]],
     },
@@ -264,7 +286,11 @@ export const blogPostsData: PostData[] = [
         subtitle: loremTextSm,
         author: authorsData[2],
         postTime: 'Posted on 27th January 2022',
-        image: { imageUrl: '/images/postImage3.png', altText: 'post image' },
+        image: {
+            imageUrl: '/images/postImage3.png',
+            altText: 'post image',
+            hqImageUrl: '/images/postImage3-high-quality.png',
+        },
         postInfo,
         tags: [allTags[2]],
     },
@@ -276,7 +302,11 @@ export const blogPostsData: PostData[] = [
         subtitle: loremTextSm,
         author: authorsData[3],
         postTime: 'Posted on 27th January 2022',
-        image: { imageUrl: '/images/postImage4.png', altText: 'post image' },
+        image: {
+            imageUrl: '/images/postImage4.png',
+            altText: 'post image',
+            hqImageUrl: '/images/postImage4-high-quality.png',
+        },
         postInfo,
         tags: [allTags[3]],
     },
@@ -288,7 +318,11 @@ export const blogPostsData: PostData[] = [
         subtitle: loremTextSm,
         author: authorsData[4],
         postTime: 'Posted on 27th January 2022',
-        image: { imageUrl: '/images/postImage1.png', altText: 'post image' },
+        image: {
+            imageUrl: '/images/postImage1.png',
+            altText: 'post image',
+            hqImageUrl: '/images/postImage1-high-quality.png',
+        },
         postInfo,
         tags: [allTags[4]],
     },
@@ -300,7 +334,11 @@ export const blogPostsData: PostData[] = [
         subtitle: loremTextSm,
         author: authorsData[5],
         postTime: 'Posted on 27th January 2022',
-        image: { imageUrl: '/images/postImage4.png', altText: 'post image' },
+        image: {
+            imageUrl: '/images/postImage4.png',
+            altText: 'post image',
+            hqImageUrl: '/images/postImage4-high-quality.png',
+        },
         postInfo,
         tags: [allTags[1], allTags[3]],
     },
@@ -312,7 +350,11 @@ export const blogPostsData: PostData[] = [
         subtitle: loremTextSm,
         author: authorsData[6],
         postTime: 'Posted on 27th January 2022',
-        image: { imageUrl: '/images/postImage3.png', altText: 'post image' },
+        image: {
+            imageUrl: '/images/postImage3.png',
+            altText: 'post image',
+            hqImageUrl: '/images/postImage3-high-quality.png',
+        },
         postInfo,
         tags: [allTags[1], allTags[4]],
     },
@@ -324,7 +366,11 @@ export const blogPostsData: PostData[] = [
         subtitle: loremTextSm,
         author: authorsData[7],
         postTime: 'Posted on 27th January 2022',
-        image: { imageUrl: '/images/postImage2.png', altText: 'post image' },
+        image: {
+            imageUrl: '/images/postImage2.png',
+            altText: 'post image',
+            hqImageUrl: '/images/postImage2-high-quality.png',
+        },
         postInfo,
         tags: [allTags[4], allTags[3]],
     },
@@ -336,7 +382,11 @@ export const blogPostsData: PostData[] = [
         subtitle: loremTextSm,
         author: authorsData[4],
         postTime: 'Posted on 27th January 2022',
-        image: { imageUrl: '/images/postImage2.png', altText: 'post image' },
+        image: {
+            imageUrl: '/images/postImage2.png',
+            altText: 'post image',
+            hqImageUrl: '/images/postImage2-high-quality.png',
+        },
         postInfo,
         tags: [...allTags],
     },
@@ -348,14 +398,22 @@ export const blogPostsData: PostData[] = [
         subtitle: loremTextSm,
         author: authorsData[2],
         postTime: 'Posted on 27th January 2022',
-        image: { imageUrl: '/images/postImage1.png', altText: 'post image' },
+        image: {
+            imageUrl: '/images/postImage1.png',
+            altText: 'post image',
+            hqImageUrl: '/images/postImage1-high-quality.png',
+        },
         postInfo,
         tags: [allTags[4], allTags[5]],
     },
 
     {
         id: '11',
-        image: { imageUrl: '/images/postImage3.png', altText: 'post image' },
+        image: {
+            imageUrl: '/images/postImage3.png',
+            altText: 'post image',
+            hqImageUrl: '/images/postImage3-high-quality.png',
+        },
         category: Categories.TECHNOLOGY,
         excerptChunk: `<purple>${Categories.TECHNOLOGY}</purple>`,
         title: 'How to build rapport with your web design clients',
@@ -370,6 +428,7 @@ export const blogPostsData: PostData[] = [
         image: {
             imageUrl: '/images/postImage1.png',
             altText: 'post image',
+            hqImageUrl: '/images/postImage1-high-quality.png',
         },
         category: Categories.BUSINESS,
         excerptChunk: `<purple>${Categories.BUSINESS}</purple>`,

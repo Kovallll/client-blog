@@ -9,3 +9,5 @@ export const src = '/images/discover.png'
 export const className = 'discover'
 export const buttonTitle = 'Discover'
 export const translate = 'Discover'
+export const imageWidth = 900
+export const imageHeight = 700

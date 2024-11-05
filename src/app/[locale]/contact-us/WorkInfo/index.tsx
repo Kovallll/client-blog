@@ -1,6 +1,4 @@
-'use client'
-
-import { useTranslations } from 'use-intl'
+import { useTranslations } from 'next-intl'
 
 import styles from './styles.module.scss'
 

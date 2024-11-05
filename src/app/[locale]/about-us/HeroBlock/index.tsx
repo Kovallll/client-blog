@@ -1,9 +1,14 @@
-'use client'
-
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
-import { altText, className, src, statisticInfo } from './config'
+import {
+    altText,
+    className,
+    imageHeight,
+    imageWidth,
+    src,
+    statisticInfo,
+} from './config'
 import styles from './styles.module.scss'
 
 import ColorsLines from '@components/ColorsLines'
@@ -28,9 +33,10 @@ export const HeroBlock = () => {
                 <Image
                     alt={altText}
                     src={src}
-                    width={1280}
-                    height={440}
+                    width={imageWidth}
+                    height={imageHeight}
                     className={styles.image}
+                    loading="lazy"
                 />
                 <div className={styles.bottomImageOverwiew}>
                     <div className={styles.statistic}>

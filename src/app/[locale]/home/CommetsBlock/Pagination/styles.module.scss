@@ -1,0 +1,79 @@
+@import '@styles/global.scss';
+
+.pagination {
+    @include flex-row-center;
+
+    position: absolute;
+    bottom: $spacer-xl;
+    right: $spacer-xxxl;
+
+    @media (max-width: $lg) {
+        bottom: $spacer-xl - 2px;
+        right: $spacer-xxl;
+    }
+
+    @media (max-width: $md) {
+        bottom: $spacer-lg;
+        right: $spacer-md;
+    }
+
+    @media (max-width: $sm) {
+        bottom: $spacer-md + 2px;
+        right: $spacer-sm;
+    }
+
+    @media (max-width: $xs) {
+        bottom: $spacer-xl;
+        right: $spacer-xxs;
+    }
+}
+
+%arrow {
+    @include flex-row-center;
+
+    border-radius: 50%;
+    cursor: pointer;
+    border: 0;
+}
+
+.prevArrow {
+    @include flex-row-center;
+
+    @extend %arrow;
+
+    background: $white;
+    width: 48px;
+    height: 48px;
+
+    @media (max-width: $sm) {
+        width: 32px;
+        height: 32px;
+    }
+
+    @media (max-width: $xs) {
+        width: 24px;
+        height: 24px;
+        padding: $spacer-xxxs;
+    }
+}
+
+.nextArrow {
+    @include flex-row-center;
+
+    @extend %arrow;
+
+    background: $black;
+    width: 62px;
+    height: 62px;
+    margin-left: $spacer-xs;
+
+    @media (max-width: $sm) {
+        width: 48px;
+        height: 48px;
+    }
+
+    @media (max-width: $xs) {
+        width: 32px;
+        height: 32px;
+    }
+}

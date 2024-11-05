@@ -63,6 +63,7 @@ export const Form = () => {
                 name="query"
                 id="query"
                 data-testid="form-select"
+                aria-label="query"
                 value={formik.values.query}
                 onChange={formik.handleChange}
             >
