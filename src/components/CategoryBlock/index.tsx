@@ -20,13 +20,7 @@ const CategoryBlock = ({ translate, className }: CategoryBlockProps) => {
             <h2 className={styles.title}>{tPage('title')}</h2>
             <div className={styles.categories} data-testid="categories">
                 {categoriesData.map(({ id, Icon }) => {
-                    return (
-                        <CategoryCard
-                            id={id}
-                            key={id}
-                            Icon={Icon}
-                        />
-                    )
+                    return <CategoryCard id={id} key={id} Icon={Icon} />
                 })}
             </div>
         </section>

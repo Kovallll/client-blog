@@ -9,6 +9,7 @@ import '@styles/base.scss'
 import 'react-toastify/dist/ReactToastify.css'
 import { Footer } from '@components/Footer'
 import { Header } from '@components/Header'
+import { PushNotificationManager } from '@components/PushNotificationManager'
 import emailjs from '@emailjs/browser'
 
 const sen = Sen({
@@ -42,6 +43,7 @@ export default async function RootLayout({
             <body className={styles.container}>
                 <NextIntlClientProvider messages={messages}>
                     <ToastContainer />
+                    <PushNotificationManager />
                     <Header />
                     <div className={styles.contentWrap}>
                         <div className={styles.content}>{children}</div>
